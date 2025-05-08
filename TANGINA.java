@@ -1,1 +1,0 @@
-//hotdog tangina mo ken
