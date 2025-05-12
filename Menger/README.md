@@ -3,3 +3,9 @@ Sa bawat araw na lumilipas, may pagkakataon tayong gumawa ng isang bagay na maka
 Marami sa atin ang naghihintay ng tamang oras, tamang mood, o tamang pagkakataon. Pero ang totoo, ang “tamang panahon” ay hindi dumadating hangga’t hindi tayo gumagawa ng paraan. Habang naghihintay tayo, unti-unting lumilipas ang oras at mga pangarap na dapat sana’y natupad na. Kung meron kang gustong simulan—proyekto, sulat, pag-aaral, negosyo, o kahit simpleng gawain sa bahay—ito na ang sagot mo. Walang ibang makakagawa niyan kundi ikaw. Simulan mo na ngayon.
 
 Hindi madaling kumilos lalo na kapag pagod, walang gana, o maraming iniisip. Pero mas mahirap ang panghihinayang sa mga bagay na hindi mo sinubukan. Kaya kung nag-aalinlangan ka pa, ito na ang paalala: Gawin mo na. Gawin mo habang may panahon pa. Huwag hayaang lumipas ang araw na wala kang naumpisahan. Isang kilos, isang hakbang, isang desisyon—iyan lang ang kailangan. At kapag nagawa mo na, malalaman mong kaya mo pala. Naghihintay ang resulta sa dulo ng iyong paggawa. Kaya, gumawa ka na.
+
+
+<div align="center">
+  <img src="https://media1.tenor.com/m/VOhi4qaR2A8AAAAd/michael-jordan-look.gif" width="400px">
+
+</div>
