@@ -1,6 +1,9 @@
 package server;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ClientHandler extends Thread {
@@ -20,7 +23,7 @@ public class ClientHandler extends Thread {
             in  = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             out = new PrintWriter(clientSocket.getOutputStream(), true);
 
-            out.println("Enter your username:");
+            out.print("Enter your username:");
             username = in.readLine();
 
             if (username == null || username.isBlank()) {
