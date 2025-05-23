@@ -17,8 +17,9 @@ public class MainClient extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Chat"), 640, 480);
+        scene = new Scene(loadFXML("view/login"), 640, 480);
         stage.setScene(scene);
+        stage.setTitle("Login");
         stage.show();
     }
 
@@ -27,9 +28,9 @@ public class MainClient extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainClient.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
+    FXMLLoader fxmlLoader = new FXMLLoader(MainClient.class.getResource("/view/." + fxml + ".fxml"));
+    return fxmlLoader.load();
+}
 
     public static void main(String[] args) {
         launch();
