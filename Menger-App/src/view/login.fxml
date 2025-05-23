@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #00254d;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" prefWidth="300.0" spacing="20.0" style="-fx-padding: 30 0 30 0;;">
+         <children>
+            <ImageView fitHeight="81.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="emailField" prefHeight="40.0" prefWidth="260.0" promptText="Mobile number or email" style="-fx-background-radius: 10;; -fx-font-size: 14px;;" />
+            <PasswordField fx:id="passwordField" promptText="Password" style="-fx-background-radius: 10; -fx-font-size: 14px;" />
+            <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLogin" prefHeight="45.0" prefWidth="260.0" style="-fx-background-color: #1877f2; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-size: 15;" text="Log in" />
+            <Hyperlink style="-fx-text-fill: #a0a0a0; -fx-font-size: 13;" text="Forgot password?" />
+            <Button fx:id="createAccountButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #1877f2; -fx-border-width: 1.5px; -fx-text-fill: #1877f2; -fx-border-radius: 25; -fx-background-radius: 25; -fx-font-size: 15;" text="Create new account" />
+            <Region prefHeight="24.0" prefWidth="286.0" VBox.vgrow="ALWAYS" />
+            <Label fx:id="metaLabel" style="-fx-text-fill: #888; -fx-font-size: 12; -fx-font-family: &quot;Segoe UI&quot;, sans-serif;;" text="Meta" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
