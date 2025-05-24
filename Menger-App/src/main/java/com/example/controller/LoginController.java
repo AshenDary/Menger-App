@@ -1,3 +1,5 @@
+package com.example.controller;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -16,7 +18,7 @@ public class LoginController {
     private Label lblMessage;
 
     @FXML
-    private void login() {
+    private void handleLogin() {
         String username = txtUsername.getText().trim();
         String password = txtPassword.getText().trim();
 
@@ -24,7 +26,7 @@ public class LoginController {
             lblMessage.setStyle("-fx-text-fill: green;");
             lblMessage.setText("Login successful!");
             try {
-                MainClient.setRoot("/view/chat"); 
+                MainClient.setRoot("chat");
             } catch (Exception e) {
                 lblMessage.setText("Failed to load chat screen.");
             }
@@ -35,7 +37,6 @@ public class LoginController {
     }
 
     private boolean authenticate(String username, String password) {
-       
-        return;
+        return !username.isEmpty() && !password.isEmpty();
     }
 }
