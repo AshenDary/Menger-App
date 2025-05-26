@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import com.example.MainClient;
+import javafx.event.ActionEvent;
 
 public class LoginController {
 
@@ -33,6 +34,16 @@ public class LoginController {
         } else {
             lblMessage.setStyle("-fx-text-fill: red;");
             lblMessage.setText("Invalid username or password.");
+        }
+    }
+
+    @FXML
+    private void handleCreateAccount(ActionEvent event) {
+        try {
+            MainClient.setRoot("create accc");
+        } catch (Exception e) {
+            lblMessage.setStyle("-fx-text-fill: red;");
+            lblMessage.setText("Failed to load create account screen.");
         }
     }
 
