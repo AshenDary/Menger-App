@@ -1,11 +1,12 @@
 package com.example.controller;
 
+import com.example.MainClient;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import com.example.MainClient;
-import javafx.event.ActionEvent;
 
 public class LoginController {
 
@@ -40,7 +41,7 @@ public class LoginController {
     @FXML
     private void handleCreateAccount(ActionEvent event) {
         try {
-            MainClient.setRoot("create accc");
+            MainClient.setRoot("create_acc");
         } catch (Exception e) {
             lblMessage.setStyle("-fx-text-fill: red;");
             lblMessage.setText("Failed to load create account screen.");
