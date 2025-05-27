@@ -16,7 +16,7 @@ public class MainClient extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("login"), 640, 480);
         stage.setScene(scene);
-        stage.setTitle("Login");
+        stage.setTitle("Menger");
         stage.show();
     }
 
@@ -30,7 +30,6 @@ public class MainClient extends Application {
             }
             scene.setRoot(root);
         } catch (IOException e) {
-            e.printStackTrace();
             throw new IOException("Failed to load FXML: " + fxml, e);
         }
     }    

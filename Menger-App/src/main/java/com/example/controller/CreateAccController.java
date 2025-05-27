@@ -50,7 +50,7 @@ public class CreateAccController {
                 try (FileWriter fw = new FileWriter(ACCOUNTS_FILE, true)) {
                     fw.write(email + "," + password + System.lineSeparator());
                 }
-                MainClient.setRoot("login", null); // Pass null as no data is required
+                MainClient.setRoot("login", null);
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 import javafx.application.Platform;
 
 public class ChatClient {
-    private Socket socket;
+    private final Socket socket;
     private BufferedReader in;
     private PrintWriter out;
     private Consumer<String> onMessageReceived;

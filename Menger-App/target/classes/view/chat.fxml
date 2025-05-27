@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchat" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" spacing="10.0" style="-fx-background-color: white;;" styleClass="transparent-scroll" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="rootlayoutchat" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" spacing="10.0" style="-fx-background-color: white;;" styleClass="transparent-scroll" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ChatController">
    <children>
       <HBox fx:id="topbar" alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="960.0" spacing="150.0">
          <children>
@@ -165,7 +165,7 @@
                               <Insets bottom="1.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="kenchatpreview" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="252.0" style="-fx-text-fill:: #9f9d9d;" text="Nag kaon kana lab&gt;..,, ?" textFill="#9f9d9d">
+                        <Label fx:id="kenchatpreview" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="252.0" style="-fx-text-fill: #9f9d9d;" text="Nag kaon kana lab&gt;..,, ?" textFill="#9f9d9d">
                            <VBox.margin>
                               <Insets top="1.0" />
                            </VBox.margin>

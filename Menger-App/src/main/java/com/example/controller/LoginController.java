@@ -20,7 +20,7 @@ public class LoginController {
     private Label lblMessage;
 
     @FXML
-    private void handleLogin() {
+    private void handleLogin(ActionEvent event) {
         String username = txtUsername.getText().trim();
         String password = txtPassword.getText().trim();
 
@@ -30,7 +30,8 @@ public class LoginController {
             try {
                 MainClient.setRoot("chat", username);
             } catch (Exception e) {
-                lblMessage.setText("Failed to load App.");
+                lblMessage.setStyle("-fx-text-fill: red;");
+                lblMessage.setText("FAILED TO LOAD");
                 e.printStackTrace();
             }
         } else {
@@ -42,7 +43,7 @@ public class LoginController {
     @FXML
     private void handleCreateAccount(ActionEvent event) {
         try {
-            MainClient.setRoot("create_acc", null); // Pass null as no data is required
+            MainClient.setRoot("create_acc", null);
         } catch (Exception e) {
             lblMessage.setStyle("-fx-text-fill: red;");
             lblMessage.setText("Failed to load create account screen.");
