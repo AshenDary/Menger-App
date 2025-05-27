@@ -28,9 +28,10 @@ public class LoginController {
             lblMessage.setStyle("-fx-text-fill: green;");
             lblMessage.setText("Login successful!");
             try {
-                MainClient.setRoot("chat");
+                MainClient.setRoot("chat", username);
             } catch (Exception e) {
-                lblMessage.setText("Failed to load chat screen.");
+                lblMessage.setText("Failed to load App.");
+                e.printStackTrace();
             }
         } else {
             lblMessage.setStyle("-fx-text-fill: red;");
@@ -41,10 +42,11 @@ public class LoginController {
     @FXML
     private void handleCreateAccount(ActionEvent event) {
         try {
-            MainClient.setRoot("create_acc");
+            MainClient.setRoot("create_acc", null); // Pass null as no data is required
         } catch (Exception e) {
             lblMessage.setStyle("-fx-text-fill: red;");
             lblMessage.setText("Failed to load create account screen.");
+            e.printStackTrace();
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example;
 
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,9 +20,20 @@ public class MainClient extends Application {
         stage.show();
     }
 
-    public static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+    public static void setRoot(String fxml, Object controllerData) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader(MainClient.class.getResource("/view/" + fxml + ".fxml"));
+            Parent root = loader.load();
+            Object controller = loader.getController();
+            if (controllerData != null && controller instanceof InitializableWithData) {
+                ((InitializableWithData) controller).init(controllerData);
+            }
+            scene.setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new IOException("Failed to load FXML: " + fxml, e);
+        }
+    }    
 
     private static Parent loadFXML(String fxml) throws IOException {
         String resourcePath = "/view/" + fxml + ".fxml";
