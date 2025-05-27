@@ -30,9 +30,10 @@ public class MainClient extends Application {
             }
             scene.setRoot(root);
         } catch (IOException e) {
+            e.printStackTrace(); // Print the full stack trace
             throw new IOException("Failed to load FXML: " + fxml, e);
         }
-    }    
+    }
 
     private static Parent loadFXML(String fxml) throws IOException {
         String resourcePath = "/view/" + fxml + ".fxml";

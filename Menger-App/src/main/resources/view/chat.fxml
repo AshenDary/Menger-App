@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchat" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" spacing="10.0" style="-fx-background-color: white;;" styleClass="transparent-scroll" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="rootlayoutchat" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" spacing="10.0" style="-fx-background-color: white;" styleClass="transparent-scroll" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ChatController">
    <children>
       <HBox fx:id="topbar" alignment="CENTER" prefHeight="60.0" prefWidth="960.0" spacing="150.0">
          <children>
             <ImageView fx:id="menuicon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@assets/images/@menu.png" />
+                  <Image url="@assets/images/menu.png" />
                </image>
             </ImageView>
             <Label fx:id="chatsstaticlabel" alignment="CENTER" contentDisplay="CENTER" text="Chats" textAlignment="CENTER">
@@ -26,7 +26,7 @@
             </Label>
             <ImageView fx:id="editicon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@assets/images/@pen.png" />
+                  <Image url="@assets/images/pen.png" />
                </image>
             </ImageView>
          </children>
@@ -41,7 +41,7 @@
          <children>
             <ImageView fx:id="mitasearchicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@assets/images/@mitaicon.png" />
+                  <Image url="@assets/images/mitaicon.png" />
                </image>
                <HBox.margin>
                   <Insets left="20.0" right="5.0" />
@@ -184,7 +184,7 @@
                <children>
                   <ImageView fx:id="mitaaichaticon" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@assets/images/@mitaicon.png" />
+                        <Image url="@assets/images/mitaicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -219,7 +219,7 @@
                <children>
                   <ImageView fx:id="binochaticon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@assets/images/@binoicon.png" />
+                        <Image url="@assets/images/binoicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -254,7 +254,7 @@
                <children>
                   <ImageView fx:id="raichaticon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@assets/images/@rileyicon.png" />
+                        <Image url="@assets/images/rileyicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -289,7 +289,7 @@
                <children>
                   <ImageView fx:id="jaridchaticon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@assets/images/@jaredicon.png" />
+                        <Image url="@assets/images/jaredicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -331,7 +331,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@assets/images/@chaticon.png" />
+                        <Image url="@assets/images/chaticon.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="chatslabel" text="Chats" />
@@ -347,7 +347,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@assets/images/@mitaicon.png" />
+                        <Image url="@assets/images/mitaicon.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="mitaailabel" text="Mita AI" />
@@ -360,7 +360,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@assets/images/@highlightsicon.png" />
+                        <Image url="@assets/images/highlightsicon.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="highlightslabel" text="Highlights" />
