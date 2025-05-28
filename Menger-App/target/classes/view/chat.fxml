@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -91,8 +91,8 @@
                   <VBox fx:id="kenstorycontainer" alignment="CENTER" layoutX="135.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                      <children>
                         <ImageView fx:id="kenavataricon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
-                           <image><Image url="@assets/images/kenicon.png" 
-                              />
+                           <image>
+                              <Image url="@assets/images/kenicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="kenusername" alignment="CENTER" contentDisplay="CENTER" text="Kinneth" textFill="#aeaeae">
