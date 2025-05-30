@@ -35,7 +35,7 @@ public class CreateAccController {
     @FXML
     private Button signUpButton;
 
-    private final String ACCOUNTS_FILE = Paths.get(System.getProperty("user.dir"), "accounts.txt").toString();
+    private final String ACCOUNTS_FILE = System.getProperty("user.dir") + "/accounts.txt";
 
     @FXML
     private void initialize() {
@@ -47,6 +47,7 @@ public class CreateAccController {
         String password = passwordField.getText().trim();
         if (!email.isEmpty() && !password.isEmpty()) {
             try {
+                System.out.println("Writing account to: " + ACCOUNTS_FILE);
                 try (FileWriter fw = new FileWriter(ACCOUNTS_FILE, true)) {
                     fw.write(email + "," + password + System.lineSeparator());
                 }
@@ -54,6 +55,15 @@ public class CreateAccController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @FXML
+    private void handleBackToLogin() {
+        try {
+            MainClient.setRoot("login", null);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

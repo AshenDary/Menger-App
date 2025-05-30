@@ -2,6 +2,8 @@ package com.example.controller;
 
 import com.example.MainClient;
 
+import java.io.File;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -52,6 +54,24 @@ public class LoginController {
     }
 
     private boolean authenticate(String username, String password) {
-        return !username.isEmpty() && !password.isEmpty();
+        String filePath = System.getProperty("user.dir") + "/accounts.txt";
+        try {
+            File file = new File(filePath);
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(filePath))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] parts = line.split(",", 2);
+                    if (parts.length == 2 && parts[0].equals(username) && parts[1].equals(password)) {
+                        return true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
