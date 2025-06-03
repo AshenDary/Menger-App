@@ -15,14 +15,14 @@ public class MainClient extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"), 390, 844);
+        scene = new Scene(loadFXML("login"), 440, 844);
         stage.setScene(scene);
     
         String css = this.getClass().getResource("/view/meneger.css").toExternalForm();
         scene.getStylesheets().add(css);
     
         stage.setTitle("Menger");
-        stage.getIcons().add(new Image(getClass().getResource("/assets/images/app_icon.png").toExternalForm()));
+        stage.getIcons().add(new Image(getClass().getResource("/assets/images/mengericon.png").toExternalForm()));
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.show(); 
