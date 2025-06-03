@@ -24,12 +24,12 @@
             <Region prefHeight="139.0" prefWidth="480.0" />
             <ImageView fx:id="editicon" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/pen.png" />
+                  <Image url="@../assets/images/pen.png" />
                </image>
             </ImageView>
             <ImageView fx:id="facebookicon" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/facebook.png" />
+                  <Image url="@../assets/images/facebook.png" />
                </image>
             </ImageView>
          </children>
@@ -44,7 +44,7 @@
          <children>
             <ImageView fx:id="mitasearchicon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@mitaicon.png" />
+                  <Image url="@../assets/images/mitaicon.png" />
                </image>
                <HBox.margin>
                   <Insets left="20.0" right="5.0" />
@@ -64,7 +64,7 @@
                      <children>
                         <ImageView fx:id="sirstoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@sirstoryicon.png" />
+                              <Image url="@../assets/images/sirstoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="yournote" alignment="CENTER" contentDisplay="CENTER" text="Your note" textFill="#aeaeae">
@@ -81,7 +81,7 @@
                      <children>
                         <ImageView fx:id="binostoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@binostoryicon.png" />
+                              <Image url="@../assets/images/binostoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="binousername" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="102.0" text="BinoPogi" textFill="#aeaeae">
@@ -98,7 +98,7 @@
                      <children>
                         <ImageView fx:id="bugoystoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@bugoystoryicon.png" />
+                              <Image url="@../assets/images/bugoystoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="bugoyusername" alignment="CENTER" contentDisplay="CENTER" text="Bugoy" textFill="#aeaeae">
@@ -115,7 +115,7 @@
                      <children>
                         <ImageView fx:id="kenstoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@kenstoryicon.png" />
+                              <Image url="@../assets/images/kenstoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="kenusername" alignment="CENTER" contentDisplay="CENTER" text="Kinneth" textFill="#aeaeae">
@@ -132,7 +132,7 @@
                      <children>
                         <ImageView fx:id="raistoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@raistoryicon.png" />
+                              <Image url="@../assets/images/raistoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="raiusername" alignment="CENTER" contentDisplay="CENTER" text="RaiCutie" textFill="#aeaeae">
@@ -149,7 +149,7 @@
                      <children>
                         <ImageView fx:id="jaridstoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@jaredstoryicon.png" />
+                              <Image url="@../assets/images/jaredstoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="jaridusername" alignment="CENTER" contentDisplay="CENTER" text="Jarid" textFill="#aeaeae">
@@ -184,7 +184,7 @@
                <children>
                   <ImageView fx:id="cfchaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@cficon.png" />
+                        <Image url="@../assets/images/cficon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -226,7 +226,7 @@
                <children>
                   <ImageView fx:id="kenchaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@kenicon.png" />
+                        <Image url="@../assets/images/kenicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -268,7 +268,7 @@
                <children>
                   <ImageView fx:id="mitaaichaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@mitaicon.png" />
+                        <Image url="@../assets/images/mitaicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -310,7 +310,7 @@
                <children>
                   <ImageView fx:id="binochaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@binoicon.png" />
+                        <Image url="@../assets/images/binoicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -352,7 +352,7 @@
                <children>
                   <ImageView fx:id="raichaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@rileyicon.png" />
+                        <Image url="@../assets/images/rileyicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -394,7 +394,7 @@
                <children>
                   <ImageView fx:id="jaridchaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@jaredicon.png" />
+                        <Image url="@../assets/images/jaredicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -436,7 +436,7 @@
                <children>
                   <ImageView fx:id="bugoychaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@bugoyicon.png" />
+                        <Image url="@../assets/images/bugoyicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -478,7 +478,7 @@
                <children>
                   <ImageView fx:id="oopchaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/oopicon.png" />
+                        <Image url="@../assets/images/oopicon.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -526,12 +526,12 @@
                      <children>
                         <ImageView fx:id="chatsicon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@chaticon.png" />
+                              <Image url="@../assets/images/chaticon.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="notificationicon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
                            <image>
-                              <Image url="@notificationicon.png" />
+                              <Image url="@../assets/images/notificationicon.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -553,7 +553,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@friendsicon.png" />
+                        <Image url="@../assets/images/friendsicon.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="friendslabel" text="Friends">
@@ -569,7 +569,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@menuicon.png" />
+                        <Image url="@../assets/images/menuicon.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="menulabel" text="Menu">
