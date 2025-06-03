@@ -14,8 +14,10 @@ public class MainClient extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"), 640, 480);
+        scene = new Scene(loadFXML("login"), 390, 844);
         stage.setScene(scene);
+        String css = this.getClass().getResource("/view/meneger.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.setTitle("Menger");
         stage.show();
     }
