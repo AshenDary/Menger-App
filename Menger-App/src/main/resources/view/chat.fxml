@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox fx:id="rootlayoutchat" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="844.0" prefWidth="390.0" spacing="10.0" style="-fx-background-color: white;;" styleClass="transparent-scroll" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox fx:id="topbar" alignment="CENTER" prefHeight="40.0" prefWidth="390.0" spacing="30.0">
@@ -66,9 +65,9 @@
       </HBox>
       <ScrollPane fx:id="storiespane" hbarPolicy="ALWAYS" prefHeight="130.0" prefWidth="380.0" style="-fx-background-color: transparent;" styleClass="transparent-scroll" vbarPolicy="NEVER">
          <content>
-            <HBox fx:id="storiescontainer" alignment="CENTER" fillHeight="false" prefHeight="120.0" prefWidth="390.0">
+            <HBox fx:id="storiescontainer" alignment="CENTER" fillHeight="false" prefHeight="120.0" prefWidth="390.0" style="-fx-background-color: transparent;">
                <children>
-                  <VBox fx:id="sirstorycontainer" alignment="BOTTOM_CENTER" prefHeight="75.0" prefWidth="50.0" spacing="5.0">
+                  <VBox fx:id="sirstorycontainer" alignment="BOTTOM_CENTER" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
                         <ImageView fx:id="sirstoryicon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -82,15 +81,21 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                      </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </VBox>
-                  <VBox fx:id="binostorycontainer" alignment="BOTTOM_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0">
+                  <VBox fx:id="binostorycontainer" alignment="BOTTOM_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
                         <ImageView fx:id="binostoryicon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/binostoryicon.png" />
                            </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                         </ImageView>
                         <Label fx:id="binousername" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="102.0" text="BinoPogi" textFill="#aeaeae">
                            <font>
@@ -99,10 +104,13 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                      </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </VBox>
-                  <VBox fx:id="bugoystorycontainer" alignment="BOTTOM_CENTER" layoutX="780.0" layoutY="30.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0">
+                  <VBox fx:id="bugoystorycontainer" alignment="BOTTOM_CENTER" layoutX="780.0" layoutY="30.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
                         <ImageView fx:id="bugoystoryicon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -116,10 +124,10 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                      </padding>
                   </VBox>
-                  <VBox fx:id="kenstorycontainer" alignment="BOTTOM_CENTER" layoutX="135.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0">
+                  <VBox fx:id="kenstorycontainer" alignment="BOTTOM_CENTER" layoutX="135.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
                         <ImageView fx:id="kenstoryicon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -133,10 +141,10 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                      </padding>
                   </VBox>
-                  <VBox fx:id="raistorycontainer" alignment="BOTTOM_CENTER" layoutX="250.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0">
+                  <VBox fx:id="raistorycontainer" alignment="BOTTOM_CENTER" layoutX="250.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
                         <ImageView fx:id="raistoryicon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -150,10 +158,10 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                      </padding>
                   </VBox>
-                  <VBox fx:id="jaridstorycontainer" alignment="BOTTOM_CENTER" layoutX="365.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0">
+                  <VBox fx:id="jaridstorycontainer" alignment="BOTTOM_CENTER" layoutX="365.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
                         <ImageView fx:id="jaridstoryicon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -167,7 +175,7 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                      </padding>
                   </VBox>
                </children>
@@ -176,9 +184,6 @@
          <VBox.margin>
             <Insets left="5.0" right="5.0" />
          </VBox.margin>
-         <padding>
-            <Insets left="20.0" right="20.0" />
-         </padding>
       </ScrollPane>
       <VBox fx:id="chatlist" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="390.0" spacing="10.0">
          <padding>
@@ -481,11 +486,11 @@
             </HBox>
          </children>
       </VBox>
-      <HBox fx:id="bottomnavbar" alignment="CENTER" prefHeight="44.0" prefWidth="390.0" spacing="70.0" style="-fx-background-color: white;">
+      <HBox fx:id="bottomnavbar" alignment="CENTER" prefHeight="44.0" prefWidth="390.0" spacing="80.0" style="-fx-background-color: white;">
          <children>
-            <VBox fx:id="chatscontainer" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" spacing="10.0">
+            <VBox fx:id="chatscontainer" alignment="CENTER" prefHeight="20.0" prefWidth="30.0" spacing="10.0">
                <children>
-                  <StackPane fx:id="chatsstackpane" prefHeight="20.0" prefWidth="20.0">
+                  <StackPane fx:id="chatsstackpane" prefHeight="19.0" prefWidth="42.0">
                      <children>
                         <ImageView fx:id="chatsicon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -501,7 +506,7 @@
                   </StackPane>
                   <Label fx:id="chatslabel" text="Chats">
                      <font>
-                        <Font name="System Bold" size="10.0" />
+                        <Font name="System Bold" size="8.0" />
                      </font>
                   </Label>
                </children>
@@ -509,7 +514,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </VBox>
-            <VBox fx:id="friendscontainer" alignment="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="50.0" prefWidth="50.0" spacing="10.0">
+            <VBox fx:id="friendscontainer" alignment="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="20.0" prefWidth="30.0" spacing="10.0">
                <children>
                   <ImageView fx:id="friendsicon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
@@ -521,12 +526,12 @@
                   </ImageView>
                   <Label fx:id="friendslabel" text="Friends">
                      <font>
-                        <Font name="System Bold" size="10.0" />
+                        <Font name="System Bold" size="8.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
-            <VBox fx:id="menucontainer" alignment="CENTER" layoutX="220.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" spacing="10.0">
+            <VBox fx:id="menucontainer" alignment="CENTER" layoutX="220.0" layoutY="10.0" prefHeight="20.0" prefWidth="30.0" spacing="10.0">
                <children>
                   <ImageView fx:id="menuicon" fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
@@ -538,7 +543,7 @@
                   </ImageView>
                   <Label fx:id="menulabel" text="Menu">
                      <font>
-                        <Font name="System Bold" size="10.0" />
+                        <Font name="System Bold" size="8.0" />
                      </font>
                   </Label>
                </children>
