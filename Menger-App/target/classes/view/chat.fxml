@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TextField?>
+<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchat" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" spacing="10.0" style="-fx-background-color: white;;" styleClass="transparent-scroll" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="rootlayoutchat" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2532.0" prefWidth="1170.0" spacing="10.0" style="-fx-background-color: white;;" styleClass="transparent-scroll" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="topbar" alignment="CENTER" prefHeight="60.0" prefWidth="960.0" spacing="150.0">
+      <HBox fx:id="topbar" alignment="CENTER" prefHeight="200.0" prefWidth="1080.0" spacing="50.0">
          <children>
-            <ImageView fx:id="menuicon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@menu.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="chatsstaticlabel" alignment="CENTER" contentDisplay="CENTER" text="Chats" textAlignment="CENTER">
+            <Label fx:id="chatsstaticlabel" contentDisplay="CENTER" prefHeight="94.0" prefWidth="290.0" text="meneger" textAlignment="CENTER" textFill="#2b63f4">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="System Bold" size="65.0" />
                </font>
             </Label>
-            <ImageView fx:id="editicon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <Region prefHeight="139.0" prefWidth="480.0" />
+            <ImageView fx:id="editicon" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@pen.png" />
+                  <Image url="@images/pen.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="facebookicon" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/facebook.png" />
                </image>
             </ImageView>
          </children>
          <padding>
-            <Insets bottom="20.0" left="30.0" right="30.0" top="30.0" />
+            <Insets bottom="10.0" left="30.0" right="30.0" top="50.0" />
          </padding>
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </HBox>
-      <HBox fx:id="searchfield" alignment="CENTER" prefHeight="20.0" prefWidth="520.0" style="-fx-background-color: #f1f3f4; -fx-background-radius: 50; -fx-padding: 5 10 5 10;">
+      <HBox fx:id="searchfield" alignment="CENTER_LEFT" prefHeight="136.0" prefWidth="1110.0" style="-fx-background-color: #f1f3f4; -fx-background-radius: 100; -fx-padding: 5 10 5 10;">
          <children>
-            <ImageView fx:id="mitasearchicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mitasearchicon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@mitaicon.png" />
                </image>
@@ -47,90 +50,122 @@
                   <Insets left="20.0" right="5.0" />
                </HBox.margin>
             </ImageView>
-            <TextField fx:id="searchbar" prefHeight="40.0" prefWidth="390.0" promptText="Ask Mita AI or Search" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black; -fx-font-size: 18px; -fx-padding: 5; -fx-background-radius: 20; -fx-padding: 5 10;" />
+            <TextField fx:id="searchbar" floatText="Ask Mita AI or Search" prefHeight="84.0" prefWidth="882.0" promptText="Ask Mita AI or Search" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black; -fx-font-size: 45; -fx-padding: 5; -fx-background-radius: 20; -fx-padding: 5 10; -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%); -fx-background-insets: 0;" styleClass="no-underline-textfield" />
          </children>
          <VBox.margin>
             <Insets left="30.0" right="30.0" />
          </VBox.margin>
       </HBox>
-      <ScrollPane fx:id="storiespane" hbarPolicy="ALWAYS" prefHeight="150.0" prefWidth="540.0" style="-fx-background-color: transparent;" styleClass="transparent-scroll" vbarPolicy="NEVER">
+      <ScrollPane fx:id="storiespane" hbarPolicy="ALWAYS" prefHeight="350.0" prefWidth="1160.0" style="-fx-background-color: transparent;" styleClass="transparent-scroll" vbarPolicy="NEVER">
          <content>
-            <HBox fx:id="storiescontainer" alignment="CENTER" prefHeight="140.0" prefWidth="540.0" spacing="15.0">
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" />
-               </padding>
+            <HBox fx:id="storiescontainer" alignment="CENTER" fillHeight="false" prefHeight="350.0" prefWidth="1110.0" spacing="20.0">
                <children>
-                  <VBox fx:id="sirstorycontainer" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                  <VBox fx:id="sirstorycontainer" alignment="BOTTOM_CENTER" prefHeight="300.0" prefWidth="200.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="siravataricon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="sirstoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@siricon.png" />
+                              <Image url="@sirstoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="yournote" alignment="CENTER" contentDisplay="CENTER" text="Your note" textFill="#aeaeae">
                            <font>
-                              <Font size="18.0" />
+                              <Font name="System Bold" size="25.0" />
                            </font>
                         </Label>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </VBox>
-                  <VBox fx:id="binostorycontainer" alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                  <VBox fx:id="binostorycontainer" alignment="BOTTOM_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="300.0" prefWidth="200.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="binoavataricon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="binostoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@binoicon.png" />
+                              <Image url="@binostoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="binousername" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="102.0" text="BinoPogi" textFill="#aeaeae">
                            <font>
-                              <Font size="18.0" />
+                              <Font name="System Bold" size="25.0" />
                            </font>
                         </Label>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </VBox>
-                  <VBox fx:id="kenstorycontainer" alignment="CENTER" layoutX="135.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                  <VBox fx:id="bugoystorycontainer" alignment="BOTTOM_CENTER" layoutX="780.0" layoutY="30.0" prefHeight="300.0" prefWidth="200.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="kenavataricon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="bugoystoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@kenicon.png" />
+                              <Image url="@bugoystoryicon.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="bugoyusername" alignment="CENTER" contentDisplay="CENTER" text="Bugoy" textFill="#aeaeae">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="kenstorycontainer" alignment="BOTTOM_CENTER" layoutX="135.0" layoutY="20.0" prefHeight="300.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <ImageView fx:id="kenstoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@kenstoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="kenusername" alignment="CENTER" contentDisplay="CENTER" text="Kinneth" textFill="#aeaeae">
                            <font>
-                              <Font size="18.0" />
+                              <Font name="System Bold" size="25.0" />
                            </font>
                         </Label>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </VBox>
-                  <VBox fx:id="raistorycontainer" alignment="CENTER" layoutX="250.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                  <VBox fx:id="raistorycontainer" alignment="BOTTOM_CENTER" layoutX="250.0" layoutY="20.0" prefHeight="300.0" prefWidth="200.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="raiavataricon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="raistoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@rileyicon.png" />
+                              <Image url="@raistoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="raiusername" alignment="CENTER" contentDisplay="CENTER" text="RaiCutie" textFill="#aeaeae">
                            <font>
-                              <Font size="18.0" />
+                              <Font name="System Bold" size="25.0" />
                            </font>
                         </Label>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </VBox>
-                  <VBox fx:id="jaridstorycontainer" alignment="CENTER" layoutX="365.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                  <VBox fx:id="jaridstorycontainer" alignment="BOTTOM_CENTER" layoutX="365.0" layoutY="20.0" prefHeight="300.0" prefWidth="200.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="jaridavataricon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="jaridstoryicon" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@jaredicon.png" />
+                              <Image url="@jaredstoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="jaridusername" alignment="CENTER" contentDisplay="CENTER" text="Jarid" textFill="#aeaeae">
                            <font>
-                              <Font size="18.0" />
+                              <Font name="System Bold" size="25.0" />
                            </font>
                         </Label>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </VBox>
                </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
             </HBox>
          </content>
          <VBox.margin>
@@ -140,14 +175,56 @@
             <Insets left="20.0" right="20.0" />
          </padding>
       </ScrollPane>
-      <VBox fx:id="chatlist" alignment="CENTER" prefHeight="450.0" prefWidth="540.0" spacing="10.0">
+      <VBox fx:id="chatlist" alignment="TOP_CENTER" prefHeight="1600.0" prefWidth="1170.0" spacing="30.0">
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
          </padding>
          <children>
-            <HBox fx:id="kenchatbox" layoutX="20.0" layoutY="20.0" prefHeight="90.0" prefWidth="540.0">
+            <HBox fx:id="cfchatbox" alignment="CENTER_LEFT" layoutX="30.0" layoutY="931.0" prefHeight="150.0" prefWidth="1050.0">
                <children>
-                  <ImageView fx:id="kenchaticon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="cfchaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@cficon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox fx:id="cfcontainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="900.0">
+                     <children>
+                        <Label fx:id="cfuser" text="COTTON FARM">
+                           <font>
+                              <Font name="System Bold" size="45.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox fx:id="cfchatcontainer" alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="814.0">
+                           <children>
+                              <Label fx:id="cfchatpreview" prefHeight="50.0" prefWidth="500.0" style="-fx-text-fill:: #9f9d9d;" text="Jarid: Mimbers: Noel, Jared L., Gutierrez, Ranee Mikaella V., Punzalan, Ralph Kenneth G., Alegoyojo, John Alvin R.la V.- Punzalan, Ralph Kenneth G.- Alegoyojo, John Alvin R." textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="27.0" prefWidth="30.0" />
+                              <Label fx:id="cftime" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-text-fill:: #9f9d9d;" text="· 10:56 am" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="kenchatbox" alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="150.0" prefWidth="1080.0">
+               <children>
+                  <ImageView fx:id="kenchaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@kenicon.png" />
                      </image>
@@ -155,24 +232,31 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <VBox fx:id="kenchatcontainer" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="540.0">
+                  <VBox fx:id="kencontainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="900.0">
                      <children>
                         <Label fx:id="kenuser" text="Kinneth Punzalan">
                            <font>
-                              <Font name="System Bold" size="25.0" />
+                              <Font name="System Bold" size="45.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="1.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="kenchatpreview" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="252.0" style="-fx-text-fill:: #9f9d9d;" text="Nag kaon kana lab&gt;..,, ?" textFill="#9f9d9d">
-                           <VBox.margin>
-                              <Insets top="1.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
+                        <HBox fx:id="kenchatcontainer" prefHeight="27.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="kenchatpreview" prefHeight="51.0" prefWidth="330.0" style="-fx-text-fill:: #9f9d9d;" text="Nag kaon kana lab?" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="27.0" prefWidth="30.0" />
+                              <Label fx:id="kentime" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-text-fill:: #9f9d9d;" text="· 1:33 am" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                      <HBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -180,9 +264,9 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox fx:id="mitaaichatbox" layoutX="20.0" layoutY="20.0" prefHeight="90.0" prefWidth="540.0">
+            <HBox fx:id="mitaaichatbox" alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="150.0" prefWidth="1080.0">
                <children>
-                  <ImageView fx:id="mitaaichaticon" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="mitaaichaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@mitaicon.png" />
                      </image>
@@ -190,24 +274,31 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <VBox fx:id="mitaaichatcontainer" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="540.0">
+                  <VBox fx:id="mitaaicontainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="900.0">
                      <children>
                         <Label fx:id="mitaaiuser" text="Mita AI">
                            <font>
-                              <Font name="System Bold" size="25.0" />
+                              <Font name="System Bold" size="45.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="1.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="mitaaichatpreview" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="252.0" style="-fx-text-fill:: #9f9d9d;" text="Ako usa ka AI nga kabalo mo-Tagalog, mo-Ingles, ug mo-Bisaya. Pero bisan pa sa akong advanced neural networks, di gihapon ko kasabot nganong wa pa ka niya gi-replyan. Basin robot sad siya — programmed to ignore." textFill="#9f9d9d">
-                           <VBox.margin>
-                              <Insets top="1.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
+                        <HBox fx:id="mitaaichatcontainer" prefHeight="27.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="mitaaichatpreview" prefHeight="51.0" prefWidth="522.0" style="-fx-text-fill:: #9f9d9d;" text="Ako usa ka AI nga kabalo mo-Tagalog, mo-Ingles, ug mo-Bisaya. Pero bisan pa sa akong advanced neural networks, di gihapon ko kasabot nganong wa pa ka niya gi-replyan. Basin robot sad siya — programmed to ignore." textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="27.0" prefWidth="30.0" />
+                              <Label fx:id="mitaaitime" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-text-fill:: #9f9d9d;" text="· 11:23 am" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                      <HBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -215,9 +306,9 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox fx:id="binochatbox" prefHeight="100.0" prefWidth="540.0">
+            <HBox fx:id="binochatbox" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="1080.0">
                <children>
-                  <ImageView fx:id="binochaticon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="binochaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@binoicon.png" />
                      </image>
@@ -225,24 +316,31 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <VBox fx:id="binochatcontainer" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="540.0">
+                  <VBox fx:id="binocontainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="900.0">
                      <children>
                         <Label fx:id="binouser" text="BinoPogi123 Lang Sakalam">
                            <font>
-                              <Font name="System Bold" size="25.0" />
+                              <Font name="System Bold" size="45.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="1.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="binochatpreview" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="252.0" style="-fx-text-fill:: #9f9d9d;" text="BinoPogi123 Unsint a message....." textFill="#9f9d9d">
-                           <VBox.margin>
-                              <Insets top="1.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
+                        <HBox fx:id="binochatcontainer" prefHeight="27.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="binochatpreview" prefHeight="51.0" prefWidth="522.0" style="-fx-text-fill:: #9f9d9d;" text="BinoPogi123 Unsint a message." textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="27.0" prefWidth="30.0" />
+                              <Label fx:id="binotime" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-text-fill:: #9f9d9d;" text="· Mon" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                      <HBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -250,9 +348,9 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox fx:id="raichatbox" layoutX="20.0" layoutY="130.0" prefHeight="100.0" prefWidth="540.0">
+            <HBox fx:id="raichatbox" alignment="CENTER_LEFT" layoutX="20.0" layoutY="130.0" prefHeight="150.0" prefWidth="1080.0">
                <children>
-                  <ImageView fx:id="raichaticon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="raichaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@rileyicon.png" />
                      </image>
@@ -260,24 +358,31 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <VBox fx:id="raichatcontainer" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="540.0">
+                  <VBox fx:id="raicontainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="900.0">
                      <children>
                         <Label fx:id="raiuser" text="RaiCutie XDXD">
                            <font>
-                              <Font name="System Bold" size="25.0" />
+                              <Font name="System Bold" size="45.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="1.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="raichatpreview" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="252.0" style="-fx-text-fill:: #9f9d9d;" text="dpt sementuhin na yung taal para di na sumabog" textFill="#9f9d9d">
-                           <VBox.margin>
-                              <Insets top="1.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
+                        <HBox fx:id="raichatcontainer" prefHeight="27.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="raichatpreview" prefHeight="51.0" prefWidth="522.0" style="-fx-text-fill:: #9f9d9d;" text="dpt sementuhin na yung taal para di na sumabog" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="27.0" prefWidth="30.0" />
+                              <Label fx:id="raitime" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-text-fill:: #9f9d9d;" text="· Mon" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                      <HBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -285,9 +390,9 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox fx:id="jaridchatbox" layoutX="20.0" layoutY="240.0" prefHeight="100.0" prefWidth="540.0">
+            <HBox fx:id="jaridchatbox" alignment="CENTER_LEFT" layoutX="20.0" layoutY="240.0" prefHeight="150.0" prefWidth="900.0">
                <children>
-                  <ImageView fx:id="jaridchaticon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="jaridchaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@jaredicon.png" />
                      </image>
@@ -295,24 +400,115 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <VBox fx:id="jaridchatcontainer" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="540.0">
+                  <VBox fx:id="jaridcontainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="900.0">
                      <children>
                         <Label fx:id="jariduser" text="Jarid NO EL">
                            <font>
-                              <Font name="System Bold" size="25.0" />
+                              <Font name="System Bold" size="45.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="1.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="jaridchatpreview" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="252.0" style="-fx-text-fill:: #9f9d9d;" text="Pasend nung DayMo" textFill="#9f9d9d">
-                           <VBox.margin>
-                              <Insets top="1.0" />
-                           </VBox.margin>
+                        <HBox fx:id="jaridchatcontainer" prefHeight="27.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="jaridchatpreview" prefHeight="51.0" prefWidth="350.0" style="-fx-text-fill:: #9f9d9d;" text="Pasend nung DayMo" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="27.0" prefWidth="30.0" />
+                              <Label fx:id="jaridtime" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-text-fill:: #9f9d9d;" text="· Tue" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="bugoychatbox" alignment="CENTER_LEFT" layoutX="20.0" layoutY="851.0" prefHeight="150.0" prefWidth="1050.0">
+               <children>
+                  <ImageView fx:id="bugoychaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@bugoyicon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox fx:id="bugoycontainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="900.0">
+                     <children>
+                        <Label fx:id="bugoyuser" text="Bugoy na CuteCute">
                            <font>
-                              <Font size="18.0" />
+                              <Font name="System Bold" size="45.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
                         </Label>
+                        <HBox fx:id="bugoychatcontainer" prefHeight="27.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="bugoychatpreview" prefHeight="51.0" prefWidth="330.0" style="-fx-text-fill:: #9f9d9d;" text="Bugoy sint a photo." textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="27.0" prefWidth="30.0" />
+                              <Label fx:id="bugoytime" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-text-fill:: #9f9d9d;" text="· Fri" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="oopchatbox" alignment="CENTER_LEFT" layoutX="30.0" layoutY="1170.0" prefHeight="150.0" prefWidth="1050.0">
+               <children>
+                  <ImageView fx:id="oopchaticon" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/oopicon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox fx:id="oopcontainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="900.0">
+                     <children>
+                        <Label fx:id="oopuser" text="OOP - COM 246">
+                           <font>
+                              <Font name="System Bold" size="45.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox fx:id="oopchatcontainer" prefHeight="27.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="oopchatpreview" prefHeight="51.0" prefWidth="330.0" style="-fx-text-fill:: #9f9d9d;" text="Bugoy sint a photo." textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="27.0" prefWidth="30.0" />
+                              <Label fx:id="ooptime" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" style="-fx-text-fill:: #9f9d9d;" text="· Sat" textFill="#9f9d9d">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                      <HBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -322,48 +518,64 @@
             </HBox>
          </children>
       </VBox>
-      <HBox fx:id="bottomnavbar" alignment="CENTER" prefHeight="100.0" prefWidth="540.0" spacing="60.0" style="-fx-background-color: white;">
+      <HBox fx:id="bottomnavbar" alignment="CENTER" prefHeight="200.0" prefWidth="540.0" spacing="300.0" style="-fx-background-color: white;">
          <children>
-            <VBox fx:id="chatscontainer" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <VBox fx:id="chatscontainer" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <ImageView fx:id="chatsicon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </VBox.margin>
-                     <image>
-                        <Image url="@chaticon.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="chatslabel" text="Chats" />
+                  <StackPane fx:id="chatsstackpane" prefHeight="84.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="chatsicon" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@chaticon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="notificationicon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                           <image>
+                              <Image url="@notificationicon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label fx:id="chatslabel" text="Chats">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
                </children>
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </VBox>
-            <VBox fx:id="mitaaicontainer" alignment="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="200.0" prefWidth="100.0">
+            <VBox fx:id="friendscontainer" alignment="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <ImageView fx:id="mitaicon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="friendsicon" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@mitaicon.png" />
+                        <Image url="@friendsicon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="mitaailabel" text="Mita AI" />
+                  <Label fx:id="friendslabel" text="Friends">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font></Label>
                </children>
             </VBox>
-            <VBox fx:id="highlightscontainer" alignment="CENTER" layoutX="220.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+            <VBox fx:id="menucontainer" alignment="CENTER" layoutX="220.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <ImageView fx:id="highlightsicon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="menuicon" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@highlightsicon.png" />
+                        <Image url="@menuicon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="highlightslabel" text="Highlights" />
+                  <Label fx:id="menulabel" text="Menu">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font></Label>
                </children>
             </VBox>
          </children>
