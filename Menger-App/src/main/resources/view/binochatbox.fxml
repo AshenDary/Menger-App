@@ -11,19 +11,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchatboxbino" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="rootlayoutchatboxbino" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="844.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="40.0" prefWidth="540.0" spacing="15.0">
+      <HBox fx:id="topnavbar" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="540.0" spacing="15.0" VBox.vgrow="NEVER">
          <children>
-            <ImageView fx:id="backicon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="backicon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
-                  <Image url="@backicon.png" />
+                  <Image url="@../assets/images/backicon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="binoicon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="binoicon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
-                  <Image url="@binoicon.png" />
+                  <Image url="@../assets/images/binoicon.png" />
                </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
             </ImageView>
             <Label fx:id="chatsstaticlabel" contentDisplay="CENTER" prefHeight="30.0" prefWidth="165.0" text="BinoPogi123 Lang Sakalam" textAlignment="CENTER">
                <font>
@@ -31,17 +34,17 @@
                </font>
             </Label>
             <Region prefHeight="50.0" prefWidth="64.0" />
-            <ImageView fx:id="callicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="callicon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
-                  <Image url="@callicon.png" />
+                  <Image url="@../assets/images/callicon.png" />
                </image>
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView fx:id="videocallicon" fitHeight="30.0" fitWidth="30.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="videocallicon" fitHeight="20.0" fitWidth="20.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
-                  <Image url="@videocallicon.png" />
+                  <Image url="@../assets/images/videocallicon.png" />
                </image>
                <HBox.margin>
                   <Insets left="5.0" />
@@ -51,6 +54,9 @@
          <padding>
             <Insets left="25.0" right="25.0" top="25.0" />
          </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </HBox>
       <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="760.0" prefWidth="540.0" vbarPolicy="ALWAYS">
          <content>
