@@ -81,12 +81,12 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="binomessagebubble" style="-fx-background-color: white; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-color: #cccccc; -fx-border-radius: 50;" text="marami nagsasabi sakin kamukha ko Daw si Dwight" wrapText="true">
+                        <Label fx:id="binomessagebubble" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="marami nagsasabi sakin kamukha ko Daw si Dwight" textFill="WHITE" wrapText="true">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <font>
-                              <Font name="System Italic" size="13.0" />
+                              <Font size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets />
@@ -104,12 +104,12 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="binomessagebubble1" style="-fx-background-color: white; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-color: #cccccc; -fx-border-radius: 50;" text="May BF ka na ba? pwedi manLigaw?" wrapText="true">
+                        <Label fx:id="binomessagebubble1" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="May BF ka na ba? pwedi manLigaw?" textFill="WHITE" wrapText="true">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <font>
-                              <Font name="System Italic" size="13.0" />
+                              <Font size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets />
@@ -127,7 +127,10 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="268.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/binopic.png" />
+                           </image></ImageView>
                      </children>
                   </HBox>
                   <HBox fx:id="binochatpreview11" alignment="CENTER_LEFT" layoutX="20.0" layoutY="85.0" prefHeight="55.0" prefWidth="200.0">
@@ -140,12 +143,12 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="binomessagebubble11" style="-fx-background-color: white; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-color: #cccccc; -fx-border-radius: 50;" text="Pogi Bako?" wrapText="true">
+                        <Label fx:id="binomessagebubble11" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Pogi Bako?" textFill="WHITE" wrapText="true">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <font>
-                              <Font name="System Italic" size="13.0" />
+                              <Font size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets />
@@ -163,12 +166,12 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="binomessagebubble111" style="-fx-background-color: white; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-color: #cccccc; -fx-border-radius: 50;" text="Hahaha hindi na makasagot Kinikilig to" wrapText="true">
+                        <Label fx:id="binomessagebubble111" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Hahaha hindi na makasagot Kinikilig to" textFill="WHITE" wrapText="true">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <font>
-                              <Font name="System Italic" size="13.0" />
+                              <Font size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets />
