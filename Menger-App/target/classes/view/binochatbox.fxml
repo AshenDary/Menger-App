@@ -13,7 +13,7 @@
 
 <VBox fx:id="rootlayoutchatboxbino" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="60.0" prefWidth="540.0" spacing="15.0">
+      <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="40.0" prefWidth="540.0" spacing="15.0">
          <children>
             <ImageView fx:id="backicon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -49,7 +49,7 @@
             </ImageView>
          </children>
          <padding>
-            <Insets bottom="20.0" left="30.0" right="30.0" top="30.0" />
+            <Insets left="25.0" right="25.0" top="25.0" />
          </padding>
       </HBox>
       <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="760.0" prefWidth="540.0" vbarPolicy="ALWAYS">
@@ -63,7 +63,7 @@
                      <children>
                         <ImageView fx:id="binoicon1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@binoicon.png" />
+                              <Image url="@../assets/images/binoicon.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="20.0" />
