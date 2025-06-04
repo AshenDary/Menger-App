@@ -20,7 +20,7 @@
                   <Image url="@../assets/images/backicon.png" />
                </image>
                <HBox.margin>
-                  <Insets bottom="10.0" top="15.0" />
+                  <Insets top="12.0" />
                </HBox.margin>
             </ImageView>
             <ImageView fx:id="kenicon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
@@ -31,15 +31,15 @@
                   <Insets top="10.0" />
                </HBox.margin>
             </ImageView>
-            <Label fx:id="chatsstaticlabel" contentDisplay="CENTER" prefHeight="25.0" prefWidth="196.0" text="BinoPogi123 Lang Sakalam" textAlignment="CENTER">
+            <Label fx:id="chatsstaticlabel" contentDisplay="CENTER" prefHeight="27.0" prefWidth="150.0" text="Kinneth Punzalan" textAlignment="CENTER">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
                <HBox.margin>
                   <Insets bottom="5.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <Region prefHeight="45.0" prefWidth="60.0" />
+            <Region prefHeight="47.0" prefWidth="100.0" />
             <ImageView fx:id="callicon" fitHeight="19.5" fitWidth="19.5" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/callicon.png" />
@@ -58,22 +58,30 @@
             </ImageView>
          </children>
          <padding>
-            <Insets bottom="12.5" left="20.0" right="20.0" top="12.5" />
+            <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
          </padding>
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </HBox>
-      <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="760.0" prefWidth="440.0" vbarPolicy="ALWAYS">
+      <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="760.0" prefWidth="440.0" vbarPolicy="ALWAYS" VBox.vgrow="NEVER">
          <content>
-            <VBox fx:id="chatpreviewcontainer" prefHeight="760.0" prefWidth="540.0" spacing="10.0">
+            <VBox fx:id="chatpreviewcontainer" prefHeight="694.0" prefWidth="428.0" spacing="10.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <HBox fx:id="binochatpreview" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0">
+                  <Label fx:id="timestamp" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="455.0" text="6:33 AM">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="150.0" right="150.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox fx:id="kenchatpreview1" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="binoicon1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenicon1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/kenicon.png" />
                            </image>
@@ -81,22 +89,31 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="binomessagebubble" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="good morning lab kumakain ako ngayon" textFill="WHITE" wrapText="true">
-                           <padding>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </padding>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </Label>
+                        <VBox fx:id="kenmessagebubblecontainer" prefHeight="82.0" prefWidth="369.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="kenmessagebubble1" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="good morning lab kumakain ako ngayon" wrapText="true">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="kenmessagebubble2" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="ito ulam ko ngayon lab masarap" wrapText="true">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
-                  <HBox fx:id="binochatpreview1" alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="kenchatpreview3" alignment="CENTER_LEFT" layoutX="20.0" layoutY="280.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="binoicon11" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenicon3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/kenicon.png" />
                            </image>
@@ -104,39 +121,16 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="binomessagebubble1" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="ito ulam ko ngayon lab masarap" textFill="WHITE" wrapText="true">
-                           <padding>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </padding>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox fx:id="binochatpreview11111" alignment="CENTER_LEFT" layoutX="20.0" layoutY="280.0" prefHeight="55.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fx:id="binoicon111111" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenmessagebubble3" fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/kenicon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="10.0" right="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <ImageView fitHeight="268.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/binopic.png" />
+                              <Image url="@../assets/images/kenpic.png" />
                            </image>
                         </ImageView>
                      </children>
                   </HBox>
-                  <HBox fx:id="binochatpreview11" alignment="CENTER_LEFT" layoutX="20.0" layoutY="85.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="kenchatpreview4" alignment="CENTER_LEFT" layoutX="20.0" layoutY="85.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="binoicon111" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenicon4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/kenicon.png" />
                            </image>
@@ -144,12 +138,12 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="binomessagebubble11" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="nag kaon ka na ba lab?" textFill="WHITE" wrapText="true">
+                        <Label fx:id="kenmessagebubble4" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="nag kaon ka na ba lab?" wrapText="true">
                            <padding>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                            </padding>
                            <font>
-                              <Font size="13.0" />
+                              <Font size="15.0" />
                            </font>
                            <HBox.margin>
                               <Insets />
@@ -209,7 +203,7 @@
                </children>
             </VBox>
             <Region layoutX="395.0" layoutY="10.0" prefHeight="90.0" prefWidth="19.0" />
-            <HBox fx:id="chatfield" alignment="CENTER_LEFT" fillHeight="false" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: #f1f3f4; -fx-background-radius: 50; -fx-padding: 5 10 5 10;">
+            <HBox fx:id="chatfield" alignment="CENTER_LEFT" fillHeight="false" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: #f1f3f4; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" HBox.hgrow="NEVER">
                <children>
                   <TextField fx:id="chatbar" prefHeight="30.0" prefWidth="150.0" promptText="Aa" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black; -fx-font-size: 12; -fx-background-radius: 20;">
                      <padding>
@@ -244,7 +238,7 @@
             </VBox>
          </children>
          <padding>
-            <Insets left="20.0" right="20.0" />
+            <Insets bottom="15.0" left="20.0" right="20.0" />
          </padding>
          <VBox.margin>
             <Insets />
