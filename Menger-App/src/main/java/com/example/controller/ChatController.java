@@ -1,6 +1,9 @@
 package com.example.controller;
 
+import java.io.IOException;
+
 import com.example.InitializableWithData;
+import com.example.MainClient;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,18 +12,16 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 public class ChatController implements InitializableWithData {
 
     @FXML
-    private ImageView binoavataricon;
-
-    @FXML
     private HBox binochatbox;
 
     @FXML
-    private VBox binochatcontainer;
+    private HBox binochatcontainer;
 
     @FXML
     private ImageView binochaticon;
@@ -29,7 +30,16 @@ public class ChatController implements InitializableWithData {
     private Label binochatpreview;
 
     @FXML
+    private VBox binocontainer;
+
+    @FXML
     private VBox binostorycontainer;
+
+    @FXML
+    private ImageView binostoryicon;
+
+    @FXML
+    private Label binotime;
 
     @FXML
     private Label binouser;
@@ -39,6 +49,57 @@ public class ChatController implements InitializableWithData {
 
     @FXML
     private HBox bottomnavbar;
+
+    @FXML
+    private HBox bugoychatbox;
+
+    @FXML
+    private HBox bugoychatcontainer;
+
+    @FXML
+    private ImageView bugoychaticon;
+
+    @FXML
+    private Label bugoychatpreview;
+
+    @FXML
+    private VBox bugoycontainer;
+
+    @FXML
+    private VBox bugoystorycontainer;
+
+    @FXML
+    private ImageView bugoystoryicon;
+
+    @FXML
+    private Label bugoytime;
+
+    @FXML
+    private Label bugoyuser;
+
+    @FXML
+    private Label bugoyusername;
+
+    @FXML
+    private HBox cfchatbox;
+
+    @FXML
+    private HBox cfchatcontainer;
+
+    @FXML
+    private ImageView cfchaticon;
+
+    @FXML
+    private Label cfchatpreview;
+
+    @FXML
+    private VBox cfcontainer;
+
+    @FXML
+    private Label cftime;
+
+    @FXML
+    private Label cfuser;
 
     @FXML
     private VBox chatlist;
@@ -53,28 +114,31 @@ public class ChatController implements InitializableWithData {
     private Label chatslabel;
 
     @FXML
+    private StackPane chatsstackpane;
+
+    @FXML
     private Label chatsstaticlabel;
 
     @FXML
     private ImageView editicon;
 
     @FXML
-    private VBox highlightscontainer;
+    private ImageView facebookicon;
 
     @FXML
-    private ImageView highlightsicon;
+    private VBox friendscontainer;
 
     @FXML
-    private Label highlightslabel;
+    private ImageView friendsicon;
 
     @FXML
-    private ImageView jaridavataricon;
+    private Label friendslabel;
 
     @FXML
     private HBox jaridchatbox;
 
     @FXML
-    private VBox jaridchatcontainer;
+    private HBox jaridchatcontainer;
 
     @FXML
     private ImageView jaridchaticon;
@@ -83,7 +147,16 @@ public class ChatController implements InitializableWithData {
     private Label jaridchatpreview;
 
     @FXML
+    private VBox jaridcontainer;
+
+    @FXML
     private VBox jaridstorycontainer;
+
+    @FXML
+    private ImageView jaridstoryicon;
+
+    @FXML
+    private Label jaridtime;
 
     @FXML
     private Label jariduser;
@@ -92,13 +165,10 @@ public class ChatController implements InitializableWithData {
     private Label jaridusername;
 
     @FXML
-    private ImageView kenavataricon;
-
-    @FXML
     private HBox kenchatbox;
 
     @FXML
-    private VBox kenchatcontainer;
+    private HBox kenchatcontainer;
 
     @FXML
     private ImageView kenchaticon;
@@ -107,7 +177,16 @@ public class ChatController implements InitializableWithData {
     private Label kenchatpreview;
 
     @FXML
+    private VBox kencontainer;
+
+    @FXML
     private VBox kenstorycontainer;
+
+    @FXML
+    private ImageView kenstoryicon;
+
+    @FXML
+    private Label kentime;
 
     @FXML
     private Label kenuser;
@@ -116,13 +195,19 @@ public class ChatController implements InitializableWithData {
     private Label kenusername;
 
     @FXML
+    private VBox menucontainer;
+
+    @FXML
     private ImageView menuicon;
+
+    @FXML
+    private Label menulabel;
 
     @FXML
     private HBox mitaaichatbox;
 
     @FXML
-    private VBox mitaaichatcontainer;
+    private HBox mitaaichatcontainer;
 
     @FXML
     private ImageView mitaaichaticon;
@@ -134,25 +219,22 @@ public class ChatController implements InitializableWithData {
     private VBox mitaaicontainer;
 
     @FXML
-    private Label mitaailabel;
+    private Label mitaaitime;
 
     @FXML
     private Label mitaaiuser;
 
     @FXML
-    private ImageView mitaicon;
-
-    @FXML
     private ImageView mitasearchicon;
 
     @FXML
-    private ImageView raiavataricon;
+    private ImageView notificationicon;
 
     @FXML
     private HBox raichatbox;
 
     @FXML
-    private VBox raichatcontainer;
+    private HBox raichatcontainer;
 
     @FXML
     private ImageView raichaticon;
@@ -161,7 +243,16 @@ public class ChatController implements InitializableWithData {
     private Label raichatpreview;
 
     @FXML
+    private VBox raicontainer;
+
+    @FXML
     private VBox raistorycontainer;
+
+    @FXML
+    private ImageView raistoryicon;
+
+    @FXML
+    private Label raitime;
 
     @FXML
     private Label raiuser;
@@ -173,16 +264,13 @@ public class ChatController implements InitializableWithData {
     private VBox rootlayoutchat;
 
     @FXML
-    private TextField searchbar;
-
-    @FXML
-    private HBox searchfield;
-
-    @FXML
-    private ImageView siravataricon;
+    private TextField searchfield;
 
     @FXML
     private VBox sirstorycontainer;
+
+    @FXML
+    private ImageView sirstoryicon;
 
     @FXML
     private HBox storiescontainer;
@@ -211,6 +299,19 @@ public class ChatController implements InitializableWithData {
             e.printStackTrace();
             messageList.getItems().add(" Failed to connect.");
         }
+    }
+
+    @FXML
+    private void initialize() {
+        // Add click event to binocontainer
+        binocontainer.setOnMouseClicked(event -> {
+            try {
+                // Switch to binochatbox.fxml scene
+                MainClient.setRoot("binochatbox", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     @FXML
