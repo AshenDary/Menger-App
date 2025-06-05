@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import com.example.network.ServerSocketMain;
 import com.example.network.ServerStorage;
 
 public class ClientHandler extends Thread {

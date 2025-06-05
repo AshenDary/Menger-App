@@ -2,7 +2,6 @@ package com.example.controller;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Paths;
 
 import com.example.MainClient;
 
@@ -67,5 +66,4 @@ public class CreateAccController {
         }
     }
 
-    // Other methods remain unchanged
 }

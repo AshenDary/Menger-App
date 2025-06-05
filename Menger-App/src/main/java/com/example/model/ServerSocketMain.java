@@ -1,10 +1,8 @@
-package com.example.network;
+package com.example.model;
 
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ConcurrentHashMap;
-
-import com.example.model.ClientHandler;
 
 public class ServerSocketMain {
     public static final int PORT = 12345;

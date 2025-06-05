@@ -13,15 +13,12 @@ public class BinoChatBoxController {
     private ImageView backicon;
 
     @FXML
-    private void initialize() {
-        // Add click event to backicon
-        backicon.setOnMouseClicked(event -> {
-            try {
-                // Switch back to chat.fxml scene
-                MainClient.setRoot("chat", null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+    private void handleBackToChat() {
+        try {
+            MainClient.setRoot("chat", null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }
