@@ -245,7 +245,12 @@
                         </Label>
                         <HBox fx:id="cfchatcontainer" alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="814.0">
                            <children>
-                              <Label fx:id="cfchatpreview" prefHeight="20.0" prefWidth="135.0" text="Jarid: @Elizer Ponio">
+                              <Label fx:id="cfchatpreview" prefHeight="20.0" prefWidth="55.0" text="Jarid: @">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="cfuserchatpreview" layoutX="10.0" layoutY="15.0" prefHeight="20.0" prefWidth="37.0" text="USER">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>

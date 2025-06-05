@@ -66,20 +66,23 @@
       </HBox>
       <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="790.0" prefWidth="520.0" vbarPolicy="ALWAYS" VBox.vgrow="NEVER">
          <content>
-            <VBox fx:id="chatpreviewcontainer" prefHeight="775.0" prefWidth="508.0" spacing="10.0">
+            <VBox fx:id="chatpreviewcontainer" prefHeight="775.0" prefWidth="508.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <Label fx:id="timestamp" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="455.0" text="6:33 AM">
+                  <Label fx:id="timestamp1" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="27.0" prefWidth="621.0" text="FRI 5:67 AM">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                      <padding>
                         <Insets left="150.0" right="150.0" top="10.0" />
                      </padding>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
                   </Label>
-                  <HBox fx:id="kenchatpreview1" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="kenchatpreview1" alignment="CENTER_LEFT" layoutX="20.0" layoutY="401.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
                         <ImageView fx:id="kenicon1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -89,9 +92,175 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
+                        <Label fx:id="kenmessagebubble1" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="good morning wim ko" wrapText="true">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="sirchatpreview1" alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="sirmessagebubble1" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="anong wim?" textFill="WHITE" wrapText="true">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fx:id="siricon1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/siricon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="kenchatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="57.0" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="kenicon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/kenicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="kenmessagebubble2" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="walang iwanan mahal ko" wrapText="true">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="sirchatpreview2" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="127.0" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="sirmessagebubble2" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="HAHAHAHA CORNY MO TALAGA" textFill="WHITE" wrapText="true">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fx:id="siricon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/siricon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="kenchatpreview3" alignment="CENTER_LEFT" layoutX="20.0" layoutY="197.0" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="kenicon3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/kenicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="kenmessagebubble3" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="baka kinikilig kana diyan ah" wrapText="true">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="sirchatpreview3" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="267.0" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="sirmessagebubble3" style="-fx-background-color: #2b63f4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="di ah" textFill="WHITE" wrapText="true">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fx:id="siricon3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/siricon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="kenchatpreview4" alignment="CENTER_LEFT" layoutX="20.0" layoutY="337.0" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="kenicon4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/kenicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="50.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="kenlike" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/likeicon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Label fx:id="timestamp2" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="542.0" text="6:33 AM">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="150.0" right="150.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox fx:id="kenchatpreview5" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="kenicon5" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/kenicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
                         <VBox fx:id="kenmessagebubblecontainer" prefHeight="82.0" prefWidth="369.0" spacing="5.0">
                            <children>
-                              <Label fx:id="kenmessagebubble1" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="good morning lab kumakain ako ngayon" wrapText="true">
+                              <Label fx:id="kenmessagebubble5" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="good morning wim kumakain ako ngayon" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -99,7 +268,7 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="kenmessagebubble2" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="ito ulam ko ngayon lab masarap" wrapText="true">
+                              <Label fx:id="kenmessagebubble6" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="ito ulam ko ngayon masarap" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -110,10 +279,13 @@
                            </children>
                         </VBox>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
                   </HBox>
-                  <HBox fx:id="kenchatpreview3" alignment="CENTER_LEFT" layoutX="20.0" layoutY="280.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="kenchatpreview6" alignment="CENTER_LEFT" layoutX="20.0" layoutY="280.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="kenicon3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenicon6" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/kenicon.png" />
                            </image>
@@ -121,7 +293,7 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fx:id="kenmessagebubble3" fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenmessagebubble7" fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/kenpic.png" />
                            </image>
@@ -130,7 +302,7 @@
                   </HBox>
                   <HBox fx:id="kenchatpreview4" alignment="CENTER_LEFT" layoutX="20.0" layoutY="85.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="kenicon4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenicon7" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/kenicon.png" />
                            </image>
@@ -138,7 +310,7 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="kenmessagebubble4" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="nag kaon ka na ba lab?" wrapText="true">
+                        <Label fx:id="kenmessagebubble8" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="nag kaon ka na ba lab?" wrapText="true">
                            <padding>
                               <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                            </padding>
