@@ -22,7 +22,7 @@ public class MainClient extends Application {
         scene.getStylesheets().add(css);
     
         stage.setTitle("Menger");
-        stage.getIcons().add(new Image(getClass().getResource("/assets/images/app_icon.png").toExternalForm()));
+        stage.getIcons().add(new Image(getClass().getResource("/assets/images/mengericon.png").toExternalForm()));
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.show(); 

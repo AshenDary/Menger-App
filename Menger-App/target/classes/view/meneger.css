@@ -1,0 +1,23 @@
+.text-field {
+    -fx-text-fill: white;
+}
+
+.text-field .text {
+    -fx-fill: white;
+}
+
+.text-field .prompt-text {
+    -fx-prompt-text-fill: #888;
+}
+
+.password-field {
+    -fx-text-fill: white;
+}
+
+.password-field .text {
+    -fx-fill: white;
+}
+
+.password-field .prompt-text {
+    -fx-prompt-text-fill: #888;
+}
