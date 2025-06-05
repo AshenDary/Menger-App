@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchatboxbino" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" 
-fx:controller="com.example.controller.BinoChatBoxController">
+<VBox fx:id="rootlayoutchatboxbino" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.BinoChatBoxController">
    <children>
       <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="520.0" spacing="10.0" VBox.vgrow="NEVER">
          <children>
@@ -197,7 +196,7 @@ fx:controller="com.example.controller.BinoChatBoxController">
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="blockmessage" layoutX="214.0" layoutY="73.0" prefHeight="45.0" prefWidth="290.0" text="You can't message or call them in this chat, and you won't receive their messages or calls." textAlignment="CENTER" textFill="#838789" wrapText="true">
+            <Label fx:id="blockmessage" layoutX="214.0" layoutY="73.0" prefHeight="45.0" prefWidth="290.0" text="You can't menage or call them in this chat, and you won't receive their menages or calls." textAlignment="CENTER" textFill="#838789" wrapText="true">
                <font>
                   <Font size="13.0" />
                </font></Label>
