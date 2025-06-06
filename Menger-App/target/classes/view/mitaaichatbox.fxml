@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchatboxken" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="rootlayoutchatboxken" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.JaridChatBoxController">
    <children>
       <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="540.0" spacing="10.0" VBox.vgrow="NEVER">
          <children>
-            <ImageView fx:id="backicon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="backicon" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#handleBackToChat" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/backicon.png" />
                </image>
@@ -84,7 +84,7 @@
                   </Label>
                   <HBox fx:id="sirchatpreview1" alignment="CENTER_RIGHT" prefHeight="116.0" prefWidth="488.0">
                      <children>
-                        <Label fx:id="sirmessagebubble1" prefHeight="96.0" prefWidth="313.0" style="-fx-background-color: #2b63f4; -fx-background-radius: 40; -fx-border-width: 1; -fx-border-radius: 50;" text="Mita AI, kabalo man diay ka mo-Bisaya, pwede ko mangutana? Ngano kaha wa pa man siya nireply nako hangtod karon?" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
+                        <Label fx:id="sirmessagebubble1" onMouseClicked="#handleBackToChat" prefHeight="96.0" prefWidth="313.0" style="-fx-background-color: #2b63f4; -fx-background-radius: 40; -fx-border-width: 1; -fx-border-radius: 50;" text="Mita AI, kabalo man diay ka mo-Bisaya, pwede ko mangutana? Ngano kaha wa pa man siya nireply nako hangtod karon?" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                            <padding>
                               <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                            </padding>

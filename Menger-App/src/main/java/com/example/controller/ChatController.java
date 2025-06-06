@@ -301,11 +301,60 @@ public class ChatController implements InitializableWithData {
 
     @FXML
     private void initialize() {
-        // Add click event to binocontainer
+    initializeBino();
+    initializeJarid();
+    initializeMitaAi();
+    initializeKen();
+    initializeRai();
+}
+    @FXML
+    private void initializeBino() {
         binocontainer.setOnMouseClicked(event -> {
             try {
-                // Switch to binochatbox.fxml scene
                 MainClient.setRoot("binochatbox", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @FXML
+    private void initializeJarid() {
+        jaridchatcontainer.setOnMouseClicked(event -> {
+            try {
+                MainClient.setRoot("jaridchatbox", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @FXML
+    private void initializeMitaAi() {
+        mitaaichatcontainer.setOnMouseClicked(event -> {
+            try {
+                MainClient.setRoot("mitaaichatbox", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @FXML
+    private void initializeKen() {
+        kencontainer.setOnMouseClicked(event -> {
+            try {
+                MainClient.setRoot("kenchatbox", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void initializeRai() {
+        raicontainer.setOnMouseClicked(event -> {
+            try {
+                MainClient.setRoot("raichatbox", null);
             } catch (IOException e) {
                 e.printStackTrace();
             }
