@@ -302,7 +302,7 @@ public class ChatController implements InitializableWithData {
     private void initialize() {
         storiespane.setOnScroll(event -> {
             double deltaY = event.getDeltaY();
-            double scrollSpeed = 0.005; // Increase this to scroll faster (try 0.01 or 0.02)
+            double scrollSpeed = 0.005;
             storiespane.setHvalue(storiespane.getHvalue() - deltaY * scrollSpeed);
             event.consume();
         });
