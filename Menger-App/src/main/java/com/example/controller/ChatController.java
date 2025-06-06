@@ -15,7 +15,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 public class ChatController implements InitializableWithData {
-
     @FXML
     private HBox binochatbox;
 
