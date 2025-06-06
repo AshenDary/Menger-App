@@ -7,7 +7,6 @@ import com.example.MainClient;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -265,6 +264,8 @@ public class ChatController implements InitializableWithData {
 
     @FXML
     private TextField searchfield;
+    @FXML
+    private HBox searchfieldBox;
 
     @FXML
     private VBox sirstorycontainer;
@@ -284,21 +285,18 @@ public class ChatController implements InitializableWithData {
     @FXML
     private Label yournote;
 
-    @FXML private ListView<String> messageList;
-    @FXML private TextField inputField;
-
     private ChatClient chatClient;
 
     @Override
     public void init(Object data) {
         System.out.println("Initializing ChatController with data: " + data);
-        String username = (String) data;
-        try {
-            chatClient = new ChatClient(username, msg -> messageList.getItems().add(msg));
-        } catch (Exception e) {
-            e.printStackTrace();
-            messageList.getItems().add(" Failed to connect.");
-        }
+        // String username = (String) data;
+        // try {
+        //     chatClient = new ChatClient(username, msg -> messageList.getItems().add(msg));
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        //     if (messageList != null) messageList.getItems().add(" Failed to connect.");
+        // }
     }
 
     @FXML
@@ -312,14 +310,5 @@ public class ChatController implements InitializableWithData {
                 e.printStackTrace();
             }
         });
-    }
-
-    @FXML
-    private void sendMessage() {
-        String msg = inputField.getText();
-        if (!msg.isBlank()) {
-            chatClient.sendMessage(msg);
-            inputField.clear();
-        }
     }
 }
