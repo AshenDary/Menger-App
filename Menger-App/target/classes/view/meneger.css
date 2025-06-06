@@ -64,4 +64,18 @@
     -fx-prompt-text-fill: gray;
 }
 
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar,
+.scroll-bar .thumb,
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
 

@@ -300,6 +300,13 @@ public class ChatController implements InitializableWithData {
 
     @FXML
     private void initialize() {
+        storiespane.setOnScroll(event -> {
+            double deltaY = event.getDeltaY();
+            double scrollSpeed = 0.005; // Increase this to scroll faster (try 0.01 or 0.02)
+            storiespane.setHvalue(storiespane.getHvalue() - deltaY * scrollSpeed);
+            event.consume();
+        });
+        
     initializeBino();
     initializeJarid();
     initializeMitaAi();
