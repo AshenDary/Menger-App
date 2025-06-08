@@ -11,7 +11,6 @@ public class ClientHandler extends Thread {
     private BufferedReader in;
     private PrintWriter out;
     private String username;
-    
 
     public ClientHandler(Socket socket) {
         this.clientSocket = socket;
@@ -20,14 +19,14 @@ public class ClientHandler extends Thread {
     @Override
     public void run() {
         try {
-            in  = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             out = new PrintWriter(clientSocket.getOutputStream(), true);
 
-            out.print("Enter your username:");
+            out.println("Enter your username:");
             username = in.readLine();
 
             if (username == null || username.isBlank()) {
-                out.println("❌ Invalid username. Disconnecting.");
+                out.println("Invalid username. Disconnecting.");
                 clientSocket.close();
                 return;
             }

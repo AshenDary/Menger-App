@@ -7,7 +7,7 @@ public class User {
     private String firstName;
     private String lastName;
 
-    public User(String username, String displayName) {
+    public User(String username) {
         this.username = username;
         this.displayName = displayName;
     }
@@ -28,7 +28,7 @@ public class User {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
-    
+
     public String getFirstName() {
         return firstName;
     }

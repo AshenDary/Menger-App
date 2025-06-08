@@ -199,7 +199,8 @@
             <Region layoutX="395.0" layoutY="10.0" prefHeight="90.0" prefWidth="19.0" />
             <HBox fx:id="chatfield" alignment="CENTER_LEFT" fillHeight="false" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: #f1f3f4; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" HBox.hgrow="NEVER">
                <children>
-                  <TextField fx:id="chatbar" focusTraversable="false" prefHeight="30.0" prefWidth="380.0" promptText="Aa" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                  <TextField fx:id="chatbar" focusTraversable="false" prefHeight="30.0" prefWidth="380.0" promptText="Aa"
+                           style="-fx-background-color: transparent; -fx-border-color: transparent;" onAction="#handleSendMessage">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>

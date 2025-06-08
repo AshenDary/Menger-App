@@ -9,11 +9,11 @@ public class ServerSocketMain {
     public static ConcurrentHashMap<String, ClientHandler> clients = new ConcurrentHashMap<>();
 
     public static void main(String[] args) {
-        System.out.println("🔌 Server starting on port " + PORT + "...");
+        System.out.println("Server starting on port " + PORT + "...");
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             while (true) {
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("✅ Client connected: " + clientSocket);
+                System.out.println("Client connected: " + clientSocket);
                 new ClientHandler(clientSocket).start();
             }
         } catch (Exception e) {

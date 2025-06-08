@@ -52,7 +52,7 @@ public class LoginController {
         while ((line = br.readLine()) != null) {
             String[] parts = line.split(",", 5); 
             if (parts.length == 5 && parts[2].equals(username) && parts[3].equals(password)) {
-                User user = new User(username, parts[0] + " " + parts[1]);
+                User user = new User(username);
                 user.setFirstName(parts[0]);
                 user.setLastName(parts[1]);
                 return user;

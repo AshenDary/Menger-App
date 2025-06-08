@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ServerSocketMain",
+            "request": "launch",
+            "mainClass": "com.example/com.example.network.ServerSocketMain",
+            "projectName": "Menger"
+        },
+        {
+            "type": "java",
             "name": "MainClient",
             "request": "launch",
             "mainClass": "com.example/com.example.MainClient",

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.controller.ChatBubbleController"
+      fx:id="root" spacing="10">
+    <Label fx:id="messageLabel" wrapText="true" maxWidth="300" styleClass="chat-bubble"/>
+</HBox>

@@ -18,5 +18,12 @@ public class Chat {
         messages.add(message);
     }
 
-    // Getters and chat management methods
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public User getParticipant1() {
+        return participant1;
+    }
+
 }
