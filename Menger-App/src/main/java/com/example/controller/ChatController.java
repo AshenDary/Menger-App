@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.example.InitializableWithData;
 import com.example.MainClient;
+import com.example.model.User;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -284,19 +285,27 @@ public class ChatController implements InitializableWithData {
     @FXML
     private Label yournote;
 
+    @FXML
+    private Label cfuserchatpreview;
+
     private ChatClient chatClient;
+
+    private User user;
 
     @Override
     public void init(Object data) {
-        System.out.println("Initializing ChatController with data: " + data);
-        // String username = (String) data;
-        // try {
-        //     chatClient = new ChatClient(username, msg -> messageList.getItems().add(msg));
-        // } catch (Exception e) {
-        //     e.printStackTrace();
-        //     if (messageList != null) messageList.getItems().add(" Failed to connect.");
-        // }
+        if (data instanceof User) {
+            this.user = (User) data;
+            System.out.println("Initializing ChatController with user: " + user.getFullName());
+            
+            if (user.getFirstName() != null && user.getLastName() != null) {
+                cfuserchatpreview.setText(user.getFullName());
+            } else {
+                cfuserchatpreview.setText(user.getDisplayName());
+            }
+        }
     }
+
 
     @FXML
     private void initialize() {

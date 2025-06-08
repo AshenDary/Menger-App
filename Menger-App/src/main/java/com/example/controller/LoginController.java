@@ -1,8 +1,10 @@
 package com.example.controller;
 
-import com.example.MainClient;
-
 import java.io.File;
+import java.io.IOException;
+
+import com.example.MainClient;
+import com.example.model.User;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,7 +32,8 @@ public class LoginController {
             lblMessage.setStyle("-fx-text-fill: green;");
             lblMessage.setText("Login successful!");
             try {
-                MainClient.setRoot("chat", username);
+                User user = getUserDetails(username, password);
+                MainClient.setRoot("chat", user);
             } catch (Exception e) {
                 lblMessage.setStyle("-fx-text-fill: red;");
                 lblMessage.setText("FAILED TO LOAD");
@@ -41,6 +44,23 @@ public class LoginController {
             lblMessage.setText("Invalid username or password.");
         }
     }
+
+    private User getUserDetails(String username, String password) throws IOException {
+    String filePath = System.getProperty("user.dir") + "/accounts.txt";
+    try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(filePath))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] parts = line.split(",", 5); 
+            if (parts.length == 5 && parts[2].equals(username) && parts[3].equals(password)) {
+                User user = new User(username, parts[0] + " " + parts[1]);
+                user.setFirstName(parts[0]);
+                user.setLastName(parts[1]);
+                return user;
+            }
+        }
+    }
+    throw new IOException("User details not found for username: " + username);
+}
 
     @FXML
     private void handleCreateAccount(ActionEvent event) {
@@ -63,15 +83,16 @@ public class LoginController {
             try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(filePath))) {
                 String line;
                 while ((line = br.readLine()) != null) {
-                    String[] parts = line.split(",", 2);
-                    if (parts.length == 2 && parts[0].equals(username) && parts[1].equals(password)) {
-                        return true;
+                    // Split the line into parts based on the updated format
+                    String[] parts = line.split(",", 5); // Expecting 5 parts: firstName, lastName, email, password, birthday
+                    if (parts.length == 5 && parts[2].equals(username) && parts[3].equals(password)) {
+                        return true; // Match found
                     }
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return false; // No match found
     }
 }

@@ -15,7 +15,7 @@ import javafx.scene.layout.VBox;
 
 public class CreateAccController {
 
-    @FXML
+    @FXML   
     private VBox rootVBox;
     @FXML
     private TextField firstNameField;
@@ -42,20 +42,26 @@ public class CreateAccController {
 
     @FXML
     private void handleSignUp() {
-        String email = emailField.getText().trim();
-        String password = passwordField.getText().trim();
-        if (!email.isEmpty() && !password.isEmpty()) {
-            try {
-                System.out.println("Writing account to: " + ACCOUNTS_FILE);
-                try (FileWriter fw = new FileWriter(ACCOUNTS_FILE, true)) {
-                    fw.write(email + "," + password + System.lineSeparator());
-                }
-                MainClient.setRoot("login", null);
-            } catch (IOException e) {
-                e.printStackTrace();
+    String firstName = firstNameField.getText().trim();
+    String lastName = lastNameField.getText().trim();
+    String email = emailField.getText().trim();
+    String password = passwordField.getText().trim();
+    String birthday = birthDatePicker.getValue() != null ? birthDatePicker.getValue().toString() : "";
+
+    if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !password.isEmpty() && !birthday.isEmpty()) {
+        try {
+            System.out.println("Writing account to: " + ACCOUNTS_FILE);
+            try (FileWriter fw = new FileWriter(ACCOUNTS_FILE, true)) {
+                fw.write(firstName + "," + lastName + "," + email + "," + password + "," + birthday + System.lineSeparator());
             }
+            MainClient.setRoot("login", null);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    } else {
+        System.out.println("Please fill in all fields.");
     }
+}
 
     @FXML
     private void handleBackToLogin() {

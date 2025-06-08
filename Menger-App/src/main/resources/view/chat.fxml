@@ -253,7 +253,7 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="cfuserchatpreview" layoutX="10.0" layoutY="15.0" prefHeight="21.0" prefWidth="39.0" text="USER">
+                              <Label fx:id="cfuserchatpreview" layoutX="10.0" layoutY="15.0" prefHeight="21.0" prefWidth="107.0" text="USER">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

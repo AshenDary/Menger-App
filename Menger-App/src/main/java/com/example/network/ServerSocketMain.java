@@ -4,8 +4,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.example.model.ClientHandler;
-
 public class ServerSocketMain {
     public static final int PORT = 12345;
     public static ConcurrentHashMap<String, ClientHandler> clients = new ConcurrentHashMap<>();
