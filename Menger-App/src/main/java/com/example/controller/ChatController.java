@@ -312,6 +312,7 @@ public class ChatController implements InitializableWithData {
     initializeMitaAi();
     initializeKen();
     initializeRai();
+    initializeBugoy();
 }
     @FXML
     private void initializeBino() {
@@ -361,6 +362,16 @@ public class ChatController implements InitializableWithData {
         raicontainer.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("raichatbox", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void initializeBugoy() {
+        bugoycontainer.setOnMouseClicked(event -> {
+            try {
+                MainClient.setRoot("bugoychatbox", null);
             } catch (IOException e) {
                 e.printStackTrace();
             }
