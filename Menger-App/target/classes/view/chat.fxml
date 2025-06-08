@@ -206,7 +206,7 @@
                         </Label>
                         <HBox fx:id="bugoychatcontainer" prefHeight="27.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="bugoychatpreview" prefHeight="20.0" prefWidth="225.0" text="Gusto mo ba maging 6th wife ko?">
+                              <Label fx:id="bugoychatpreview" prefHeight="21.0" prefWidth="240.0" text="Gusto mo ba maging 6th wife ko?">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

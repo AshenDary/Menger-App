@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchatboxbino" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="844.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.BinoChatBoxController">
+<VBox fx:id="rootlayoutchatboxbino" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.BinoChatBoxController">
    <children>
       <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="520.0" spacing="10.0" VBox.vgrow="NEVER">
          <children>
-            <ImageView fx:id="backicon" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#handleBackToChat" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="backicon" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#handleBackToChat" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/backicon.png" />
                </image>
@@ -31,7 +31,7 @@
                   <Insets top="10.0" />
                </HBox.margin>
             </ImageView>
-            <Label fx:id="chatsstaticlabel" contentDisplay="CENTER" prefHeight="27.0" prefWidth="275.0" text="BinoPogi123 Lang Sakalam" textAlignment="CENTER">
+            <Label fx:id="chatsstaticlabel" contentDisplay="CENTER" prefHeight="27.0" prefWidth="394.0" text="BinoPogi123 Lang Sakalam" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -40,7 +40,7 @@
                </HBox.margin>
             </Label>
             <Region prefHeight="50.0" prefWidth="130.0" />
-            <ImageView fx:id="callicon" fitHeight="19.5" fitWidth="19.5" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="callicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/callicon.png" />
                </image>
@@ -48,7 +48,7 @@
                   <Insets right="5.0" top="15.5" />
                </HBox.margin>
             </ImageView>
-            <ImageView fx:id="videocallicon" fitHeight="25.0" fitWidth="25.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="videocallicon" fitHeight="33.0" fitWidth="33.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/videocallicon.png" />
                </image>
@@ -66,12 +66,39 @@
       </HBox>
       <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="760.0" prefWidth="440.0" vbarPolicy="ALWAYS">
          <content>
-            <VBox fx:id="chatpreviewcontainer" prefHeight="613.0" prefWidth="428.0" spacing="10.0">
+            <VBox fx:id="chatpreviewcontainer" alignment="BOTTOM_CENTER" prefHeight="613.0" prefWidth="428.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <Label fx:id="timestamp" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="506.0" text="MON 8:38 PM" VBox.vgrow="NEVER">
+                  <ImageView fx:id="binopfp" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/binoicon.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" text="BinoPogi123 Lang Sakalam">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="8.0" top="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="binobutton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #e1e6ea; -fx-background-radius: 50;" text="View profile">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label fx:id="timestamp" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="506.0" text="SUN 9:40 PM" VBox.vgrow="NEVER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -82,7 +109,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox fx:id="binochatpreview1" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="binochatpreview1" alignment="CENTER_LEFT" layoutX="20.0" layoutY="266.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
                         <ImageView fx:id="binoicon1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -94,7 +121,7 @@
                         </ImageView>
                         <VBox fx:id="binomessagebubblecontainer1" prefHeight="82.0" prefWidth="363.0" spacing="5.0">
                            <children>
-                              <Label fx:id="binomessagebubble1" prefHeight="31.0" prefWidth="327.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="marami nagsasabi na kmuka ko Daw si Dwight" textFill="WHITE" wrapText="true">
+                              <Label fx:id="binomessagebubble1" prefHeight="31.0" prefWidth="33.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="hi" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -102,7 +129,7 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="binomessagebubble2" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="May BF ka na ba? pwedi manLigaw?" textFill="WHITE" wrapText="true">
+                              <Label fx:id="binomessagebubble2" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="hi" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -113,8 +140,22 @@
                            </children>
                         </VBox>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
                   </HBox>
-                  <HBox fx:id="binochatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="280.0" prefHeight="55.0" prefWidth="200.0">
+                  <Label fx:id="timestamp1" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="219.0" prefHeight="27.0" prefWidth="506.0" text="MON 8:38 PM" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="150.0" right="150.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox fx:id="binochatpreview2" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0">
                      <children>
                         <ImageView fx:id="binoicon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -124,25 +165,9 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fx:id="binomessagebubble3" fitHeight="268.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/binopic.png" />
-                           </image></ImageView>
-                     </children>
-                  </HBox>
-                  <HBox fx:id="binochatpreview3" alignment="CENTER_LEFT" layoutX="20.0" layoutY="85.0" prefHeight="55.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fx:id="binoicon3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/binoicon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="10.0" right="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox fx:id="binomessagebubblecontainer2" prefHeight="87.0" prefWidth="377.0" spacing="5.0">
+                        <VBox fx:id="binomessagebubblecontainer2" prefHeight="82.0" prefWidth="363.0" spacing="5.0">
                            <children>
-                              <Label fx:id="binomessagebubble4" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Pogi Bako?" textFill="WHITE" wrapText="true">
+                              <Label fx:id="binomessagebubble3" prefHeight="31.0" prefWidth="327.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="marami nagsasabi na kmuka ko Daw si Dwight" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -150,7 +175,7 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="binomessagebubble5" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Hahaha hindi na makasagot Kinikilig to" textFill="WHITE" wrapText="true">
+                              <Label fx:id="binomessagebubble4" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="May BF ka na ba? pwedi manLigaw?" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -162,7 +187,29 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox fx:id="binochatpreview4" alignment="CENTER_LEFT" layoutX="20.0" layoutY="215.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="binochatpreview3" alignment="CENTER_LEFT" layoutX="20.0" layoutY="280.0" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="binoicon3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/binoicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="binomessagebubble5" fitHeight="268.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/binopic.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="binochatpreview4" alignment="CENTER_LEFT" layoutX="20.0" layoutY="85.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
                         <ImageView fx:id="binoicon4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -172,7 +219,39 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="binomessagebubble6" style="-fx-background-color: white; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-color: #cccccc; -fx-border-radius: 50;" text="BinoPogi123 Unsint a message." wrapText="true">
+                        <VBox fx:id="binomessagebubblecontainer3" prefHeight="87.0" prefWidth="377.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="binomessagebubble5" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Pogi Bako?" textFill="WHITE" wrapText="true">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="binomessagebubble6" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Hahaha hindi na makasagot Kinikilig to" textFill="WHITE" wrapText="true">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="binochatpreview5" alignment="CENTER_LEFT" layoutX="20.0" layoutY="215.0" prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="binoicon5" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/binoicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="binomessagebubble7" style="-fx-background-color: white; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-color: #cccccc; -fx-border-radius: 50;" text="BinoPogi123 Unsint a message." wrapText="true">
                            <padding>
                               <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                            </padding>
@@ -189,14 +268,14 @@
             </VBox>
          </content>
       </ScrollPane>
-      <VBox fx:id="blockbottomnavbar" alignment="TOP_CENTER" prefHeight="300.0" prefWidth="520.0" style="-fx-background-color: white;" VBox.vgrow="NEVER">
+      <VBox fx:id="blockbottomnavbar" alignment="BOTTOM_CENTER" prefHeight="350.0" prefWidth="440.0" style="-fx-background-color: white;" VBox.vgrow="NEVER">
          <children>
             <Label fx:id="blockname" text="You've blocked BinoPogi123" textFill="#797775">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="blockmessage" layoutX="214.0" layoutY="73.0" prefHeight="45.0" prefWidth="290.0" text="You can't menage or call them in this chat, and you won't receive their menages or calls." textAlignment="CENTER" textFill="#838789" wrapText="true">
+            <Label fx:id="blockmessage" layoutX="214.0" layoutY="73.0" prefHeight="84.0" prefWidth="290.0" text="You can't menage or call them in this chat, and you won't receive their menages or calls." textAlignment="CENTER" textFill="#838789" wrapText="true">
                <font>
                   <Font size="13.0" />
                </font></Label>
@@ -210,7 +289,7 @@
             </Button>
             <Button fx:id="reportbutton" layoutX="203.0" layoutY="85.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="490.0" style="-fx-background-radius: 10; -fx-background-color: #e1e6ea;" text="Report">
                <VBox.margin>
-                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                  <Insets bottom="25.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
                <font>
                   <Font name="System Bold" size="14.0" />
