@@ -295,7 +295,7 @@
                         </Label>
                         <HBox fx:id="kenchatcontainer" prefHeight="27.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="kenchatpreview" prefHeight="21.0" prefWidth="141.0" style="-fx-text-fill:: #9f9d9d;" text="Nag kaon kana lab?" textFill="#9f9d9d">
+                              <Label fx:id="kenchatpreview" prefHeight="21.0" prefWidth="141.0" style="-fx-text-fill: #9f9d9d;" text="Nag kaon kana lab?" textFill="#9f9d9d">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

@@ -32,7 +32,7 @@ public class ClientHandler extends Thread {
             }
 
             ServerSocketMain.clients.put(username, this);
-            ServerSocketMain.broadcast("🟢 " + username + " has joined the chat.");
+            ServerSocketMain.broadcast(username + " has joined the chat.");
 
             String message;
             while ((message = in.readLine()) != null) {
@@ -42,12 +42,12 @@ public class ClientHandler extends Thread {
                 ServerSocketMain.broadcast(fullMessage);
             }
         } catch (IOException e) {
-            System.out.println("❌ Disconnected: " + username);
+            System.out.println("Disconnected: " + username);
         } finally {
             try {
                 if (username != null) {
                     ServerSocketMain.clients.remove(username);
-                    ServerSocketMain.broadcast("🔴 " + username + " has left the chat.");
+                    ServerSocketMain.broadcast(username + " has left the chat.");
                 }
                 clientSocket.close();
             } catch (IOException e) {

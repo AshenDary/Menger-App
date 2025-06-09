@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import com.example.MainClient;
 import com.example.model.Chat;
+import com.example.model.ClientSocket;
 import com.example.model.Message;
-import com.example.network.ClientSocket;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -36,7 +36,6 @@ public class BugoyChatBoxController {
     public void setChat(Chat chat) {
         this.chat = chat;
 
-        // Load existing messages into the chat view
         if (chat != null && chat.getMessages() != null) {
             chat.getMessages().forEach(message -> {
                 boolean isSentByCurrentUser = message.getSender().equals(chat.getParticipant1());
@@ -56,6 +55,11 @@ public class BugoyChatBoxController {
 
     @FXML
     private void initialize() {
+        if (clientSocket == null) {
+            System.err.println("ClientSocket is not initialized!");
+            return;
+        }
+
         new Thread(() -> {
             try {
                 String message;
@@ -71,13 +75,17 @@ public class BugoyChatBoxController {
 
     @FXML
     private void handleSendMessage() {
+        if (clientSocket == null) {
+            System.err.println("ClientSocket is not initialized!");
+            return;
+        }
+
         String message = chatbar.getText().trim();
         if (!message.isEmpty()) {
             clientSocket.sendMessage(message);
             addMessageToChat("You: " + message, true);
 
             if (chat != null) {
-                // Add the message to the chat with the current timestamp
                 chat.addMessage(new Message(chat.getParticipant1(), message, java.time.LocalDateTime.now()));
             }
 

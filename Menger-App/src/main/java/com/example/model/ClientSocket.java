@@ -1,4 +1,4 @@
-package com.example.network;
+package com.example.model;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,9 +10,11 @@ public class ClientSocket {
     private final Socket socket;
     private final BufferedReader in;
     private final PrintWriter out;
+    private final String username;
 
-    public ClientSocket(Socket socket) throws IOException {
+    public ClientSocket(Socket socket, String username) throws IOException {
         this.socket = socket;
+        this.username = username;
         this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         this.out = new PrintWriter(socket.getOutputStream(), true);
     }
@@ -23,6 +25,10 @@ public class ClientSocket {
 
     public String receiveMessage() throws IOException {
         return in.readLine();
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public void close() throws IOException {

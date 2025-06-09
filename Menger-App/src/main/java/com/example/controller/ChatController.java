@@ -2,8 +2,8 @@ package com.example.controller;
 
 import java.io.IOException;
 
-import com.example.InitializableWithData;
 import com.example.MainClient;
+import com.example.model.InitializableWithData;
 import com.example.model.User;
 
 import javafx.fxml.FXML;

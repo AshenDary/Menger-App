@@ -4,8 +4,11 @@ import java.io.IOException;
 import java.net.Socket;
 
 import com.example.controller.BugoyChatBoxController;
+import com.example.controller.ChatController;
 import com.example.model.Chat;
-import com.example.network.ClientSocket;
+import com.example.model.ClientSocket;
+import com.example.model.CurrentUser;
+import com.example.model.User;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,13 +20,20 @@ import javafx.stage.Stage;
 public class MainClient extends Application {
     
     private static Scene scene;
-    private static ClientSocket clientSocket; 
+    public static ClientSocket clientSocket;
 
     @Override
     public void start(Stage stage) {
         try {
-            clientSocket = new ClientSocket(new Socket("localhost", 12345));
-            scene = new Scene(loadFXML("login"), 520, 964);
+            if (CurrentUser.getInstance().getUser() == null) {
+                scene = new Scene(loadFXML("login"), 520, 964);
+            } else {
+                String username = CurrentUser.getInstance().getUser().getUsername();
+                clientSocket = new ClientSocket(new Socket("localhost", 12345), username);
+            System.out.println("ClientSocket initialized: " + (clientSocket != null));
+                scene = new Scene(loadFXML("chat"), 520, 964);
+            }
+
             stage.setScene(scene);
 
             String css = this.getClass().getResource("/view/meneger.css").toExternalForm();
@@ -45,10 +55,16 @@ public class MainClient extends Application {
             FXMLLoader loader = new FXMLLoader(MainClient.class.getResource("/view/" + fxml + ".fxml"));
             Parent root = loader.load();
             Object controller = loader.getController();
-            if (controllerData != null && controller instanceof InitializableWithData) {
-                ((InitializableWithData) controller).init(controllerData);
-            } else if (controllerData instanceof Chat && controller instanceof BugoyChatBoxController) {
-                ((BugoyChatBoxController) controller).setChat((Chat) controllerData);
+    
+            if (controller instanceof BugoyChatBoxController) {
+                BugoyChatBoxController chatController = (BugoyChatBoxController) controller;
+                chatController.setClientSocket(clientSocket);
+                if (controllerData instanceof Chat) {
+                    chatController.setChat((Chat) controllerData);
+                }
+            } else if (controller instanceof ChatController && controllerData instanceof User) {
+                ChatController chatController = (ChatController) controller;
+                chatController.init(controllerData);
             }
             scene.setRoot(root);
         } catch (IOException e) {
