@@ -9,6 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -439,18 +440,19 @@
                </HBox.margin>
             </HBox>
             <Region layoutX="244.0" layoutY="10.0" prefHeight="90.0" prefWidth="19.0" />
-            <VBox fx:id="emojicontainer" alignment="CENTER" layoutX="156.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0">
+            <StackPane fx:id="sendemojicontainer" prefHeight="50.0" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </HBox.margin>
                <children>
                   <ImageView fx:id="likeicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/images/likeicon.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
                </children>
-               <HBox.margin>
-                  <Insets bottom="20.0" top="20.0" />
-               </HBox.margin>
-            </VBox>
+            </StackPane>
          </children>
          <padding>
             <Insets left="20.0" right="20.0" />

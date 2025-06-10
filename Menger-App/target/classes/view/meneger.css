@@ -59,9 +59,9 @@
     -fx-cursor: hand;
 }
 
-.chatbar {
-    -fx-text-fill: white;
-    -fx-prompt-text-fill: gray;
+#chatbar {
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: #888;
 }
 
 .scroll-pane {
