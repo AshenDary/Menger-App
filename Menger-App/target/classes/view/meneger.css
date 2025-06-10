@@ -3,9 +3,6 @@
     -fx-text-fill: white;
 }
 
-.text-field .text {
-    -fx-fill: white;
-}
 
 .text-field .prompt-text {
     -fx-prompt-text-fill: #888;
@@ -24,10 +21,10 @@
 }
 
 #searchfield {
-    -fx-prompt-text-fill: #626262
+    -fx-prompt-text-fill: #626262;
 }
 
-.hyperlink .text {
+.hyperlink {
     -fx-text-fill: white;
 }
 
