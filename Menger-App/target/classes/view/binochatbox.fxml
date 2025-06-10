@@ -221,7 +221,7 @@
                         </ImageView>
                         <VBox fx:id="binomessagebubblecontainer3" prefHeight="87.0" prefWidth="377.0" spacing="5.0">
                            <children>
-                              <Label fx:id="binomessagebubble5" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Pogi Bako?" textFill="WHITE" wrapText="true">
+                              <Label fx:id="binomessagebubble5" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Pogi Bako?" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -229,7 +229,7 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="binomessagebubble6" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Hahaha hindi na makasagot Kinikilig to" textFill="WHITE" wrapText="true">
+                              <Label fx:id="binomessagebubble6" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Hahaha hindi na makasagot Kinikilig to" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>

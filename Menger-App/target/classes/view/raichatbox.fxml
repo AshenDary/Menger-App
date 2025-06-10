@@ -9,10 +9,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchatboxken" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.KenChatBoxController">
+<VBox fx:id="rootlayoutchatboxrai" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.KenChatBoxController">
    <children>
       <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="540.0" spacing="10.0" VBox.vgrow="NEVER">
          <children>
@@ -24,7 +25,7 @@
                   <Insets right="5.0" top="12.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView fx:id="kenicon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="raiicon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/rileyicon.png" />
                </image>
@@ -32,7 +33,7 @@
                   <Insets top="10.0" />
                </HBox.margin>
             </ImageView>
-            <Label fx:id="chatsstaticlabel" contentDisplay="CENTER" prefHeight="27.0" prefWidth="150.0" text="Kinneth Punzalan" textAlignment="CENTER">
+            <Label fx:id="chatsstaticlabel" contentDisplay="CENTER" prefHeight="27.0" prefWidth="150.0" text="RaiCutie XDXD" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -40,7 +41,7 @@
                   <Insets bottom="5.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <Region prefHeight="50.0" prefWidth="141.0" />
+            <Region prefHeight="50.0" prefWidth="185.0" />
             <ImageView fx:id="callicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/callicon.png" />
@@ -72,7 +73,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <ImageView fx:id="kenpfp" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="raipfp" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/images/rileyicon.png" />
                      </image>
@@ -80,7 +81,7 @@
                         <Insets bottom="5.0" top="15.0" />
                      </VBox.margin>
                   </ImageView>
-                  <Label alignment="CENTER" text="Kinneth Punzalan">
+                  <Label alignment="CENTER" text="RaiCutie XDXD">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>
@@ -88,7 +89,7 @@
                         <Insets />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="kenbutton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #e1e6ea; -fx-background-radius: 50;" text="View profile">
+                  <Button fx:id="raibutton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #e1e6ea; -fx-background-radius: 50;" text="View profile">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -99,7 +100,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Label fx:id="timestamp1" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="27.0" prefWidth="621.0" text="FRI 5:47 AM">
+                  <Label fx:id="timestamp1" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="27.0" prefWidth="621.0" text="FRI 5:47 PM">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -110,9 +111,9 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox fx:id="kenchatpreview1" alignment="CENTER_LEFT" layoutX="20.0" layoutY="401.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="raichatpreview1" alignment="CENTER_LEFT" layoutX="20.0" layoutY="401.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="kenicon1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="raiicon1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/rileyicon.png" />
                            </image>
@@ -122,7 +123,7 @@
                         </ImageView>
                         <VBox prefHeight="60.0" prefWidth="454.0" spacing="5.0">
                            <children>
-                              <Label fx:id="kenmessagebubble1" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="helo po" wrapText="true">
+                              <Label fx:id="raimessagebubble1" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="helo po" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -130,7 +131,7 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="kenmessagebubble11" layoutX="10.0" layoutY="10.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="hi" wrapText="true">
+                              <Label fx:id="raimessagebubble2" layoutX="10.0" layoutY="10.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="hi" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -142,9 +143,9 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox fx:id="kenchatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="57.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="raichatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="57.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="kenicon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="raiicon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/rileyicon.png" />
                            </image>
@@ -152,7 +153,7 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="kenmessagebubble2" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="may roblox po ba kayo?" wrapText="true">
+                        <Label fx:id="raimessagebubble3" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="may roblox po ba kayo?" wrapText="true">
                            <padding>
                               <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                            </padding>
@@ -165,32 +166,9 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox fx:id="kenchatpreview3" alignment="CENTER_LEFT" layoutX="20.0" layoutY="197.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="raichatpreview3" alignment="CENTER_LEFT" layoutX="20.0" layoutY="337.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="kenicon3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/rileyicon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="10.0" right="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <Label fx:id="kenmessagebubble3" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="baka kinikilig kana diyan ah" wrapText="true">
-                           <padding>
-                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                           </padding>
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox fx:id="kenchatpreview4" alignment="CENTER_LEFT" layoutX="20.0" layoutY="337.0" prefHeight="55.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fx:id="kenicon4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="raiicon3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/rileyicon.png" />
                            </image>
@@ -198,14 +176,14 @@
                               <Insets bottom="10.0" right="10.0" top="50.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fx:id="kenlike" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="railike" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/likeicon.png" />
                            </image>
                         </ImageView>
                      </children>
                   </HBox>
-                  <Label fx:id="timestamp2" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="542.0" text="6:33 AM">
+                  <Label fx:id="timestamp2" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="542.0" text="FRI 6:33 PM">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -216,9 +194,9 @@
                         <Insets bottom="20.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox fx:id="kenchatpreview5" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="raichatpreview4" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="kenicon5" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="raiicon4" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/rileyicon.png" />
                            </image>
@@ -226,70 +204,18 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <VBox fx:id="kenmessagebubblecontainer" prefHeight="82.0" prefWidth="369.0" spacing="5.0">
-                           <children>
-                              <Label fx:id="kenmessagebubble5" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="good morning wim kumakain ako ngayon" wrapText="true">
-                                 <padding>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </padding>
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="kenmessagebubble6" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="ito ulam ko ngayon masarap" wrapText="true">
-                                 <padding>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </padding>
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                     <padding>
-                        <Insets bottom="5.0" />
-                     </padding>
-                  </HBox>
-                  <HBox fx:id="kenchatpreview6" alignment="CENTER_LEFT" layoutX="20.0" layoutY="280.0" prefHeight="55.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fx:id="kenicon6" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/kenicon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="10.0" right="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <ImageView fx:id="kenmessagebubble7" fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/kenpic.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox fx:id="kenchatpreview4" alignment="CENTER_LEFT" layoutX="20.0" layoutY="85.0" prefHeight="55.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fx:id="kenicon7" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/kenicon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="10.0" right="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <Label fx:id="kenmessagebubble8" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="nag kaon ka na ba lab?" wrapText="true">
+                        <Label fx:id="raimessagebubble4" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="Naka online pero hindi binasa message ko wow ganern" wrapText="true">
                            <padding>
                               <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                            </padding>
                            <font>
                               <Font size="15.0" />
                            </font>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
                         </Label>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
                   </HBox>
                </children>
             </VBox>
@@ -379,18 +305,20 @@
                </HBox.margin>
             </HBox>
             <Region layoutX="244.0" layoutY="10.0" prefHeight="90.0" prefWidth="19.0" />
-            <VBox fx:id="emojicontainer" alignment="CENTER" layoutX="156.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0">
+            <StackPane fx:id="iconswitcher" prefHeight="50.0" prefWidth="50.0">
                <children>
-                  <ImageView fx:id="likeicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="likeicon" fitHeight="30.0" fitWidth="30.0" managed="true" pickOnBounds="true" preserveRatio="true" visible="true">
                      <image>
                         <Image url="@../assets/images/likeicon.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" managed="false" onMouseClicked="#handleSend" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/images/sendicon.png" />
+                     </image>
+                  </ImageView>
                </children>
-               <HBox.margin>
-                  <Insets bottom="20.0" top="20.0" />
-               </HBox.margin>
-            </VBox>
+            </StackPane>
          </children>
          <padding>
             <Insets left="20.0" right="20.0" />
