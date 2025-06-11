@@ -8,6 +8,7 @@ public class ServerStorage {
     private static final String FILE_PATH = "chat_log.txt";
 
     public static synchronized void saveMessage(String message) {
+        System.out.println("Saving message to file: " + message);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
             writer.write(message);
             writer.newLine();

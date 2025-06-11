@@ -24,6 +24,7 @@ public class ClientHandler extends Thread {
 
             out.println("Enter your username:");
             username = in.readLine();
+            System.out.println("Client connected with username: " + username);
 
             if (username == null || username.isBlank()) {
                 out.println("Invalid username. Disconnecting.");
@@ -37,7 +38,7 @@ public class ClientHandler extends Thread {
             String message;
             while ((message = in.readLine()) != null) {
                 String fullMessage = username + ": " + message;
-                System.out.println("📩 " + fullMessage);
+                System.out.println("📩 Received message: " + fullMessage);
                 ServerStorage.saveMessage(fullMessage);
                 ServerSocketMain.broadcast(fullMessage);
             }

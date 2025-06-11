@@ -2,7 +2,7 @@ package com.example.controller;
 
 import java.io.IOException;
 
-import com.example.MainClient;
+import com.example.network.MainClient;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;

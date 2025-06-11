@@ -3,9 +3,9 @@ package com.example.controller;
 import java.io.File;
 import java.io.IOException;
 
-import com.example.MainClient;
 import com.example.model.CurrentUser;
 import com.example.model.User;
+import com.example.network.MainClient;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -2,10 +2,10 @@ package com.example.controller;
 
 import java.io.IOException;
 
-import com.example.MainClient;
 import com.example.model.Chat;
-import com.example.model.ClientSocket;
 import com.example.model.Message;
+import com.example.network.ClientSocket;
+import com.example.network.MainClient;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ import javafx.scene.layout.VBox;
 public class BugoyChatBoxController {
 
     @FXML
-    private VBox chatVBox;
+    private VBox chatpreviewcontainer;
 
     @FXML
     private TextField chatbar;
@@ -31,42 +31,19 @@ public class BugoyChatBoxController {
 
     public void setClientSocket(ClientSocket clientSocket) {
         this.clientSocket = clientSocket;
+
+        // Register message listener when ClientSocket is injected
+        this.clientSocket.setOnMessageReceived(message -> {
+            Platform.runLater(() -> {
+                handleIncomingMessage(message);
+            });
+        });
     }
-
-    @FXML
-    private void initialize() {
-        if (clientSocket == null) {
-            System.err.println("ClientSocket is not initialized!");
-            return;
-        }
-
-        new Thread(() -> {
-            try {
-                String message;
-                while ((message = clientSocket.receiveMessage()) != null) {
-                    String finalMessage = message;
-                    Platform.runLater(() -> addMessageToChat(finalMessage, false));
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }).start();
-    }
-
-    public boolean isClientSocketConnected() throws IOException {
-        if (clientSocket == null) {
-            System.err.println("ClientSocket is not initialized!");
-            return false;
-        }
-    
-        clientSocket.sendMessage("PING");
-        return true;
-    }
-
 
     public void setChat(Chat chat) {
         this.chat = chat;
 
+        // Load old messages
         if (chat != null && chat.getMessages() != null) {
             chat.getMessages().forEach(message -> {
                 boolean isSentByCurrentUser = message.getSender().equals(chat.getParticipant1());
@@ -83,23 +60,11 @@ public class BugoyChatBoxController {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
-    private void handleSendMessage() throws IOException {
-
-        if (isClientSocketConnected()) {
-            System.out.println("ClientSocket is successfully connected to the server.");
-        } else {
-            System.err.println("ClientSocket failed to connect to the server.");
-        }
-        
-        if (clientSocket == null) {
-            System.err.println("ClientSocket is null");
-            return;
-        }
-
+    private void handleSendMessage() {
         String message = chatbar.getText().trim();
-        if (!message.isEmpty()) {
+        if (!message.isEmpty() && clientSocket != null) {
             clientSocket.sendMessage(message);
             addMessageToChat("You: " + message, true);
 
@@ -111,17 +76,29 @@ public class BugoyChatBoxController {
         }
     }
 
+    public void handleIncomingMessage(String message) {
+        String[] parts = message.split(": ", 2);
+        if (parts.length == 2) {
+            String sender = parts[0];
+            String content = parts[1];
+            boolean isSentByCurrentUser = (chat != null) && sender.equals(chat.getParticipant1().getUsername());
+            addMessageToChat(content, isSentByCurrentUser);
+        } else {
+            addMessageToChat(message, false);
+        }
+    }
+
     private void addMessageToChat(String content, boolean isSentByCurrentUser) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/view/ChatBubble.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ChatBubble.fxml"));
             HBox bubble = loader.load();
-
+    
             ChatBubbleController controller = loader.getController();
             controller.setMessage(content, isSentByCurrentUser);
-
-            chatVBox.getChildren().add(bubble);
+    
+            chatpreviewcontainer.getChildren().add(bubble);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }    
 }

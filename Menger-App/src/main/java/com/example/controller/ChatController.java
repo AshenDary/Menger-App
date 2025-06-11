@@ -2,12 +2,12 @@ package com.example.controller;
 
 import java.io.IOException;
 
-import com.example.MainClient;
 import com.example.model.CurrentUser;
 import com.example.model.InitializableWithData;
 import com.example.model.User;
-import com.example.network.ChatClient;
+import com.example.network.MainClient;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -38,6 +38,9 @@ public class ChatController implements InitializableWithData {
 
     @FXML
     private ImageView binostoryicon;
+
+    @FXML
+    private TextField chatInput;
 
     @FXML
     private Label binotime;
@@ -290,9 +293,12 @@ public class ChatController implements InitializableWithData {
     @FXML
     private Label cfuserchatpreview;
 
-    private ChatClient chatClient;
+    @FXML
+    private VBox chatVBox;
 
     private User user;
+
+    private static VBox staticChatVBox;
 
     @Override
     public void init(Object data) {
@@ -310,30 +316,32 @@ public class ChatController implements InitializableWithData {
 
 
     @FXML
-private void initialize() {
-    User currentUser = CurrentUser.getInstance().getUser();
-    if (currentUser != null) {
-        if (currentUser.getFirstName() != null && currentUser.getLastName() != null) {
-            cfuserchatpreview.setText(currentUser.getFullName());
-        } else {
-            cfuserchatpreview.setText(currentUser.getDisplayName());
+    private void initialize() {
+        User currentUser = CurrentUser.getInstance().getUser();
+        staticChatVBox = chatVBox;
+        if (currentUser != null) {
+            if (currentUser.getFirstName() != null && currentUser.getLastName() != null) {
+                cfuserchatpreview.setText(currentUser.getFullName());
+            } else {
+                cfuserchatpreview.setText(currentUser.getDisplayName());
+            }
         }
+
+        storiespane.setOnScroll(event -> {
+            double deltaY = event.getDeltaY();
+            double scrollSpeed = 0.005;
+            storiespane.setHvalue(storiespane.getHvalue() - deltaY * scrollSpeed);
+            event.consume();
+        });
+
+        initializeBino();
+        initializeJarid();
+        initializeMitaAi();
+        initializeKen();
+        initializeRai();
+        initializeBugoy();
+        initializeMenger();
     }
-
-    storiespane.setOnScroll(event -> {
-        double deltaY = event.getDeltaY();
-        double scrollSpeed = 0.005;
-        storiespane.setHvalue(storiespane.getHvalue() - deltaY * scrollSpeed);
-        event.consume();
-    });
-
-    initializeBino();
-    initializeJarid();
-    initializeMitaAi();
-    initializeKen();
-    initializeRai();
-    initializeBugoy();
-}
     @FXML
     private void initializeBino() {
         binochatbox.setOnMouseClicked(event -> {
@@ -393,6 +401,38 @@ private void initialize() {
             try {
                 MainClient.setRoot("bugoychatbox", null);
             } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void initializeMenger() {
+        cfchatbox.setOnMouseClicked(event -> {
+            try {
+                MainClient.setRoot("mengerchatbox", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @FXML
+    private void sendMessage() {
+        String message = chatInput.getText().trim();
+        if (!message.isEmpty()) {
+            MainClient.clientSocket.sendMessage(message);
+            addMessageToUI("You: " + message, true);
+            chatInput.clear();
+        }
+    }
+
+    public static void addMessageToUI(String message, boolean isSentByCurrentUser) {
+        Platform.runLater(() -> {
+            try {
+                ChatBubbleController bubble = new ChatBubbleController();
+                bubble.setMessage(message, isSentByCurrentUser);
+                staticChatVBox.getChildren().add(bubble.getRoot());
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         });

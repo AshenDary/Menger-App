@@ -2,7 +2,7 @@ package com.example.controller;
 
 import java.io.IOException;
 
-import com.example.MainClient;
+import com.example.network.MainClient;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -86,10 +86,9 @@ public class KenChatBoxController {
     private void addMessageBubble(String message) {
         Text text = new Text(message);
         TextFlow bubble = new TextFlow(text);
-        bubble.getStyleClass().add("message-bubble"); // Define in CSS if needed
+        bubble.getStyleClass().add("message-bubble");
         messageContainer.getChildren().add(bubble);
 
-        // Auto-scroll to bottom
         Platform.runLater(() -> chatareacontainer.setVvalue(1.0));
     }
 }
