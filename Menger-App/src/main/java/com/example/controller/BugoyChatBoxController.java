@@ -33,26 +33,6 @@ public class BugoyChatBoxController {
         this.clientSocket = clientSocket;
     }
 
-    public void setChat(Chat chat) {
-        this.chat = chat;
-
-        if (chat != null && chat.getMessages() != null) {
-            chat.getMessages().forEach(message -> {
-                boolean isSentByCurrentUser = message.getSender().equals(chat.getParticipant1());
-                addMessageToChat(message.getContent(), isSentByCurrentUser);
-            });
-        }
-    }
-
-    @FXML
-    private void handleBackToChat() {
-        try {
-            MainClient.setRoot("chat", null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     @FXML
     private void initialize() {
         if (clientSocket == null) {
@@ -73,10 +53,48 @@ public class BugoyChatBoxController {
         }).start();
     }
 
-    @FXML
-    private void handleSendMessage() {
+    public boolean isClientSocketConnected() throws IOException {
         if (clientSocket == null) {
             System.err.println("ClientSocket is not initialized!");
+            return false;
+        }
+    
+        clientSocket.sendMessage("PING");
+        return true;
+    }
+
+
+    public void setChat(Chat chat) {
+        this.chat = chat;
+
+        if (chat != null && chat.getMessages() != null) {
+            chat.getMessages().forEach(message -> {
+                boolean isSentByCurrentUser = message.getSender().equals(chat.getParticipant1());
+                addMessageToChat(message.getContent(), isSentByCurrentUser);
+            });
+        }
+    }
+
+    @FXML
+    private void handleBackToChat() {
+        try {
+            MainClient.setRoot("chat", null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML
+    private void handleSendMessage() throws IOException {
+
+        if (isClientSocketConnected()) {
+            System.out.println("ClientSocket is successfully connected to the server.");
+        } else {
+            System.err.println("ClientSocket failed to connect to the server.");
+        }
+        
+        if (clientSocket == null) {
+            System.err.println("ClientSocket is null");
             return;
         }
 
