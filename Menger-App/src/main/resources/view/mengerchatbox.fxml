@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchatboxken" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.KenChatBoxController">
+<VBox fx:id="rootlayoutchatboxmengergroup" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.KenChatBoxController">
    <children>
       <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="540.0" spacing="10.0" VBox.vgrow="NEVER">
          <children>
@@ -24,7 +24,7 @@
                   <Insets right="5.0" top="12.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView fx:id="kenicon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="mengergroupicon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/cficon.png" />
                </image>
@@ -74,7 +74,7 @@
                <children>
                   <VBox fx:id="pfpcontainer" alignment="CENTER" prefHeight="210.0" prefWidth="100.0">
                      <children>
-                        <ImageView fx:id="kenpfp" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="mengergrouppfp" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/cficon.png" />
                            </image>
@@ -98,11 +98,11 @@
                               <Insets bottom="15.0" top="5.0" />
                            </padding>
                         </Label>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                        <HBox fx:id="middlenavbar" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="35.0" prefWidth="50.0" spacing="3.0">
+                              <VBox fx:id="addcontainer" alignment="CENTER" prefHeight="35.0" prefWidth="50.0" spacing="3.0">
                                  <children>
-                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="addgcicon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../assets/images/addgcicon.png" />
                                        </image>
@@ -114,9 +114,9 @@
                                     </Label>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" prefHeight="35.0" prefWidth="50.0" spacing="3.0">
+                              <VBox fx:id="namecontainer" alignment="CENTER" prefHeight="35.0" prefWidth="50.0" spacing="3.0">
                                  <children>
-                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="namecontainer" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../assets/images/nameicon.png" />
                                        </image>
@@ -128,9 +128,9 @@
                                     </Label>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" prefHeight="35.0" prefWidth="50.0" spacing="3.0">
+                              <VBox fx:id="memberscontainer" alignment="CENTER" prefHeight="35.0" prefWidth="50.0" spacing="3.0">
                                  <children>
-                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="memberscontainer" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../assets/images/membersicon.png" />
                                        </image>
@@ -148,7 +148,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="80.0" prefWidth="485.0">
                      <children>
-                        <Label fx:id="timestamp1" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="532.0" text="You named the group MENGER GROUP." textAlignment="CENTER">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="532.0" text="You named the group MENGER GROUP." textAlignment="CENTER">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -179,14 +179,22 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="458.0" spacing="6.0">
+                        <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="458.0" spacing="2.0">
                            <children>
                               <Label text="Kinneth">
                                  <VBox.margin>
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="kenmessagebubble1" alignment="BOTTOM_LEFT" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="may pasok b online?" wrapText="true">
+                              <Label fx:id="kenmessagebubble1" alignment="BOTTOM_LEFT" prefHeight="31.0" prefWidth="194.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="nag luluko ba teams niyo?" wrapText="true">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="kenmessagebubble2" alignment="BOTTOM_LEFT" prefHeight="31.0" prefWidth="369.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="d ako makapasok, kanina p ako reconicting sa teams" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
@@ -201,9 +209,9 @@
                         <Insets top="15.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="kenchatpreview11" alignment="CENTER_LEFT" layoutX="20.0" layoutY="345.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="kenchatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="422.0" prefHeight="55.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="kenicon11" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenicon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/kenicon.png" />
                            </image>
@@ -218,36 +226,97 @@
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="kenmessagebubble11" alignment="BOTTOM_LEFT" prefHeight="31.0" prefWidth="340.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="d ako makapasok sa teams, kanina p reconicting" wrapText="true">
-                                 <padding>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </padding>
+                              <ImageView fx:id="kenpic2" fitHeight="191.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/kenpic2.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="jaridchatpreview1" alignment="CENTER_LEFT" layoutX="20.0" layoutY="345.0" prefHeight="100.0" prefWidth="498.0">
+                     <children>
+                        <ImageView fx:id="jaridicon1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/jaredicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="448.0" spacing="6.0">
+                           <children>
+                              <Label text="Jarid">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="jaridmessagebubble1" alignment="BOTTOM_LEFT" prefHeight="53.0" prefWidth="306.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="baka sau lng, kakatapos lng magannounce n groupings si sir sa OOP eh" wrapText="true">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
                               </Label>
                            </children>
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox fx:id="kenchatpreview111" alignment="CENTER_LEFT" layoutX="20.0" layoutY="422.0" prefHeight="55.0" prefWidth="200.0">
+                  <HBox fx:id="jaridchatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="453.0" prefHeight="181.0" prefWidth="485.0">
                      <children>
-                        <ImageView fx:id="kenicon111" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="jaridicon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/kenicon.png" />
+                              <Image url="@../assets/images/jaredicon.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="452.0" spacing="6.0">
+                        <VBox alignment="CENTER_LEFT" prefHeight="126.0" prefWidth="435.0" spacing="2.0">
                            <children>
-                              <Label text="Kinneth">
+                              <Label text="Jarid">
                                  <VBox.margin>
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="jaridmessagebubble2" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="49.0" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="\@Ranee @Alvin @Kenneth @Jared" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="jaridmessagebubble3" alignment="BOTTOM_LEFT" prefHeight="31.0" prefWidth="38.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="ito" wrapText="true">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <HBox fx:id="jaridmessagebubble4" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20;">
+                                 <children>
+                                    <Label fx:id="staticat" text="\@">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="cfuserchatpreview" layoutX="10.0" layoutY="10.0" text="USER">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets right="350.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                              </HBox>
                            </children>
                         </VBox>
                      </children>
