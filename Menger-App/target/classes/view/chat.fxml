@@ -327,14 +327,16 @@
                   </ImageView>
                   <VBox fx:id="mitaaicontainer" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="390.0">
                      <children>
-                        <Label fx:id="mitaaiuser" text="Mita AI">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="1.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox prefHeight="3.0" prefWidth="390.0">
+                           <children>
+                              <Label fx:id="mitaaiuser" text="Mita AI">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="27.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
                         <HBox fx:id="mitaaichatcontainer" prefHeight="27.0" prefWidth="200.0">
                            <children>
                               <Label fx:id="mitaaichatpreview" prefHeight="21.0" prefWidth="264.0" style="-fx-text-fill:: #9f9d9d;" text="Ako usa ka AI nga kabalo mo-Tagalog, mo-Ingles, ug mo-Bisaya. Pero bisan pa sa akong advanced neural networks, di gihapon ko kasabot nganong wa pa ka niya gi-replyan. Basin robot sad siya — programmed to ignore." textFill="#9f9d9d">
@@ -421,7 +423,7 @@
                         </Label>
                         <HBox fx:id="raichatcontainer" prefHeight="27.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="raichatpreview" prefHeight="20.0" prefWidth="234.0" style="-fx-text-fill:: #9f9d9d;" text="dpt sementuhin na yung taal para di na sumabog" textFill="#9f9d9d">
+                              <Label fx:id="raichatpreview" prefHeight="21.0" prefWidth="280.0" style="-fx-text-fill:: #9f9d9d;" text="Naka online pero hindi binasa message ko wow ganern" textFill="#9f9d9d">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
