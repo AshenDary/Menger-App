@@ -40,14 +40,6 @@
                </HBox.margin>
             </Label>
             <Region prefHeight="50.0" prefWidth="260.0" />
-            <ImageView fx:id="callicon" fitHeight="19.5" fitWidth="19.5" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
-               <image>
-                  <Image url="@../assets/images/callicon.png" />
-               </image>
-               <HBox.margin>
-                  <Insets right="5.0" top="15.5" />
-               </HBox.margin>
-            </ImageView>
             <ImageView fx:id="videocallicon" fitHeight="25.0" fitWidth="25.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/videocallicon.png" />
