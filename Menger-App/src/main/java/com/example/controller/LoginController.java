@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import com.example.MainClient;
+import com.example.model.CurrentUser;
 import com.example.model.User;
 
 import javafx.event.ActionEvent;
@@ -33,6 +34,7 @@ public class LoginController {
             lblMessage.setText("Login successful!");
             try {
                 User user = getUserDetails(username, password);
+                CurrentUser.getInstance().setUser(user);
                 MainClient.setRoot("chat", user);
             } catch (Exception e) {
                 lblMessage.setStyle("-fx-text-fill: red;");

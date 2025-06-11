@@ -29,8 +29,13 @@ public class MainClient extends Application {
                 scene = new Scene(loadFXML("login"), 520, 964);
             } else {
                 String username = CurrentUser.getInstance().getUser().getUsername();
-                clientSocket = new ClientSocket(new Socket("localhost", 12345), username);
-            System.out.println("ClientSocket initialized: " + (clientSocket != null));
+                try {
+                    clientSocket = new ClientSocket(new Socket("localhost", 12345), username);
+                    System.out.println("ClientSocket initialized: " + (clientSocket != null));
+                } catch (IOException e) {
+                    System.err.println("Failed to initialize ClientSocket: " + e.getMessage());
+                    e.printStackTrace();
+                }
                 scene = new Scene(loadFXML("chat"), 520, 964);
             }
 

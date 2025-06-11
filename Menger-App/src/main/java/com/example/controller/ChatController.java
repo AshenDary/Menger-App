@@ -3,8 +3,10 @@ package com.example.controller;
 import java.io.IOException;
 
 import com.example.MainClient;
+import com.example.model.CurrentUser;
 import com.example.model.InitializableWithData;
 import com.example.model.User;
+import com.example.network.ChatClient;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -308,14 +310,23 @@ public class ChatController implements InitializableWithData {
 
 
     @FXML
-    private void initialize() {
-        storiespane.setOnScroll(event -> {
-            double deltaY = event.getDeltaY();
-            double scrollSpeed = 0.005;
-            storiespane.setHvalue(storiespane.getHvalue() - deltaY * scrollSpeed);
-            event.consume();
-        });
-        
+private void initialize() {
+    User currentUser = CurrentUser.getInstance().getUser();
+    if (currentUser != null) {
+        if (currentUser.getFirstName() != null && currentUser.getLastName() != null) {
+            cfuserchatpreview.setText(currentUser.getFullName());
+        } else {
+            cfuserchatpreview.setText(currentUser.getDisplayName());
+        }
+    }
+
+    storiespane.setOnScroll(event -> {
+        double deltaY = event.getDeltaY();
+        double scrollSpeed = 0.005;
+        storiespane.setHvalue(storiespane.getHvalue() - deltaY * scrollSpeed);
+        event.consume();
+    });
+
     initializeBino();
     initializeJarid();
     initializeMitaAi();
@@ -325,7 +336,7 @@ public class ChatController implements InitializableWithData {
 }
     @FXML
     private void initializeBino() {
-        binocontainer.setOnMouseClicked(event -> {
+        binochatbox.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("binochatbox", null);
             } catch (IOException e) {
@@ -336,7 +347,7 @@ public class ChatController implements InitializableWithData {
 
     @FXML
     private void initializeJarid() {
-        jaridchatcontainer.setOnMouseClicked(event -> {
+        jaridchatbox.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("jaridchatbox", null);
             } catch (IOException e) {
@@ -347,7 +358,7 @@ public class ChatController implements InitializableWithData {
 
     @FXML
     private void initializeMitaAi() {
-        mitaaichatcontainer.setOnMouseClicked(event -> {
+        mitaaichatbox.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("mitaaichatbox", null);
             } catch (IOException e) {
@@ -358,7 +369,7 @@ public class ChatController implements InitializableWithData {
 
     @FXML
     private void initializeKen() {
-        kencontainer.setOnMouseClicked(event -> {
+        kenchatbox.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("kenchatbox", null);
             } catch (IOException e) {
@@ -368,7 +379,7 @@ public class ChatController implements InitializableWithData {
     }
 
     private void initializeRai() {
-        raicontainer.setOnMouseClicked(event -> {
+        raichatbox.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("raichatbox", null);
             } catch (IOException e) {
@@ -378,7 +389,7 @@ public class ChatController implements InitializableWithData {
     }
 
     private void initializeBugoy() {
-        bugoycontainer.setOnMouseClicked(event -> {
+        bugoychatbox.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("bugoychatbox", null);
             } catch (IOException e) {
