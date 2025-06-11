@@ -4,12 +4,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <VBox fx:id="rootlayoutchat" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ChatController">
@@ -197,13 +199,27 @@
                               </Label>
                            </children>
                         </HBox>
-                        <HBox fx:id="jaridmessagebubble4" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20;">
+                        <HBox fx:id="jaridmessagebubble4" prefHeight="31.0" style="-fx-background-color: white; -fx-background-radius: 10;">
                            <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="28.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/emojibino.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                            <padding>
                               <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                            </padding>
+                           <VBox.margin>
+                              <Insets right="350.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow height="17.34" offsetY="2.0" radius="8.3525" width="18.07">
+                                 <color>
+                                    <Color red="0.6200000047683716" green="0.6200000047683716" blue="0.6200000047683716" opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </HBox>
                      </children>
                      <padding>
