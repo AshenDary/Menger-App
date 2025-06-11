@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -39,13 +40,21 @@
                   <Insets bottom="5.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <Region prefHeight="50.0" prefWidth="260.0" />
-            <ImageView fx:id="videocallicon" fitHeight="25.0" fitWidth="25.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="verificationicon" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/images/videocallicon.png" />
+                  <Image url="@../assets/images/verificationicon.png" />
                </image>
                <HBox.margin>
-                  <Insets left="5.0" top="15.0" />
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Region prefHeight="50.0" prefWidth="272.0" />
+            <ImageView fx:id="informationicon" fitHeight="25.0" fitWidth="25.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+               <image>
+                  <Image url="@../assets/images/informationicon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="5.0" top="15.0" />
                </HBox.margin>
             </ImageView>
          </children>
@@ -58,11 +67,50 @@
       </HBox>
       <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="790.0" prefWidth="520.0" vbarPolicy="ALWAYS" VBox.vgrow="NEVER">
          <content>
-            <VBox fx:id="chatpreviewcontainer" prefHeight="775.0" prefWidth="508.0">
+            <VBox fx:id="chatpreviewcontainer" prefHeight="775.0" prefWidth="508.0" spacing="2.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
+                  <VBox fx:id="pfpcontainer" alignment="CENTER" prefHeight="210.0" prefWidth="485.0">
+                     <children>
+                        <ImageView fx:id="mitaaipfp1" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/mitaicon.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="15.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <HBox alignment="CENTER" prefHeight="22.0" prefWidth="485.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="chatstaticlabel1" alignment="CENTER" text="Mita AI">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="verificationicon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/verificationicon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Label text="With Llama 4">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="40.0" prefWidth="223.0" text="Misseges are ginirated by AI. Some may be inaccurate or inappropriate." textAlignment="CENTER" textFill="#888888" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
                   <Label fx:id="timestamp1" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="27.0" prefWidth="600.0" text="FRI 5:67 AM">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -76,9 +124,9 @@
                   </Label>
                   <HBox fx:id="sirchatpreview1" alignment="CENTER_RIGHT" prefHeight="116.0" prefWidth="488.0">
                      <children>
-                        <Label fx:id="sirmessagebubble1" onMouseClicked="#handleBackToChat" prefHeight="96.0" prefWidth="313.0" style="-fx-background-color: #2b63f4; -fx-background-radius: 40; -fx-border-width: 1; -fx-border-radius: 50;" text="Mita AI, kabalo man diay ka mo-Bisaya, pwede ko mangutana? Ngano kaha wa pa man siya nireply nako hangtod karon?" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
+                        <Label fx:id="sirmessagebubble1" onMouseClicked="#handleBackToChat" prefHeight="85.0" prefWidth="294.0" style="-fx-background-color: #2b63f4; -fx-background-radius: 30; -fx-border-width: 1;" text="Mita AI, kabalo man diay ka mo-Bisaya, pwede ko mangutana? Ngano kaha wa pa man siya nireply nako hangtod karon?" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                            <padding>
-                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                            </padding>
                            <font>
                               <Font size="15.0" />
@@ -107,9 +155,9 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="mitaaimessagebubble1" prefHeight="130.0" prefWidth="403.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 40; -fx-border-width: 1; -fx-border-radius: 20;" text="Ako usa ka AI nga kabalo mo-Tagalog, mo-Ingles, ug mo-Bisaya. Pero bisan pa sa akong advanced neural networks, di gihapon ko kasabot nganong wa pa ka niya gi-replyan. Basin robot sad siya — programmed to ignore." wrapText="true">
+                        <Label fx:id="mitaaimessagebubble1" prefHeight="125.0" prefWidth="346.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 30; -fx-border-width: 1;" text="Ako usa ka AI nga kabalo mo-Tagalog, mo-Ingles, ug mo-Bisaya. Pero bisan pa sa akong advanced neural networks, di gihapon ko kasabot nganong wa pa ka niya gi-replyan. Basin robot sad siya — programmed to ignore." wrapText="true">
                            <padding>
-                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                            </padding>
                            <font>
                               <Font size="15.0" />
@@ -186,13 +234,13 @@
             <Region layoutX="395.0" layoutY="10.0" prefHeight="90.0" prefWidth="19.0" />
             <HBox fx:id="chatfield" alignment="CENTER_LEFT" fillHeight="false" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: #f1f3f4; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" HBox.hgrow="NEVER">
                <children>
-                  <TextField fx:id="chatbar" prefHeight="30.0" prefWidth="150.0" promptText="Aa" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black; -fx-font-size: 12; -fx-background-radius: 20;">
+                  <TextField fx:id="chatbar" focusTraversable="false" prefHeight="30.0" prefWidth="380.0" promptText="Aa" style="-fx-background-color: transparent; -fx-border-color: transparent;">
                      <padding>
-                        <Insets left="5.0" />
+                        <Insets left="5.0" right="5.0" />
                      </padding>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
                   </TextField>
                   <ImageView fx:id="selectemojiicon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -208,18 +256,20 @@
                </HBox.margin>
             </HBox>
             <Region layoutX="244.0" layoutY="10.0" prefHeight="90.0" prefWidth="19.0" />
-            <VBox fx:id="emojicontainer" alignment="CENTER" layoutX="156.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0">
+            <StackPane fx:id="iconswitcher" prefHeight="50.0" prefWidth="50.0">
                <children>
-                  <ImageView fx:id="likeicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="likeicon" fitHeight="30.0" fitWidth="30.0" managed="true" pickOnBounds="true" preserveRatio="true" visible="true">
                      <image>
                         <Image url="@../assets/images/likeicon.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" managed="false" onMouseClicked="#handleSend" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/images/sendicon.png" />
+                     </image>
+                  </ImageView>
                </children>
-               <HBox.margin>
-                  <Insets bottom="20.0" top="20.0" />
-               </HBox.margin>
-            </VBox>
+            </StackPane>
          </children>
          <padding>
             <Insets left="20.0" right="20.0" />
