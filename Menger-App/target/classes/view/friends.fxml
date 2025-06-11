@@ -173,19 +173,19 @@
       </ScrollPane>
       <ScrollPane hbarPolicy="NEVER" prefHeight="592.0" prefWidth="520.0">
          <content>
-            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="520.0">
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="509.0">
                <children>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/images/binoicon.png" />
                      </image>
                      <HBox.margin>
-                        <Insets left="5.0" right="5.0" />
+                        <Insets left="5.0" right="5.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0">
+                  <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="425.0">
                      <children>
-                        <HBox prefHeight="23.0" prefWidth="440.0" spacing="5.0">
+                        <HBox prefHeight="23.0" prefWidth="433.0" spacing="5.0">
                            <children>
                               <Label text="BinoPogi123 Lang Sakalam">
                                  <font>
@@ -197,6 +197,15 @@
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
+                              <Region prefHeight="23.0" prefWidth="139.0" />
+                              <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/dropdownicon.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="5.0" top="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
                            </children>
                         </HBox>
                         <HBox fx:id="jaridmessagebubble4" prefHeight="31.0" style="-fx-background-color: white; -fx-background-radius: 10;">
