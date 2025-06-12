@@ -66,7 +66,7 @@ public class BugoyChatBoxController {
         String message = chatbar.getText().trim();
         if (!message.isEmpty() && clientSocket != null) {
             clientSocket.sendMessage(message);
-            addMessageToChat("You: " + message, true);
+            addMessageToChat(message, true);
 
             if (chat != null) {
                 chat.addMessage(new Message(chat.getParticipant1(), message, java.time.LocalDateTime.now()));
