@@ -9,8 +9,8 @@ public class User {
 
     public User(String username) {
         this.username = username;
-        this.displayName = displayName;
     }
+    
 
     // Getters and Setters
     public String getUsername() {

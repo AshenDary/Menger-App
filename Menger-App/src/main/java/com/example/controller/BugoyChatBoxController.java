@@ -3,7 +3,6 @@ package com.example.controller;
 import java.io.IOException;
 
 import com.example.model.Chat;
-import com.example.model.Message;
 import com.example.network.ClientSocket;
 import com.example.network.MainClient;
 
@@ -33,17 +32,14 @@ public class BugoyChatBoxController {
         this.clientSocket = clientSocket;
 
         // Register message listener when ClientSocket is injected
-        this.clientSocket.setOnMessageReceived(message -> {
-            Platform.runLater(() -> {
-                handleIncomingMessage(message);
-            });
-        });
+        if (this.clientSocket != null) {
+            this.clientSocket.setOnMessageReceived(message -> Platform.runLater(() -> handleIncomingMessage(message)));
+        }
     }
 
     public void setChat(Chat chat) {
         this.chat = chat;
 
-        // Load old messages
         if (chat != null && chat.getMessages() != null) {
             chat.getMessages().forEach(message -> {
                 boolean isSentByCurrentUser = message.getSender().equals(chat.getParticipant1());
@@ -66,13 +62,10 @@ public class BugoyChatBoxController {
         String message = chatbar.getText().trim();
         if (!message.isEmpty() && clientSocket != null) {
             clientSocket.sendMessage(message);
-            addMessageToChat(message, true);
-
-            if (chat != null) {
-                chat.addMessage(new Message(chat.getParticipant1(), message, java.time.LocalDateTime.now()));
-            }
-
             chatbar.clear();
+
+            // Add sent message to the chat visually immediately
+            addMessageToChat(message, true);
         }
     }
 
@@ -92,13 +85,13 @@ public class BugoyChatBoxController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ChatBubble.fxml"));
             HBox bubble = loader.load();
-    
+
             ChatBubbleController controller = loader.getController();
             controller.setMessage(content, isSentByCurrentUser);
-    
+
             chatpreviewcontainer.getChildren().add(bubble);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }    
+    }
 }

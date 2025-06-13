@@ -35,6 +35,11 @@ public class LoginController {
             try {
                 User user = getUserDetails(username, password);
                 CurrentUser.getInstance().setUser(user);
+                
+                // ✅ Initialize ClientSocket AFTER user is set
+                MainClient.initializeClientSocket();
+
+                // ✅ Load chat scene
                 MainClient.setRoot("chat", user);
             } catch (Exception e) {
                 lblMessage.setStyle("-fx-text-fill: red;");
@@ -46,6 +51,7 @@ public class LoginController {
             lblMessage.setText("Invalid username or password.");
         }
     }
+
 
     private User getUserDetails(String username, String password) throws IOException {
     String filePath = System.getProperty("user.dir") + "/accounts.txt";

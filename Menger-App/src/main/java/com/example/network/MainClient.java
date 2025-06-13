@@ -25,8 +25,10 @@ public class MainClient extends Application {
     public void start(Stage stage) {
         try {
             if (CurrentUser.getInstance().getUser() == null) {
+                // No user logged in, show login scene
                 scene = new Scene(loadFXML("login"), 520, 964);
             } else {
+                // User already logged in, now we can safely init socket
                 initializeClientSocket();
                 setRoot("chat", null);
             }
@@ -45,11 +47,21 @@ public class MainClient extends Application {
         }
     }
 
-    private void initializeClientSocket() {
-        String username = CurrentUser.getInstance().getUser().getUsername();
+    public static void initializeClientSocket() {
+        // Only call this if you're sure CurrentUser is not null!
+        User user = CurrentUser.getInstance().getUser();
+        if (user == null) {
+            System.err.println("Attempted to initialize ClientSocket with null user.");
+            return;
+        }
+
+        String username = user.getUsername();
         try {
             clientSocket = new ClientSocket(username, message -> {
-                System.out.println("📩 Message received: " + message);
+                Platform.runLater(() -> {
+                    System.out.println("📩 Message received: " + message);
+                    // Here you can notify controllers later if needed
+                });
             });
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,39 +69,28 @@ public class MainClient extends Application {
     }
 
     public static void setRoot(String fxml, Object controllerData) throws IOException {
-    FXMLLoader loader = new FXMLLoader(MainClient.class.getResource("/view/" + fxml + ".fxml"));
-    Parent root = loader.load();
-    Object controller = loader.getController();
+        FXMLLoader loader = new FXMLLoader(MainClient.class.getResource("/view/" + fxml + ".fxml"));
+        Parent root = loader.load();
+        Object controller = loader.getController();
 
-    if (controller instanceof BugoyChatBoxController) {
-        BugoyChatBoxController chatController = (BugoyChatBoxController) controller;
+        if (controller instanceof BugoyChatBoxController) {
+            BugoyChatBoxController chatController = (BugoyChatBoxController) controller;
+            chatController.setClientSocket(clientSocket);
 
-        try {
-            clientSocket = new ClientSocket(CurrentUser.getInstance().getUser().getUsername(), message -> {
-                Platform.runLater(() -> {
-                    chatController.handleIncomingMessage(message);
-                });
-            });
-        } catch (Exception ex) {
+            if (controllerData instanceof Chat) {
+                chatController.setChat((Chat) controllerData);
+            }
+        } else if (controller instanceof ChatController && controllerData instanceof User) {
+            ChatController chatController = (ChatController) controller;
+            chatController.init(controllerData);
         }
 
-        chatController.setClientSocket(clientSocket);
-
-        if (controllerData instanceof Chat) {
-            chatController.setChat((Chat) controllerData);
+        if (scene == null) {
+            scene = new Scene(root, 520, 964);
+        } else {
+            scene.setRoot(root);
         }
-    } else if (controller instanceof ChatController && controllerData instanceof User) {
-        ChatController chatController = (ChatController) controller;
-        chatController.init(controllerData);
     }
-
-    if (scene == null) {
-        scene = new Scene(root, 520, 964);
-    } else {
-        scene.setRoot(root);
-    }
-}
-
 
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainClient.class.getResource("/view/" + fxml + ".fxml"));
