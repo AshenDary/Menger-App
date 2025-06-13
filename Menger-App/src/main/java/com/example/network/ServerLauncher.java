@@ -4,7 +4,7 @@ import org.glassfish.tyrus.server.Server;
 
 public class ServerLauncher {
     public static void main(String[] args) {
-        Server server = new Server("localhost", 8080, "/", null, ChatServer.class);
+        Server server = new Server("localhost", 8080, "/", null, ChatServerEndpoint.class);
 
         try {
             System.out.println("Starting WebSocket server...");

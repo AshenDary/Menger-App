@@ -74,24 +74,26 @@ public class BugoyChatBoxController {
             System.err.println("Chat is not initialized yet. Skipping message: " + message);
             return;
         }
-    
+
         String[] parts = message.split(": ", 2);
         if (parts.length == 2) {
-            String sender = parts[0];
+            String sender = parts[0].trim();
             String content = parts[1];
-    
-            // Ignore your own broadcasted messages
-            if (sender.equals(chat.getParticipant1().getUsername())) {
+
+            // Debugging (Optional - can be removed later)
+            System.out.println("Comparing sender [" + sender + "] with local user [" + chat.getParticipant1().getUsername().trim() + "]");
+
+            // FIXED: Ignore your own broadcasted messages (normalized comparison)
+            if (sender.equalsIgnoreCase(chat.getParticipant1().getUsername().trim())) {
                 return;
             }
-    
+
             addMessageToChat(content, false); // Show others' messages
         } else {
+            // Message didn't match expected format (optional behavior)
             addMessageToChat(message, false);
         }
     }
-    
-    
 
     private void addMessageToChat(String content, boolean isSentByCurrentUser) {
         try {
