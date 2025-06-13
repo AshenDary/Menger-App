@@ -1,5 +1,12 @@
 package com.example.network;
 
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import jakarta.websocket.OnClose;
 import jakarta.websocket.OnError;
 import jakarta.websocket.OnMessage;
@@ -7,36 +14,38 @@ import jakarta.websocket.OnOpen;
 import jakarta.websocket.Session;
 import jakarta.websocket.server.ServerEndpoint;
 
-import java.io.IOException;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-
 @ServerEndpoint("/chat")
 public class ChatServerEndpoint {
-
-    // store all connected clients
-    private static final Set<Session> clients = ConcurrentHashMap.newKeySet();
+    private static final Set<Session> sessions = Collections.synchronizedSet(new HashSet<>());
+    private static final Map<Session, String> userMap = Collections.synchronizedMap(new HashMap<>());
 
     @OnOpen
     public void onOpen(Session session) {
-        clients.add(session);
-        System.out.println("Client connected: " + session.getId());
+        sessions.add(session);
+        System.out.println("New connection: " + session.getId());
     }
 
     @OnMessage
     public void onMessage(String message, Session senderSession) {
         System.out.println("Received: " + message);
 
-        // Save message to file (for history)
-        ServerStorage.saveMessage(message);
+        if (message.startsWith("USERNAME:")) {
+            String username = message.substring(9);
+            userMap.put(senderSession, username);
+            return;
+        }
 
-        // Broadcast to all clients
-        for (Session session : clients) {
-            if (session.isOpen()) {
-                try {
-                    session.getBasicRemote().sendText(message);
-                } catch (IOException e) {
-                    e.printStackTrace();
+        String senderUsername = userMap.get(senderSession);
+
+        // Broadcast to all sessions EXCEPT the sender
+        synchronized (sessions) {
+            for (Session session : sessions) {
+                if (!session.equals(senderSession) && session.isOpen()) {
+                    try {
+                        session.getBasicRemote().sendText(senderUsername + ": " + message);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
@@ -44,13 +53,13 @@ public class ChatServerEndpoint {
 
     @OnClose
     public void onClose(Session session) {
-        clients.remove(session);
-        System.out.println("Client disconnected: " + session.getId());
+        sessions.remove(session);
+        userMap.remove(session);
+        System.out.println("Session closed: " + session.getId());
     }
 
     @OnError
     public void onError(Session session, Throwable throwable) {
-        System.err.println("Error on session " + session.getId());
-        throwable.printStackTrace();
+        System.err.println("Error on session " + session.getId() + ": " + throwable.getMessage());
     }
 }

@@ -2,7 +2,6 @@ package com.example.network;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import jakarta.websocket.OnClose;
 import jakarta.websocket.OnMessage;
 import jakarta.websocket.OnOpen;
 import jakarta.websocket.Session;
@@ -35,25 +34,11 @@ public class ServerSocketMain {
                     .orElse("Unknown");
             String fullMessage = username + ": " + message;
             ServerStorage.saveMessage(fullMessage);
-            broadcast(fullMessage);
+            broadcastToOthers(fullMessage, session);
         }
     }
 
-    @OnClose
-    public void onClose(Session session) {
-        String username = websocketClients.entrySet().stream()
-                .filter(entry -> entry.getValue().equals(session))
-                .map(entry -> entry.getKey())
-                .findFirst()
-                .orElse("Unknown");
-        websocketClients.remove(username);
-        broadcast(username + " has left the chat.");
-        System.out.println("WebSocket client disconnected: " + session.getId());
-    }
-
     public static void broadcast(String message) {
-        System.out.println("Broadcasting message: " + message);
-
         websocketClients.values().forEach(session -> {
             try {
                 session.getBasicRemote().sendText(message);
@@ -61,7 +46,17 @@ public class ServerSocketMain {
                 e.printStackTrace();
             }
         });
+    }
 
-        clients.values().forEach(client -> client.sendMessage(message));
+    public static void broadcastToOthers(String message, Session senderSession) {
+        websocketClients.values().forEach(session -> {
+            if (!session.equals(senderSession)) {
+                try {
+                    session.getBasicRemote().sendText(message);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

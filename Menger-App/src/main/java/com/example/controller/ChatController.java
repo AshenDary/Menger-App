@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.io.IOException;
 
+import com.example.model.Chat;
 import com.example.model.CurrentUser;
 import com.example.model.InitializableWithData;
 import com.example.model.User;
@@ -396,15 +397,23 @@ public class ChatController implements InitializableWithData {
         });
     }
 
-    private void initializeBugoy() {
-        bugoychatbox.setOnMouseClicked(event -> {
-            try {
-                MainClient.setRoot("bugoychatbox", null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-    }
+    @FXML
+private void initializeBugoy() {
+    bugoychatbox.setOnMouseClicked(event -> {
+        try {
+            User sender = CurrentUser.getInstance().getUser();
+            User bugoy = new User("bugoy");
+            bugoy.setDisplayName("Bugoy");
+
+            Chat chat = new Chat(sender, bugoy);
+            MainClient.setRoot("bugoychatbox", chat);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    });
+}
+
+
 
     private void initializeMenger() {
         cfchatbox.setOnMouseClicked(event -> {
