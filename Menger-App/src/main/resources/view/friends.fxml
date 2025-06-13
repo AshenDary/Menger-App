@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -171,75 +172,139 @@
             <Insets left="10.0" right="10.0" />
          </VBox.margin>
       </ScrollPane>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="592.0" prefWidth="520.0">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="592.0" prefWidth="536.0">
          <content>
-            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="509.0">
+            <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="592.0" prefWidth="520.0">
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/binoicon.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="5.0" right="5.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="425.0">
+                  <HBox fx:id="binonotes" alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="526.0" scaleShape="false" VBox.vgrow="NEVER">
                      <children>
-                        <HBox prefHeight="23.0" prefWidth="433.0" spacing="5.0">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/binoicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0">
                            <children>
-                              <Label text="BinoPogi123 Lang Sakalam">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label text="shared a note" textFill="#838789">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Region prefHeight="23.0" prefWidth="139.0" />
-                              <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/images/dropdownicon.png" />
-                                 </image>
-                                 <HBox.margin>
-                                    <Insets right="5.0" top="10.0" />
-                                 </HBox.margin>
-                              </ImageView>
+                              <HBox prefHeight="23.0" prefWidth="433.0" spacing="5.0">
+                                 <children>
+                                    <Label text="BinoPogi123 Lang Sakalam">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="shared a note" textFill="#838789">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Region prefHeight="23.0" prefWidth="150.0" />
+                                    <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/dropdownicon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox fx:id="jaridmessagebubble4" prefHeight="34.0" prefWidth="231.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                       <children>
+                                          <ImageView fitHeight="28.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/images/emojibino.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets right="1000.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow height="17.34" offsetY="2.0" radius="8.3525" width="18.07">
+                                             <color>
+                                                <Color red="0.6200000047683716" green="0.6200000047683716" blue="0.6200000047683716" opacity="0.5" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </HBox>
+                                 </children>
+                              </VBox>
                            </children>
-                        </HBox>
-                        <HBox fx:id="jaridmessagebubble4" prefHeight="31.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-                           <children>
-                              <ImageView fitHeight="28.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/images/emojibino.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets right="350.0" />
-                           </VBox.margin>
-                           <effect>
-                              <DropShadow height="17.34" offsetY="2.0" radius="8.3525" width="18.07">
-                                 <color>
-                                    <Color red="0.6200000047683716" green="0.6200000047683716" blue="0.6200000047683716" opacity="0.5" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </HBox>
+                        </VBox>
                      </children>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </VBox>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox fx:id="binonotes1" alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="526.0" scaleShape="false">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/binoicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0">
+                           <children>
+                              <HBox prefHeight="23.0" prefWidth="433.0" spacing="5.0">
+                                 <children>
+                                    <Label text="BinoPogi123 Lang Sakalam">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="shared a note" textFill="#838789">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Region prefHeight="23.0" prefWidth="150.0" />
+                                    <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/dropdownicon.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" top="10.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="jaridmessagebubble41" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow height="17.34" offsetY="2.0" radius="8.3525" width="18.07">
+                                       <color>
+                                          <Color red="0.6200000047683716" green="0.6200000047683716" blue="0.6200000047683716" opacity="0.5" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                                 <children>
+                                    <Label prefHeight="21.0" prefWidth="172.0" text="pa hingi po robux" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
-               <padding>
-                  <Insets top="20.0" />
-               </padding>
-            </HBox>
+            </VBox>
          </content>
       </ScrollPane>
       <HBox fx:id="bottomnavbar" alignment="BOTTOM_CENTER" prefHeight="77.0" prefWidth="520.0" spacing="90.0" style="-fx-background-color: white;" VBox.vgrow="NEVER">
