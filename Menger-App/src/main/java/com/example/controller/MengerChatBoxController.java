@@ -114,6 +114,9 @@ public class MengerChatBoxController {
 
     @FXML
     private void initialize() {
+
+        Platform.runLater(() -> chatAreaContainer.setVvalue(1.0));
+
         User currentUser = CurrentUser.getInstance().getUser();
         if (currentUser != null) {
             if (currentUser.getFirstName() != null && currentUser.getLastName() != null) {

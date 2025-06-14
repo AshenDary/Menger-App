@@ -20,7 +20,7 @@ public class KenChatBoxController {
     private ScrollPane chatareacontainer;
 
     @FXML
-    private VBox messageContainer; // VBox inside ScrollPane
+    private VBox messageContainer;
 
     @FXML
     private TextField chatbar;

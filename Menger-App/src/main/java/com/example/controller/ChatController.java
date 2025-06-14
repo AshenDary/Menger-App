@@ -342,6 +342,7 @@ public class ChatController implements InitializableWithData {
         initializeRai();
         initializeBugoy();
         initializeMenger();
+        initializeMenu();
     }
     @FXML
     private void initializeBino() {
@@ -398,20 +399,20 @@ public class ChatController implements InitializableWithData {
     }
 
     @FXML
-private void initializeBugoy() {
-    bugoychatbox.setOnMouseClicked(event -> {
-        try {
-            User sender = CurrentUser.getInstance().getUser();
-            User bugoy = new User("bugoy");
-            bugoy.setDisplayName("Bugoy");
+    private void initializeBugoy() {
+        bugoychatbox.setOnMouseClicked(event -> {
+            try {
+                User sender = CurrentUser.getInstance().getUser();
+                User bugoy = new User("bugoy");
+                bugoy.setDisplayName("Bugoy");
 
-            Chat chat = new Chat(sender, bugoy);
-            MainClient.setRoot("bugoychatbox", chat);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    });
-}
+                Chat chat = new Chat(sender, bugoy);
+                MainClient.setRoot("bugoychatbox", chat);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
 
 
 
@@ -419,6 +420,16 @@ private void initializeBugoy() {
         cfchatbox.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("mengerchatbox", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void initializeMenu() {
+        menuicon.setOnMouseClicked(event -> {
+            try {
+                MainClient.setRoot("menu", null);
             } catch (IOException e) {
                 e.printStackTrace();
             }

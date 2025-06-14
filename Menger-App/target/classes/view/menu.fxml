@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchat" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ChatController">
+<VBox fx:id="rootlayoutchat" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MenuController">
    <children>
       <HBox fx:id="topbar" alignment="CENTER" prefHeight="40.0" prefWidth="390.0" spacing="30.0">
          <children>
@@ -310,7 +310,7 @@
                <children>
                   <StackPane fx:id="chatsstackpane" prefHeight="19.0" prefWidth="42.0">
                      <children>
-                        <ImageView fx:id="chatsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="chaticon" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#HandleChatTransfer" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/chaticon2.png" />
                            </image>
