@@ -37,9 +37,7 @@ public class ClientSocket {
 
     @OnMessage
     public void onMessage(String message) {
-        if (onMessageReceived != null) {
-            onMessageReceived.accept(message);
-        }
+        if (onMessageReceived != null) onMessageReceived.accept(message);
     }
 
     @OnClose
@@ -53,26 +51,13 @@ public class ClientSocket {
     }
 
     public void sendMessage(String message) {
-        if (session != null && session.isOpen()) {
-            try {
+        try {
+            if (session != null && session.isOpen()) {
                 session.getBasicRemote().sendText(message);
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-        } else {
-            System.err.println("❗ WebSocket session is closed. Attempting to reconnect...");
-            try {
-                reconnect();
-                session.getBasicRemote().sendText(message);
-            } catch (Exception e) {
-                System.err.println("❌ Failed to reconnect WebSocket.");
-                e.printStackTrace();
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }
-
-    private void reconnect() throws Exception {
-        connect();
     }
 
     public void setOnMessageReceived(Consumer<String> onMessageReceived) {
@@ -81,9 +66,7 @@ public class ClientSocket {
 
     public void close() {
         try {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
+            if (session != null && session.isOpen()) session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

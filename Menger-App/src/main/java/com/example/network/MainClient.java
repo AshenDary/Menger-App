@@ -24,21 +24,12 @@ public class MainClient extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            if (CurrentUser.getInstance().getUser() == null) {
-                // No user logged in, show login scene
-                scene = new Scene(loadFXML("login"), 520, 964);
-            } else {
-                // User already logged in, now we can safely init socket
-                initializeClientSocket();
-                setRoot("chat", null);
-            }
-
+            scene = new Scene(loadFXML("login"), 520, 964);
             stage.setScene(scene);
-            String css = this.getClass().getResource("/view/meneger.css").toExternalForm();
-            scene.getStylesheets().add(css);
+            stage.getIcons().add(new Image(getClass().getResource("/assets/images/mengericon.png").toExternalForm()));
+            scene.getStylesheets().add(getClass().getResource("/view/meneger.css").toExternalForm());
 
             stage.setTitle("Menger");
-            stage.getIcons().add(new Image(getClass().getResource("/assets/images/mengericon.png").toExternalForm()));
             stage.setResizable(false);
             stage.centerOnScreen();
             stage.show();
@@ -54,9 +45,8 @@ public class MainClient extends Application {
             return;
         }
 
-        String username = user.getUsername();
         try {
-            clientSocket = new ClientSocket(username, message -> {
+            clientSocket = new ClientSocket(user.getUsername(), message -> {
                 Platform.runLater(() -> {
                     System.out.println("📩 Message received: " + message);
                 });
@@ -71,13 +61,10 @@ public class MainClient extends Application {
         Parent root = loader.load();
         Object controller = loader.getController();
 
-        if (controller instanceof BugoyChatBoxController) {
+        if (controller instanceof BugoyChatBoxController && controllerData instanceof Chat) {
             BugoyChatBoxController chatController = (BugoyChatBoxController) controller;
             chatController.setClientSocket(clientSocket);
-
-            if (controllerData instanceof Chat) {
-                chatController.setChat((Chat) controllerData);
-            }
+            chatController.setChat((Chat) controllerData);
         } else if (controller instanceof ChatController && controllerData instanceof User) {
             ChatController chatController = (ChatController) controller;
             chatController.init(controllerData);

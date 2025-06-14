@@ -38,7 +38,6 @@ public class BugoyChatBoxController {
 
     public void setChat(Chat chat) {
         this.chat = chat;
-
         if (chat != null && chat.getMessages() != null) {
             chat.getMessages().forEach(message -> {
                 boolean isSentByCurrentUser = message.getSender().equals(chat.getParticipant1());
@@ -62,28 +61,18 @@ public class BugoyChatBoxController {
         if (!message.isEmpty() && clientSocket != null) {
             clientSocket.sendMessage(message);
             chatbar.clear();
-
             addMessageToChat(message, true);
         }
     }
 
-    public void handleIncomingMessage(String message) {
-        if (chat == null) {
-            System.err.println("Chat is not initialized yet. Skipping message: " + message);
-            return;
-        }
+    private void handleIncomingMessage(String message) {
+        if (chat == null) return;
 
         String[] parts = message.split(": ", 2);
         if (parts.length == 2) {
             String sender = parts[0].trim();
             String content = parts[1];
-
-            System.out.println("Comparing sender [" + sender + "] with local user [" + chat.getParticipant1().getUsername().trim() + "]");
-
-            if (sender.equalsIgnoreCase(chat.getParticipant1().getUsername().trim())) {
-                return;
-            }
-
+            if (sender.equalsIgnoreCase(chat.getParticipant1().getUsername().trim())) return;
             addMessageToChat(content, false);
         } else {
             addMessageToChat(message, false);
