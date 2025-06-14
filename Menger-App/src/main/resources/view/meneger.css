@@ -83,3 +83,13 @@
     -fx-font-size: 14px;
 }
 
+/* chat css */
+.hoverable-hbox {
+    -fx-background-color: transparent;
+}
+
+.hoverable-hbox:hover {
+    -fx-background-color: #e0e0e0;
+    -fx-cursor: hand;
+}
+
