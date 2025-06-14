@@ -69,7 +69,7 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Button>
-            <Region prefHeight="425.0" prefWidth="520.0" VBox.vgrow="NEVER" />
+            <Region prefHeight="405.0" prefWidth="520.0" VBox.vgrow="NEVER" />
          </children>
       </VBox>
    </children>

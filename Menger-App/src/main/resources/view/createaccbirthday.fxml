@@ -50,7 +50,11 @@
             </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <DatePicker fx:id="birthDatePicker" prefHeight="60.0" prefWidth="480.0" promptText="Birthday" style="-fx-background-radius: 20; -fx-font-size: 18; -fx-background-color: transparent; -fx-border-radius: 15; -fx-border-color: #697479;" />
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="480.0">
+                     <children>
+                        <DatePicker fx:id="myDatePicker" prefHeight="60.0" prefWidth="480.0" promptText="Birthday" />
+                     </children>
+                  </VBox>
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" />

@@ -13,10 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.CreateAccGenderController"
-            prefHeight="964.0" prefWidth="520.0" style="-fx-background-color: #162029;">
+<AnchorPane prefHeight="964.0" prefWidth="520.0" style="-fx-background-color: #162029;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.CreateAccGenderController">
    <children>
-      <VBox alignment="CENTER" spacing="20.0" prefHeight="964.0" prefWidth="520.0">
+      <VBox alignment="CENTER" prefHeight="964.0" prefWidth="520.0" spacing="20.0">
          <children>
             <HBox prefHeight="26.0" prefWidth="520.0">
                <children>
@@ -42,15 +41,14 @@
                <padding><Insets left="20.0" right="20.0" /></padding>
             </VBox>
 
-            <HBox alignment="CENTER" spacing="10.0" prefHeight="160.0" prefWidth="520.0">
+            <HBox alignment="CENTER" prefHeight="160.0" prefWidth="520.0" spacing="10.0">
                <children>
-                  <VBox alignment="CENTER" spacing="10.0" prefHeight="160.0" prefWidth="480.0"
-                        style="-fx-background-radius: 20; -fx-background-color: transparent; -fx-border-color: #697479; -fx-border-radius: 20;">
+                  <VBox alignment="CENTER" prefHeight="160.0" prefWidth="480.0" spacing="10.0" style="-fx-background-radius: 20; -fx-background-color: transparent; -fx-border-color: #697479; -fx-border-radius: 20;">
                      <children>
                         <HBox alignment="CENTER" prefHeight="60.0" prefWidth="480.0">
                            <children>
                               <Label text="Female" textFill="WHITE">
-                                 <font><Font name="System Bold" size="18.0" /></font>
+                                 <font><Font size="18.0" /></font>
                               </Label>
                               <Region prefWidth="361.0" />
                               <RadioButton fx:id="femaleradio" mnemonicParsing="false" style="-fx-background-color: transparent;" />
@@ -58,14 +56,14 @@
                            <padding><Insets left="20.0" right="20.0" /></padding>
                         </HBox>
 
-                        <Separator prefWidth="480.0" />
+                        <Separator prefWidth="480.0" style="-fx-max-height: 0.5;" />
 
                         <HBox alignment="CENTER" prefHeight="60.0" prefWidth="480.0">
                            <children>
                               <Label text="Male" textFill="WHITE">
-                                 <font><Font name="System Bold" size="18.0" /></font>
+                                 <font><Font size="18.0" /></font>
                               </Label>
-                              <Region prefWidth="380.0" />
+                              <Region prefHeight="60.0" prefWidth="378.0" />
                               <RadioButton fx:id="maleradio" mnemonicParsing="false" style="-fx-background-color: transparent;" />
                            </children>
                            <padding><Insets left="20.0" right="20.0" /></padding>
@@ -76,10 +74,8 @@
                <padding><Insets left="20.0" right="20.0" /></padding>
             </HBox>
 
-            <Button fx:id="nextbutton" onAction="#handleNext" text="Next"
-                    prefHeight="45.0" prefWidth="460.0"
-                    style="-fx-background-color: #1877f2; -fx-text-fill: white; -fx-background-radius: 25;">
-               <font><Font name="System Bold" size="17.0" /></font>
+            <Button fx:id="nextbutton" onAction="#handleNext" prefHeight="45.0" prefWidth="460.0" style="-fx-background-color: #1877f2; -fx-text-fill: white; -fx-background-radius: 25;" text="Next">
+               <font><Font size="17.0" /></font>
                <VBox.margin><Insets left="20.0" right="20.0" /></VBox.margin>
             </Button>
 
