@@ -1,38 +1,32 @@
 package com.example.controller;
 
-import com.example.network.MainClient;
 import com.example.model.CreateAccountData;
+import com.example.network.MainClient;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.event.ActionEvent;
 
 public class CreateAccGenderController {
 
     @FXML
-    private ToggleGroup genderGroup;
+    private RadioButton femaleradio;
 
     @FXML
-    private RadioButton maleRadio;
-
-    @FXML
-    private RadioButton femaleRadio;
-
-    @FXML
-    private RadioButton otherRadio;
-
-    @FXML
-    private Button nextButton;
+    private RadioButton maleradio;
 
     @FXML
     private ImageView backicon;
 
+    private ToggleGroup genderGroup = new ToggleGroup();
+
     @FXML
     private void initialize() {
+        femaleradio.setToggleGroup(genderGroup);
+        maleradio.setToggleGroup(genderGroup);
         backicon.setOnMouseClicked(this::handleBack);
     }
 
@@ -47,7 +41,6 @@ public class CreateAccGenderController {
         CreateAccountData.getInstance().setGender(gender);
 
         try {
-            // Proceed to createaccemail.fxml (step 4)
             MainClient.setRoot("createaccemail", null);
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,7 +49,7 @@ public class CreateAccGenderController {
 
     private void handleBack(MouseEvent event) {
         try {
-            MainClient.setRoot("createaccbirthday", null); // Go back to Step 2
+            MainClient.setRoot("createaccbirthday", null);
         } catch (Exception e) {
             e.printStackTrace();
         }

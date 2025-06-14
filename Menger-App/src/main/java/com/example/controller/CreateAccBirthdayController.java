@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 public class CreateAccBirthdayController {
 
     @FXML
-    private DatePicker birthdayPicker;
+    private DatePicker birthDatePicker; 
 
     @FXML
     private Button nextButton;
@@ -30,16 +30,15 @@ public class CreateAccBirthdayController {
 
     @FXML
     private void handleNext(ActionEvent event) {
-        if (birthdayPicker.getValue() == null) {
+        if (birthDatePicker.getValue() == null) {
             System.out.println("❗ Please select your birthday.");
             return;
         }
 
-        String birthday = birthdayPicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        String birthday = birthDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         CreateAccountData.getInstance().setBirthday(birthday);
 
         try {
-            // Proceed to Gender screen (3)
             MainClient.setRoot("createaccgender", null);
         } catch (Exception e) {
             e.printStackTrace();

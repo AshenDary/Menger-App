@@ -9,3 +9,6 @@ ranee,goat,ranee1,ranee2,2025-06-12
 =======
 alexaloreinbatumbakal69@gmail.com,aldenrecharge128739182739281,123
 >>>>>>> Stashed changes
+abc,abc,null,,asda@,asdasdasdasdas,2025-06-18
+Ranee,Gutierrez,null,,09613795707,ranee123,2006-07-09
+Jared,Noel,noel.jared22@gmail.com,,noel.jared22@gmail.com,123456,2006-06-22

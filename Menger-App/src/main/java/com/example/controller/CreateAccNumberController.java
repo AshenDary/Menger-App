@@ -19,6 +19,9 @@ public class CreateAccNumberController {
     private Button nextButton;
 
     @FXML
+    private Button signupemailbutton;
+
+    @FXML
     private ImageView backicon;
 
     @FXML
@@ -35,10 +38,22 @@ public class CreateAccNumberController {
             return;
         }
 
-        CreateAccountData.getInstance().setNumber(number);
+        CreateAccountData data = CreateAccountData.getInstance();
+        data.setNumber(number);
+        data.setUsername(number);
 
         try {
             MainClient.setRoot("createaccpassword", null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void handleTransfer(ActionEvent event) {
+        try {
+            MainClient.setRoot("createaccemail", null);
         } catch (Exception e) {
             e.printStackTrace();
         }

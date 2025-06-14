@@ -31,7 +31,6 @@ public class BugoyChatBoxController {
     public void setClientSocket(ClientSocket clientSocket) {
         this.clientSocket = clientSocket;
 
-        // Register message listener when ClientSocket is injected
         if (this.clientSocket != null) {
             this.clientSocket.setOnMessageReceived(message -> Platform.runLater(() -> handleIncomingMessage(message)));
         }
@@ -64,7 +63,6 @@ public class BugoyChatBoxController {
             clientSocket.sendMessage(message);
             chatbar.clear();
 
-            // Add sent message to the chat visually immediately
             addMessageToChat(message, true);
         }
     }
@@ -80,17 +78,14 @@ public class BugoyChatBoxController {
             String sender = parts[0].trim();
             String content = parts[1];
 
-            // Debugging (Optional - can be removed later)
             System.out.println("Comparing sender [" + sender + "] with local user [" + chat.getParticipant1().getUsername().trim() + "]");
 
-            // FIXED: Ignore your own broadcasted messages (normalized comparison)
             if (sender.equalsIgnoreCase(chat.getParticipant1().getUsername().trim())) {
                 return;
             }
 
-            addMessageToChat(content, false); // Show others' messages
+            addMessageToChat(content, false);
         } else {
-            // Message didn't match expected format (optional behavior)
             addMessageToChat(message, false);
         }
     }

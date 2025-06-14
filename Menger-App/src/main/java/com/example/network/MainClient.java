@@ -48,7 +48,6 @@ public class MainClient extends Application {
     }
 
     public static void initializeClientSocket() {
-        // Only call this if you're sure CurrentUser is not null!
         User user = CurrentUser.getInstance().getUser();
         if (user == null) {
             System.err.println("Attempted to initialize ClientSocket with null user.");
@@ -60,7 +59,6 @@ public class MainClient extends Application {
             clientSocket = new ClientSocket(username, message -> {
                 Platform.runLater(() -> {
                     System.out.println("📩 Message received: " + message);
-                    // Here you can notify controllers later if needed
                 });
             });
         } catch (Exception e) {

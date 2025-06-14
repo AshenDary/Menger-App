@@ -60,7 +60,7 @@ public class CreateAccPasswordController {
         }
 
         try {
-            MainClient.setRoot("login", null); // Go back to Login screen
+            MainClient.setRoot("login", null);
         } catch (Exception e) {
             e.printStackTrace();
         }

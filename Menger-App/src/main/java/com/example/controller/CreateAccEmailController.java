@@ -38,7 +38,9 @@ public class CreateAccEmailController {
             return;
         }
 
-        CreateAccountData.getInstance().setEmail(email);
+        CreateAccountData data = CreateAccountData.getInstance();
+        data.setEmail(email);
+        data.setUsername(email);
 
         try {
             MainClient.setRoot("createaccpassword", null);
@@ -47,7 +49,9 @@ public class CreateAccEmailController {
         }
     }
 
-    private void handleTransfer(MouseEvent event) {
+
+        @FXML
+    private void handleTransfer(ActionEvent event) {
         try {
             MainClient.setRoot("createaccnumber", null);
         } catch (Exception e) {

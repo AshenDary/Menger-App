@@ -58,7 +58,7 @@ public class LoginController {
             try (var br = new java.io.BufferedReader(new java.io.FileReader(file))) {
                 String line;
                 while ((line = br.readLine()) != null) {
-                    String[] parts = line.split(",", 7); // ✅ Expecting 7 fields
+                    String[] parts = line.split(",", 7);
                     if (parts.length == 7 && parts[2].equals(username) && parts[5].equals(password)) {
                         return true;
                     }
