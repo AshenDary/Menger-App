@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchatboxmengergroup" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.KenChatBoxController">
+<VBox fx:id="rootlayoutchatboxmengergroup" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MengerChatBoxController">
    <children>
       <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="540.0" spacing="10.0" VBox.vgrow="NEVER">
          <children>
@@ -304,7 +304,7 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="cfuserchatpreview" layoutX="10.0" layoutY="10.0" text="USER">
+                                    <Label fx:id="cfuserchatpreviewStatic" layoutX="10.0" layoutY="10.0" text="USER">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
