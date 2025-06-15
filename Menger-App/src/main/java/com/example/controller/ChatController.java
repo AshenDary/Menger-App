@@ -8,7 +8,6 @@ import com.example.model.InitializableWithData;
 import com.example.model.User;
 import com.example.network.MainClient;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -431,28 +430,6 @@ public class ChatController implements InitializableWithData {
             try {
                 MainClient.setRoot("menu", null);
             } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-    }
-
-    @FXML
-    private void sendMessage() {
-        String message = chatInput.getText().trim();
-        if (!message.isEmpty()) {
-            MainClient.clientSocket.sendMessage(message);
-            addMessageToUI("You: " + message, true);
-            chatInput.clear();
-        }
-    }
-
-    public static void addMessageToUI(String message, boolean isSentByCurrentUser) {
-        Platform.runLater(() -> {
-            try {
-                ChatBubbleController bubble = new ChatBubbleController();
-                bubble.setMessage(message, isSentByCurrentUser);
-                staticChatVBox.getChildren().add(bubble.getRoot());
-            } catch (Exception e) {
                 e.printStackTrace();
             }
         });

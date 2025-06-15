@@ -82,14 +82,16 @@ public class BugoyChatBoxController {
     private void addMessageToChat(String content, boolean isSentByCurrentUser) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ChatBubble.fxml"));
+            loader.setController(new ChatBubbleController());
             HBox bubble = loader.load();
-
+    
             ChatBubbleController controller = loader.getController();
             controller.setMessage(content, isSentByCurrentUser);
-
+    
             chatpreviewcontainer.getChildren().add(bubble);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
 }
