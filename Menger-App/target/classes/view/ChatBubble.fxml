@@ -6,9 +6,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.geometry.Insets?>
 
-<HBox fx:id="bubbleContainer" spacing="8" xmlns:fx="http://javafx.com/fxml" style="-fx-padding: 5;">
+<HBox fx:id="bubbleContainer" spacing="8" xmlns:fx="http://javafx.com/fxml" style="-fx-padding: 6;">
     <children>
-        <ImageView fx:id="profilePic" fitWidth="30" fitHeight="30" pickOnBounds="true" preserveRatio="true" visible="false" />
+        <ImageView fx:id="profilePic" fitWidth="40" fitHeight="40" pickOnBounds="true" preserveRatio="true" visible="false" />
         <VBox>
             <Label fx:id="senderName" style="-fx-font-weight: bold; -fx-font-size: 10px;" visible="false"/>
             <Label fx:id="messageLabel" wrapText="true" maxWidth="280" style="-fx-background-radius: 12; -fx-padding: 8;" />
