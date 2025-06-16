@@ -455,7 +455,7 @@
                      </image>
                   </ImageView>
 
-                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" managed="false" onMouseClicked="#handleSend" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" managed="false" onMouseClicked="#handleSendMessage" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../assets/images/sendicon.png" />
                      </image>
