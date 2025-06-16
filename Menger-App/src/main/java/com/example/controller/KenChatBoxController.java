@@ -90,7 +90,7 @@ public class KenChatBoxController {
     private void scrollToBottom() {
         Platform.runLater(() -> {
             chatareacontainer.layout();
-            chatareacontainer.setVvalue(5.0);
+            chatareacontainer.setVvalue(1.0);
         });
     }
 }

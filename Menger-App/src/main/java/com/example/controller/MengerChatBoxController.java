@@ -8,69 +8,75 @@ import com.example.network.MainClient;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 
 public class MengerChatBoxController {
 
-    @FXML private VBox addContainer;
-    @FXML private ImageView addGcIcon;
-    @FXML private ImageView addIcon;
-    @FXML private ImageView backIcon;
-    @FXML private ImageView callIcon;
-    @FXML private VBox cameraContainer;
-    @FXML private ImageView cameraIcon;
-    @FXML private ScrollPane chatAreaContainer;
-    @FXML private TextField chatBar;
-    @FXML private HBox chatBoxBottomNavBar;
-    @FXML private HBox chatField;
-    @FXML private VBox chatPreviewContainer;
-    @FXML private Label chatStaticLabel;
-    @FXML private Label chatStaticLabel1;
-    @FXML private StackPane iconSwitcher;
-    @FXML private VBox imageContainer;
-    @FXML private ImageView imageIcon;
-    @FXML private HBox jaridChatPreview1;
-    @FXML private HBox jaridChatPreview2;
-    @FXML private ImageView jaridIcon1;
-    @FXML private ImageView jaridIcon2;
-    @FXML private Label jaridMessageBubble1;
-    @FXML private Label jaridMessageBubble2;
-    @FXML private Label jaridMessageBubble3;
-    @FXML private HBox jaridMessageBubble4;
-    @FXML private HBox kenChatPreview1;
-    @FXML private HBox kenChatPreview2;
-    @FXML private ImageView kenIcon1;
-    @FXML private ImageView kenIcon2;
-    @FXML private Label kenMessageBubble1;
-    @FXML private Label kenMessageBubble2;
-    @FXML private ImageView kenPic2;
-    @FXML private ImageView likeIcon;
-    @FXML private ImageView membersIcon;
-    @FXML private ImageView mengerGroupIcon;
-    @FXML private ImageView mengerGroupPfp;
-    @FXML private VBox micContainer;
-    @FXML private ImageView micIcon;
-    @FXML private HBox middleNavBar;
-    @FXML private ImageView nameIcon;
-    @FXML private VBox pfpContainer;
-    @FXML private VBox rootLayoutChatBoxMengerGroup;
-    @FXML private ImageView selectEmojiIcon;
-    @FXML private ImageView sendIcon;
-    @FXML private Label staticAt;
-    @FXML private Label cfuserchatpreviewStatic;
-    @FXML private HBox topNavBar;
-    @FXML private ImageView videoCallIcon;
-    @FXML private VBox messageContainer;
+    @FXML
+    private ScrollPane chatareacontainer;
+
+    @FXML
+    private VBox chatpreviewcontainer;
+
+    @FXML
+    private TextField chatbar;
+
+    @FXML
+    private ImageView sendicon;
+
+    @FXML
+    private ImageView likeicon;
+
+    @FXML
+    private ImageView backicon;
+
+    @FXML
+    private Label cfuserchatpreviewStatic;
 
     private User user;
+
+    public void init(Object data) {
+        if (data instanceof User) {
+            this.user = (User) data;
+            cfuserchatpreviewStatic.setText(user.getFullName() != null && user.getLastName() != null
+                    ? user.getFullName()
+                    : user.getDisplayName());
+        }
+    }
+
+    @FXML
+    private void initialize() {
+        Platform.runLater(this::scrollToBottom);
+
+        chatbar.textProperty().addListener((obs, oldVal, newVal) -> {
+            boolean hasText = !newVal.trim().isEmpty();
+            sendicon.setVisible(hasText);
+            sendicon.setManaged(hasText);
+            likeicon.setVisible(!hasText);
+            likeicon.setManaged(!hasText);
+        });
+
+        chatbar.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER && !event.isShiftDown()) {
+                handleSend();
+                event.consume();
+            }
+        });
+
+        User currentUser = CurrentUser.getInstance().getUser();
+        if (currentUser != null) {
+            cfuserchatpreviewStatic.setText(currentUser.getFullName() != null && currentUser.getLastName() != null
+                    ? currentUser.getFullName()
+                    : currentUser.getDisplayName());
+        }
+    }
 
     @FXML
     private void handleBackToChat() {
@@ -83,47 +89,32 @@ public class MengerChatBoxController {
 
     @FXML
     private void handleSend() {
-        String message = chatBar.getText().trim();
+        String message = chatbar.getText().trim();
         if (!message.isEmpty()) {
-            addMessageBubble(message);
-            chatBar.clear();
+            chatbar.clear();
+            addMessageToChat(message);
         }
     }
 
-    private void addMessageBubble(String message) {
-        Text text = new Text(message);
-        TextFlow bubble = new TextFlow(text);
-        bubble.getStyleClass().add("message-bubble");
-        messageContainer.getChildren().add(bubble);
-        Platform.runLater(() -> chatAreaContainer.setVvalue(1.0));
-    }
+    private void addMessageToChat(String content) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/OneWayChatBubble.fxml"));
+            HBox bubble = loader.load();
 
-    public void init(Object data) {
-        if (data instanceof User) {
-            this.user = (User) data;
-            System.out.println("Initializing ChatController with user: " + user.getFullName());
-            
-            if (user.getFirstName() != null && user.getLastName() != null) {
-                cfuserchatpreviewStatic.setText(user.getFullName());
-            } else {
-                cfuserchatpreviewStatic.setText(user.getDisplayName());
-            }
+            OneWayChatBubbleController controller = loader.getController();
+            controller.setMessage(content);
+
+            chatpreviewcontainer.getChildren().add(bubble);
+            scrollToBottom();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-
-    @FXML
-    private void initialize() {
-
-        Platform.runLater(() -> chatAreaContainer.setVvalue(1.0));
-
-        User currentUser = CurrentUser.getInstance().getUser();
-        if (currentUser != null) {
-            if (currentUser.getFirstName() != null && currentUser.getLastName() != null) {
-                cfuserchatpreviewStatic.setText(currentUser.getFullName());
-            } else {
-                cfuserchatpreviewStatic.setText(currentUser.getDisplayName());
-            }
-        }
+    private void scrollToBottom() {
+        Platform.runLater(() -> {
+            chatareacontainer.layout();
+            chatareacontainer.setVvalue(1.0);
+        });
     }
 }

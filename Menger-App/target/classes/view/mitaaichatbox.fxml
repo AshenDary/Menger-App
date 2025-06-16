@@ -67,7 +67,7 @@
       </HBox>
       <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="790.0" prefWidth="520.0" vbarPolicy="ALWAYS" VBox.vgrow="NEVER">
          <content>
-            <VBox fx:id="chatpreviewcontainer" prefHeight="775.0" prefWidth="508.0" spacing="2.0">
+            <VBox fx:id="chatpreviewcontainer" prefHeight="775.0" prefWidth="508.0" spacing="6.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -263,7 +263,7 @@
                         <Image url="@../assets/images/likeicon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" managed="false" onMouseClicked="#handleSend" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" managed="false" onMouseClicked="#handleSendMessage" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../assets/images/sendicon.png" />
                      </image>

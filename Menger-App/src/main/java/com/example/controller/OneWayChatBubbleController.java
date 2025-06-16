@@ -14,7 +14,5 @@ public class OneWayChatBubbleController {
 
     public void setMessage(String message) {
         messageLabel.setText(message);
-        messageLabel.setStyle("-fx-background-color: #0084FF; -fx-text-fill: white; -fx-font-size: 15px; -fx-background-radius: 12; -fx-padding: 8;");
-        bubbleContainer.setStyle("-fx-alignment: CENTER_RIGHT;");
     }
 }

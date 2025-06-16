@@ -126,6 +126,6 @@ public class BugoyChatBoxController {
     }
 
     private void scrollToBottom() {
-        chatareacontainer.setVvalue(5.0);
+        chatareacontainer.setVvalue(1.0);
     }
 }

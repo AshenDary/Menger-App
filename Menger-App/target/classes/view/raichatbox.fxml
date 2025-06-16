@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchatboxrai" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.KenChatBoxController">
+<VBox fx:id="rootlayoutchatboxrai" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.RaiChatBoxController">
    <children>
       <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="540.0" spacing="10.0" VBox.vgrow="NEVER">
          <children>
@@ -68,7 +68,7 @@
       </HBox>
       <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="790.0" prefWidth="520.0" VBox.vgrow="NEVER">
          <content>
-            <VBox fx:id="chatpreviewcontainer" alignment="TOP_CENTER" prefHeight="775.0" prefWidth="508.0" spacing="2.0">
+            <VBox fx:id="chatpreviewcontainer" alignment="TOP_CENTER" prefHeight="775.0" prefWidth="508.0" spacing="6.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -316,7 +316,7 @@
                         <Image url="@../assets/images/likeicon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" managed="false" onMouseClicked="#handleSend" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <ImageView fx:id="sendicon" fitHeight="30.0" fitWidth="30.0" managed="false" onMouseClicked="#handleSendMessage" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../assets/images/sendicon.png" />
                      </image>

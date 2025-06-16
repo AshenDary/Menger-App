@@ -6,13 +6,13 @@ import com.example.network.MainClient;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 
 public class RaiChatBoxController {
 
@@ -20,7 +20,7 @@ public class RaiChatBoxController {
     private ScrollPane chatareacontainer;
 
     @FXML
-    private VBox messageContainer;
+    private VBox chatpreviewcontainer;
 
     @FXML
     private TextField chatbar;
@@ -36,10 +36,8 @@ public class RaiChatBoxController {
 
     @FXML
     private void initialize() {
-        // Auto-scroll to bottom on load
-        Platform.runLater(() -> chatareacontainer.setVvalue(1.0));
-    
-        // Toggle send and like icons based on input
+        Platform.runLater(this::scrollToBottom);
+
         chatbar.textProperty().addListener((obs, oldVal, newVal) -> {
             boolean hasText = !newVal.trim().isEmpty();
             sendicon.setVisible(hasText);
@@ -47,21 +45,12 @@ public class RaiChatBoxController {
             likeicon.setVisible(!hasText);
             likeicon.setManaged(!hasText);
         });
-    
-        // Enter key to send message
+
         chatbar.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER && !event.isShiftDown()) {
-                handleSend();
+                handleSendMessage();
                 event.consume();
             }
-        });
-    
-        // Typing toggle (optional)
-        chatbar.textProperty().addListener((obs, oldVal, newVal) -> {
-            // You can toggle send icon here if needed
-            boolean hasText = !newVal.trim().isEmpty();
-            sendicon.setVisible(hasText);
-            sendicon.setManaged(hasText);
         });
     }
 
@@ -75,21 +64,33 @@ public class RaiChatBoxController {
     }
 
     @FXML
-    private void handleSend() {
+    private void handleSendMessage() {
         String message = chatbar.getText().trim();
         if (!message.isEmpty()) {
-            addMessageBubble(message);
             chatbar.clear();
+            addMessageToChat(message);
         }
     }
 
-    private void addMessageBubble(String message) {
-        Text text = new Text(message);
-        TextFlow bubble = new TextFlow(text);
-        bubble.getStyleClass().add("message-bubble"); // Define in CSS if needed
-        messageContainer.getChildren().add(bubble);
+    private void addMessageToChat(String content) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/OneWayChatBubble.fxml"));
+            HBox bubble = loader.load();
 
-        // Auto-scroll to bottom
-        Platform.runLater(() -> chatareacontainer.setVvalue(1.0));
+            OneWayChatBubbleController controller = loader.getController();
+            controller.setMessage(content);
+
+            chatpreviewcontainer.getChildren().add(bubble);
+            scrollToBottom();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void scrollToBottom() {
+        Platform.runLater(() -> {
+            chatareacontainer.layout();
+            chatareacontainer.setVvalue(1.0);
+        });
     }
 }

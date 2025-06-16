@@ -68,7 +68,7 @@
       </HBox>
       <ScrollPane fx:id="chatareacontainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="790.0" prefWidth="520.0" VBox.vgrow="NEVER">
          <content>
-            <VBox fx:id="chatpreviewcontainer" alignment="TOP_CENTER" prefHeight="775.0" prefWidth="508.0" spacing="2.0">
+            <VBox fx:id="chatpreviewcontainer" alignment="TOP_CENTER" prefHeight="775.0" prefWidth="508.0" spacing="6.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>

@@ -301,10 +301,11 @@
                                  <children>
                                     <Label fx:id="staticat" text="\@">
                                        <font>
-                                          <Font name="System Bold" size="15.0" />
+                                          <Font name="System Bold" size="15.0"/>
                                        </font>
                                     </Label>
-                                    <Label fx:id="cfuserchatpreviewStatic" layoutX="10.0" layoutY="10.0" text="USER                                                                                                                     ">
+                                    <Label fx:id="cfuserchatpreviewStatic" layoutX="10.0" layoutY="10.0" prefWidth="500.0"
+                                          text="USER" wrapText="true" style="-fx-font-size: 15px; -fx-font-weight: bold;">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -327,7 +328,7 @@
       </ScrollPane>
       <HBox fx:id="chatboxbottomnavbar" alignment="BOTTOM_CENTER" prefHeight="120.0" prefWidth="520.0" spacing="10.0" style="-fx-background-color: white;" VBox.vgrow="NEVER">
          <children>
-            <VBox fx:id="addcontainer" alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
+            <VBox fx:id="addcontainers" alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
                <children>
                   <ImageView fx:id="addicon" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
