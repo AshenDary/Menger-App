@@ -81,13 +81,16 @@ public class KenChatBoxController {
             controller.setMessage(content);
 
             chatpreviewcontainer.getChildren().add(bubble);
-            Platform.runLater(this::scrollToBottom);
+            scrollToBottom();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void scrollToBottom() {
-        chatareacontainer.setVvalue(1.0);
+        Platform.runLater(() -> {
+            chatareacontainer.layout();
+            chatareacontainer.setVvalue(5.0);
+        });
     }
 }

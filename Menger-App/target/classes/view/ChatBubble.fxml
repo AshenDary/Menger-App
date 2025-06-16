@@ -5,7 +5,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 
-<HBox fx:id="bubbleContainer" spacing="8" xmlns:fx="http://javafx.com/fxml" style="-fx-padding: 6;">
+<HBox fx:id="bubbleContainer" spacing="8"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.controller.ChatBubbleController"
+      style="-fx-padding: 6;">
     <children>
         <ImageView fx:id="profilePic" fitWidth="40" fitHeight="40" pickOnBounds="true" preserveRatio="true" visible="false" />
         <VBox>
