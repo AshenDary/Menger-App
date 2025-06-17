@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 
-<HBox fx:id="bubbleContainer" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.controller.OneWayChatBubbleController"
-      style="-fx-padding: 6; -fx-alignment: CENTER_RIGHT;" spacing="8">
+<HBox fx:id="bubbleContainer" spacing="8" style="-fx-padding: 6; -fx-alignment: CENTER_RIGHT;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.OneWayChatBubbleController">
 
     <children>
-        <Label fx:id="messageLabel"
-               style="-fx-background-color: #0084FF; -fx-text-fill: white; -fx-font-size: 15px; -fx-background-radius: 12; -fx-padding: 8;"
-               wrapText="true" maxWidth="280" />
+        <Label fx:id="messageLabel" maxWidth="280" style="-fx-background-color: #0084FF; -fx-text-fill: white; -fx-font-size: 15px; -fx-background-radius: 20; -fx-padding: 8;" wrapText="true" />
     </children>
 </HBox>

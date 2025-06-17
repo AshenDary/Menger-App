@@ -151,14 +151,6 @@
                               <Insets />
                            </HBox.margin>
                         </Label>
-                        <ImageView fx:id="siricon1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/siricon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ImageView>
                      </children>
                   </HBox>
                   <HBox fx:id="kenchatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="57.0" prefHeight="55.0" prefWidth="200.0">
@@ -197,14 +189,6 @@
                               <Insets />
                            </HBox.margin>
                         </Label>
-                        <ImageView fx:id="siricon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/siricon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ImageView>
                      </children>
                   </HBox>
                   <HBox fx:id="kenchatpreview3" alignment="CENTER_LEFT" layoutX="20.0" layoutY="197.0" prefHeight="55.0" prefWidth="200.0">
@@ -243,14 +227,6 @@
                               <Insets />
                            </HBox.margin>
                         </Label>
-                        <ImageView fx:id="siricon3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/siricon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" top="10.0" />
-                           </HBox.margin>
-                        </ImageView>
                      </children>
                   </HBox>
                   <HBox fx:id="kenchatpreview4" alignment="CENTER_LEFT" layoutX="20.0" layoutY="337.0" prefHeight="55.0" prefWidth="200.0">
