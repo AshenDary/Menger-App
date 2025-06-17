@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootlayoutchat" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ChatController">
+<VBox fx:id="rootlayoutchat" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.FriendsController">
    <children>
       <HBox fx:id="topbar" alignment="CENTER" prefHeight="40.0" prefWidth="390.0" spacing="30.0">
          <children>

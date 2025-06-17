@@ -342,6 +342,7 @@ public class ChatController implements InitializableWithData {
         initializeBugoy();
         initializeMenger();
         initializeMenu();
+        initializeFriends();
     }
     @FXML
     private void initializeBino() {
@@ -429,6 +430,16 @@ public class ChatController implements InitializableWithData {
         menuicon.setOnMouseClicked(event -> {
             try {
                 MainClient.setRoot("menu", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void initializeFriends() {
+        friendsicon.setOnMouseClicked(event -> {
+            try {
+                MainClient.setRoot("friends", null);
             } catch (IOException e) {
                 e.printStackTrace();
             }

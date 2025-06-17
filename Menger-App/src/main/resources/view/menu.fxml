@@ -38,7 +38,7 @@
                   <Image url="@../assets/images/siricon.png" />
                </image>
             </ImageView>
-            <Label text="USER">
+            <Label fx:id="cfuserchatpreview" text="USER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -50,7 +50,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="251.0" layoutY="10.0" prefHeight="20.0" prefWidth="38.0" text="user" textFill="#838789">
+                  <Label fx:id="cfuserchatpreview" layoutX="251.0" layoutY="10.0" prefHeight="20.0" prefWidth="38.0" text="user" textFill="#838789">
                      <font>
                         <Font size="20.0" />
                      </font>
