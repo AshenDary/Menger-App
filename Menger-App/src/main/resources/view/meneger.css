@@ -302,5 +302,8 @@
     -fx-background-color: #697479;
 }
 
-
+.btnTogglePassword {
+    -fx-background-color:  #697479;
+    -fx-text-fill: #697479;
+}
 
