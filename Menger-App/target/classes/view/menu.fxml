@@ -38,7 +38,7 @@
                   <Image url="@../assets/images/siricon.png" />
                </image>
             </ImageView>
-            <Label fx:id="cfuserchatpreview" text="USER">
+            <Label fx:id="cfuserFullName" text="USER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -50,7 +50,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="cfuserchatpreview" layoutX="251.0" layoutY="10.0" prefHeight="20.0" prefWidth="38.0" text="user" textFill="#838789">
+                  <Label fx:id="cfuserUsername" layoutX="251.0" layoutY="10.0" prefHeight="20.0" prefWidth="38.0" text="user" textFill="#838789">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -335,7 +335,7 @@
             </VBox>
             <VBox fx:id="friendscontainer" alignment="BOTTOM_CENTER" layoutX="15.0" layoutY="15.0" prefHeight="54.0" prefWidth="38.0" spacing="5.0">
                <children>
-                  <ImageView fx:id="friendsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="friendsicon" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#HandleFriendsTransfer" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
