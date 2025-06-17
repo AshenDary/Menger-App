@@ -58,6 +58,9 @@
                </children>
             </HBox>
          </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
       </VBox>
       <ScrollPane hbarPolicy="NEVER" prefWidth="508.0">
          <content>
@@ -116,12 +119,12 @@
                         <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0">
                            <children>
                               <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
-                              <Label text="Dark mode">
+                              <Label text="Change Password">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <Region prefHeight="45.0" prefWidth="299.0" />
+                              <Region prefHeight="45.0" prefWidth="237.0" />
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/images/backicon3.png" />
