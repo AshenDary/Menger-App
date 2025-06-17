@@ -265,6 +265,12 @@
     -fx-border-color: #697479; /* Optional: your color */
 }
 
+.sepline .line {
+    -fx-border-color: #ccc;     /* Or any color */
+    -fx-border-width: 0.5px;
+}
+
+
 /* Circle (the dot and border) */
 .radio-button .radio {
     -fx-border-color: #697479;
