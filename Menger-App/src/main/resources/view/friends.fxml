@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -27,54 +26,23 @@
             <Region prefHeight="45.0" prefWidth="368.0" />
          </children>
          <padding>
-            <Insets left="30.0" right="30.0" top="25.0" />
+            <Insets bottom="5.0" left="30.0" right="30.0" top="25.0" />
          </padding>
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </HBox>
-      <HBox fx:id="searchfieldBox" alignment="CENTER" prefHeight="20.0" prefWidth="330.0" style="-fx-background-color: #e1e7e7; -fx-background-radius: 100; -fx-padding: 10 15 10 15;" VBox.vgrow="NEVER">
-         <children>
-            <ImageView fx:id="mitasearchicon" fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/mitaicon.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="20.0" right="5.0" />
-               </HBox.margin>
-            </ImageView>
-            <TextField fx:id="searchfield" focusTraversable="false" prefHeight="30.0" prefWidth="380.0" promptText="Ask Mita AI or Search" style="-fx-background-color: transparent; -fx-border-color: transparent;" HBox.hgrow="NEVER">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-               <padding>
-                  <Insets left="5.0" right="5.0" />
-               </padding>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
-         </children>
-         <VBox.margin>
-            <Insets bottom="8.0" left="20.0" right="20.0" top="8.0" />
-         </VBox.margin>
-      </HBox>
-      <ScrollPane fx:id="storiespane" fitToHeight="true" fitToWidth="true" prefHeight="155.0" prefWidth="500.0" style="-fx-background-color: transparent;" styleClass="transparent-scroll" vbarPolicy="NEVER" VBox.vgrow="NEVER">
+      <ScrollPane fx:id="storiespane" fitToHeight="true" fitToWidth="true" prefHeight="225.0" prefWidth="500.0" style="-fx-background-color: transparent;" styleClass="transparent-scroll" vbarPolicy="NEVER" VBox.vgrow="NEVER">
          <content>
-            <HBox fx:id="storiescontainer" alignment="TOP_CENTER" fillHeight="false" prefHeight="155.0" prefWidth="614.0" spacing="5.0" style="-fx-background-color: transparent;">
+            <HBox fx:id="storiescontainer" alignment="CENTER" fillHeight="false" prefHeight="155.0" prefWidth="614.0" spacing="10.0" style="-fx-background-color: transparent;">
                <children>
-                  <VBox fx:id="sirstorycontainer" alignment="BOTTOM_CENTER" prefHeight="75.0" prefWidth="89.0" spacing="5.0" style="-fx-background-color: transparent;">
+                  <VBox fx:id="sirstorycontainer" alignment="CENTER" prefHeight="140.0" prefWidth="100.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
-                        <ImageView fx:id="sirstoryicon" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="sirstoryicon" fitHeight="200.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/sirstoryicon.png" />
+                              <Image url="@../assets/images/sirstory.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="yournote" alignment="CENTER" contentDisplay="CENTER" text="Your note">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
                      </children>
                      <HBox.margin>
                         <Insets />
@@ -83,83 +51,58 @@
                         <Insets left="5.0" />
                      </padding>
                   </VBox>
-                  <VBox fx:id="binostorycontainer" alignment="BOTTOM_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
+                  <VBox fx:id="binostorycontainer" alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
-                        <ImageView fx:id="binostoryicon" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="binostoryicon" fitHeight="200.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/binostoryicon.png" />
+                              <Image url="@../assets/images/binostory.png" />
                            </image>
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
                         </ImageView>
-                        <Label fx:id="binousername" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="102.0" text="BinoPogi">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
                      </children>
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <VBox fx:id="bugoystorycontainer" alignment="BOTTOM_CENTER" layoutX="780.0" layoutY="30.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
+                  <VBox fx:id="bugoystorycontainer" alignment="CENTER" layoutX="780.0" layoutY="30.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
-                        <ImageView fx:id="bugoystoryicon" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="bugoystoryicon" fitHeight="200.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/bugoystoryicon.png" />
+                              <Image url="@../assets/images/bugoystory.png" />
                            </image>
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
                         </ImageView>
-                        <Label fx:id="bugoyusername" alignment="CENTER" contentDisplay="CENTER" text="Bugoy">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
                   <VBox fx:id="kenstorycontainer" alignment="BOTTOM_CENTER" layoutX="135.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
-                        <ImageView fx:id="kenstoryicon" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="kenstoryicon" fitHeight="200.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/kenstoryicon.png" />
+                              <Image url="@../assets/images/kinnethstory.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="kenusername" alignment="CENTER" contentDisplay="CENTER" text="Kinneth">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
-                  <VBox fx:id="raistorycontainer" alignment="BOTTOM_CENTER" layoutX="250.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
+                  <VBox fx:id="raistorycontainer" alignment="CENTER" layoutX="250.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
-                        <ImageView fx:id="raistoryicon" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="raistoryicon" fitHeight="200.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/raistoryicon.png" />
+                              <Image url="@../assets/images/raistory.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="raiusername" alignment="CENTER" contentDisplay="CENTER" text="RaiCutie">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
-                  <VBox fx:id="jaridstorycontainer" alignment="BOTTOM_CENTER" layoutX="365.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
+                  <VBox fx:id="jaridstorycontainer" alignment="CENTER" layoutX="365.0" layoutY="20.0" prefHeight="75.0" prefWidth="50.0" spacing="5.0" style="-fx-background-color: transparent;">
                      <children>
-                        <ImageView fx:id="jaridstoryicon" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="jaridstoryicon" fitHeight="200.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/jaredstoryicon.png" />
+                              <Image url="@../assets/images/jaridstory.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="jaridusername" alignment="CENTER" contentDisplay="CENTER" text="Jarid">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
                </children>
@@ -176,71 +119,6 @@
          <content>
             <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="592.0" prefWidth="520.0">
                <children>
-                  <HBox fx:id="binonotes" alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="526.0" scaleShape="false" VBox.vgrow="NEVER">
-                     <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/binoicon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="5.0" right="5.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0">
-                           <children>
-                              <HBox prefHeight="23.0" prefWidth="433.0" spacing="5.0">
-                                 <children>
-                                    <Label text="BinoPogi123 Lang Sakalam">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="shared a note" textFill="#838789">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Region prefHeight="23.0" prefWidth="150.0" />
-                                    <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../assets/images/dropdownicon.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets right="20.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
-                                 <children>
-                                    <HBox fx:id="jaridmessagebubble4" prefHeight="34.0" prefWidth="231.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-                                       <children>
-                                          <ImageView fitHeight="28.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../assets/images/emojibino.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                       </padding>
-                                       <VBox.margin>
-                                          <Insets right="1000.0" />
-                                       </VBox.margin>
-                                       <effect>
-                                          <DropShadow height="17.34" offsetY="2.0" radius="8.3525" width="18.07">
-                                             <color>
-                                                <Color red="0.6200000047683716" green="0.6200000047683716" blue="0.6200000047683716" opacity="0.5" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
                   <Separator prefWidth="200.0" />
                   <HBox fx:id="binonotes1" alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="526.0" scaleShape="false">
                      <children>
@@ -277,12 +155,12 @@
                                     </ImageView>
                                  </children>
                               </HBox>
-                              <HBox fx:id="jaridmessagebubble41" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                              <HBox fx:id="jaridmessagebubble41" alignment="CENTER" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: white; -fx-background-radius: 10;">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
                                  <VBox.margin>
-                                    <Insets />
+                                    <Insets right="350.0" />
                                  </VBox.margin>
                                  <effect>
                                     <DropShadow height="17.34" offsetY="2.0" radius="8.3525" width="18.07">
@@ -292,12 +170,43 @@
                                     </DropShadow>
                                  </effect>
                                  <children>
-                                    <Label prefHeight="21.0" prefWidth="172.0" text="pa hingi po robux" wrapText="true">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
+                                    <ImageView fitHeight="23.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/emojibino.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
+                              </HBox>
+                              <HBox fx:id="jaridmessagebubble411" alignment="CENTER" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                                 <effect>
+                                    <DropShadow height="17.34" offsetY="2.0" radius="8.3525" width="18.07">
+                                       <color>
+                                          <Color red="0.6200000047683716" green="0.6200000047683716" blue="0.6200000047683716" opacity="0.5" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/siricon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label style="-fx-background-color: f3f2f8; -fx-background-radius: 20;" text="Send message..." textFill="#585d61" wrapText="true">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets right="200.0" />
+                                 </VBox.margin>
                               </HBox>
                            </children>
                         </VBox>
