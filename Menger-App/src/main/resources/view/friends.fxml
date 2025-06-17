@@ -619,7 +619,7 @@
                <children>
                   <StackPane fx:id="chatsstackpane" prefHeight="19.0" prefWidth="42.0">
                      <children>
-                        <ImageView fx:id="chatsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="chatsicon" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#HandleChatTransfer" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/chaticon2.png" />
                            </image>
@@ -661,7 +661,7 @@
             </VBox>
             <VBox fx:id="menucontainer" alignment="BOTTOM_CENTER" layoutX="220.0" layoutY="10.0" prefHeight="20.0" prefWidth="30.0">
                <children>
-                  <ImageView fx:id="menuicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="menuicon" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#HandleMenuTransfer" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets bottom="6.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
@@ -669,7 +669,7 @@
                         <Image url="@../assets/images/menuicon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="menulabel" text="Menu">
+                  <Label fx:id="menulabel" onMouseClicked="#HandleMenuTransfer" text="Menu">
                      <font>
                         <Font name="System Bold" size="10.0" />
                      </font>

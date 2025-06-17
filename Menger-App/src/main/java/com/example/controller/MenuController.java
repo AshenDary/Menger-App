@@ -30,7 +30,7 @@ public class MenuController {
     private Label cfuserUsername;
 
     @FXML
-    private VBox bottomnavbar;
+    private HBox bottomnavbar;
 
     @FXML
     private ImageView chaticon;
