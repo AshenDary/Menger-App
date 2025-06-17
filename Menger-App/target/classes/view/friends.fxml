@@ -155,12 +155,12 @@
                                     </ImageView>
                                  </children>
                               </HBox>
-                              <HBox fx:id="jaridmessagebubble41" alignment="CENTER" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                              <HBox fx:id="jaridmessagebubble41" alignment="BOTTOM_LEFT" prefHeight="35.0" prefWidth="210.0" style="-fx-background-color: white; -fx-background-radius: 10;">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
                                  <VBox.margin>
-                                    <Insets right="200.0" />
+                                    <Insets right="315.0" />
                                  </VBox.margin>
                                  <effect>
                                     <DropShadow height="17.98" offsetY="2.0" radius="8.5125" width="18.07">
@@ -170,7 +170,15 @@
                                     </DropShadow>
                                  </effect>
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="16.0" style="-fx-background-color: transparent;" text="▶" />
+                                    <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="19.0" style="-fx-background-color: transparent;" text="▶" />
+                                    <ImageView fitHeight="26.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/waveform.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
                                  </children>
                               </HBox>
                               <HBox fx:id="jaridmessagebubble411" alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="320.0" spacing="10.0">
