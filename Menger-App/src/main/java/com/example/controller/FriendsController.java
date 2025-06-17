@@ -12,6 +12,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.nio.file.Paths;
 
 public class FriendsController {
 
@@ -164,5 +167,31 @@ public class FriendsController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void handlePlayAudio2() {
+        try {
+            String audioPath = getClass().getResource("/assets/audio/binowaveform.mp3").toExternalForm();
+            Media media = new Media(audioPath);
+            MediaPlayer mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void handlePlayAudio1() {
+    try {
+        String audioPath = getClass().getResource("/assets/audio/bugoywaveform.mp3").toExternalForm();
+        Media media = new Media(audioPath);
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
     
 }

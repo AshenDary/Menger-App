@@ -7,6 +7,7 @@ module com.example {
     requires org.glassfish.tyrus.server;
     requires org.glassfish.tyrus.client;
     requires org.glassfish.tyrus.container.grizzly.server;
+    requires javafx.media;
 
     // Allow JavaFX to access FXML controller classes
     opens com.example.controller to javafx.fxml, javafx.graphics;
