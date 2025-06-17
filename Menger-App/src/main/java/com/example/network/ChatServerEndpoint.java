@@ -37,7 +37,6 @@ public class ChatServerEndpoint {
 
         String senderUsername = userMap.get(senderSession);
 
-        // Broadcast to all sessions EXCEPT the sender
         synchronized (sessions) {
             for (Session session : sessions) {
                 if (!session.equals(senderSession) && session.isOpen()) {

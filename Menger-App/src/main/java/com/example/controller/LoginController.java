@@ -9,6 +9,7 @@ import com.example.network.MainClient;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -25,9 +26,17 @@ public class LoginController {
     private Label lblMessage;
 
     @FXML
+    private TextField txtPasswordVisible;
+
+    @FXML
+    private Button btnTogglePassword;
+
+    private boolean passwordVisible = false;
+
+    @FXML
     private void handleLogin(ActionEvent event) {
         String username = txtUsername.getText().trim();
-        String password = txtPassword.getText().trim();
+        String password = passwordVisible ? txtPasswordVisible.getText().trim() : txtPassword.getText().trim();
 
         if (authenticate(username, password)) {
             lblMessage.setStyle("-fx-text-fill: green;");
@@ -48,6 +57,28 @@ public class LoginController {
             lblMessage.setText("Invalid username or password.");
         }
     }
+
+    @FXML
+    private void handleTogglePassword(ActionEvent event) {
+        passwordVisible = !passwordVisible;
+        
+        if (passwordVisible) {
+            txtPasswordVisible.setText(txtPassword.getText());
+            txtPasswordVisible.setVisible(true);
+            txtPasswordVisible.setManaged(true);
+            txtPassword.setVisible(false);
+            txtPassword.setManaged(false);
+            btnTogglePassword.setText("🙈"); // Change icon/text when visible
+        } else {
+            txtPassword.setText(txtPasswordVisible.getText());
+            txtPassword.setVisible(true);
+            txtPassword.setManaged(true);
+            txtPasswordVisible.setVisible(false);
+            txtPasswordVisible.setManaged(false);
+            btnTogglePassword.setText("👁"); // Change back to eye icon/text when hidden
+        }
+    }
+
 
     private boolean authenticate(String username, String password) {
         String filePath = System.getProperty("user.dir") + "/accounts.txt";
