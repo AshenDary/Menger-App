@@ -54,7 +54,7 @@ public class CreateAccPasswordController {
             );
             writer.write(line);
             writer.newLine();
-            System.out.println("✅ Account created successfully.");
+            System.out.println("Account created successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }

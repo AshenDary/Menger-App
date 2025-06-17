@@ -10,6 +10,7 @@ import com.example.network.MainClient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -24,6 +25,9 @@ public class LoginController {
 
     @FXML
     private Label lblMessage;
+
+    @FXML
+    private Hyperlink ChangePass;
 
     @FXML
     private TextField txtPasswordVisible;
@@ -68,14 +72,14 @@ public class LoginController {
             txtPasswordVisible.setManaged(true);
             txtPassword.setVisible(false);
             txtPassword.setManaged(false);
-            btnTogglePassword.setText("🙈"); // Change icon/text when visible
+            btnTogglePassword.setText("🙈");
         } else {
             txtPassword.setText(txtPasswordVisible.getText());
             txtPassword.setVisible(true);
             txtPassword.setManaged(true);
             txtPasswordVisible.setVisible(false);
             txtPasswordVisible.setManaged(false);
-            btnTogglePassword.setText("👁"); // Change back to eye icon/text when hidden
+            btnTogglePassword.setText("👁");
         }
     }
 
@@ -106,7 +110,7 @@ public class LoginController {
         try (var br = new java.io.BufferedReader(new java.io.FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] parts = line.split(",", 7); // ✅ Expecting 7 fields
+                String[] parts = line.split(",", 7);
                 if (parts.length == 7 && parts[2].equals(username) && parts[5].equals(password)) {
                     User user = new User(username);
                     user.setFirstName(parts[0]);
@@ -126,6 +130,17 @@ public class LoginController {
         } catch (Exception e) {
             lblMessage.setStyle("-fx-text-fill: red;");
             lblMessage.setText("Failed to load create account screen.");
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void ChangePassTransfer() {
+        try {
+            MainClient.setRoot("changepassword", null);
+        } catch (Exception e) {
+            lblMessage.setStyle("-fx-text-fill: red;");
+            lblMessage.setText("Failed to load change password screen.");
             e.printStackTrace();
         }
     }

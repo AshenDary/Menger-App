@@ -56,7 +56,7 @@
             </Button>
 
             <!-- Forgot Password Hyperlink -->
-            <Hyperlink alignment="CENTER" text="Forgot password?" textFill="WHITE">
+            <Hyperlink fx:id="ChangePass" alignment="CENTER" onMouseClicked="#ChangePassTransfer" text="Change Password" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
