@@ -45,14 +45,9 @@
             </Label>
             <VBox>
                <children>
-                  <HBox alignment="CENTER" prefHeight="16.0">
+                  <HBox alignment="CENTER">
                      <children>
-                        <Label text="\@" textFill="#838789" wrapText="true">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cfuserUsername" layoutX="251.0" layoutY="10.0" prefHeight="20.0" prefWidth="38.0" text="user" textFill="#838789" wrapText="true">
+                        <Label fx:id="cfuserUsername" layoutX="251.0" layoutY="10.0" text="user" textFill="#838789" wrapText="true">
                            <font>
                               <Font size="20.0" />
                            </font>
