@@ -33,6 +33,9 @@ public class MenuController {
     private HBox bottomnavbar;
 
     @FXML
+    private HBox LogoutOption;
+
+    @FXML
     private ImageView chaticon;
 
     @FXML
@@ -61,6 +64,15 @@ public class MenuController {
     private void HandleChatTransfer() {
         try {
             MainClient.setRoot("chat", null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void HandleLogoutTransfer() {
+        try {
+            MainClient.setRoot("logout", null);
         } catch (IOException e) {
             e.printStackTrace();
         }
