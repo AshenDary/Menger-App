@@ -43,20 +43,24 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER" prefHeight="16.0" prefWidth="520.0">
+            <VBox>
                <children>
-                  <Label text="\@" textFill="#838789">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="cfuserUsername" layoutX="251.0" layoutY="10.0" prefHeight="20.0" prefWidth="38.0" text="user" textFill="#838789">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
+                  <HBox alignment="CENTER" prefHeight="16.0">
+                     <children>
+                        <Label text="\@" textFill="#838789" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="cfuserUsername" layoutX="251.0" layoutY="10.0" prefHeight="20.0" prefWidth="38.0" text="user" textFill="#838789" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                </children>
-            </HBox>
+            </VBox>
          </children>
          <padding>
             <Insets bottom="10.0" />
