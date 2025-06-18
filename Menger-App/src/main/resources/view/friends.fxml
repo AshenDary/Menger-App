@@ -170,7 +170,10 @@
                                     </DropShadow>
                                  </effect>
                                  <children>
-                                    <Button fx:id="playbutton" mnemonicParsing="false" onAction="#handlePlayAudio1" prefHeight="24.0" prefWidth="19.0" style="-fx-background-color: transparent;" text="▶" />
+                                    <Button fx:id="playbutton" mnemonicParsing="false" onAction="#handlePlayAudio1" prefHeight="24.0" prefWidth="19.0" style="-fx-background-color: transparent;">
+                                       <HBox.margin>
+                                          <Insets bottom="2.0" />
+                                       </HBox.margin></Button>
                                     <ImageView fx:id="waveform1" fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../assets/images/waveform.png" />
@@ -275,7 +278,10 @@
                                     </DropShadow>
                                  </effect>
                                  <children>
-                                    <Button fx:id="playbutton1" mnemonicParsing="false" onAction="#handlePlayAudio2" prefHeight="24.0" prefWidth="19.0" style="-fx-background-color: transparent;" text="▶" />
+                                    <Button fx:id="playbutton1" mnemonicParsing="false" onAction="#handlePlayAudio2" prefHeight="24.0" prefWidth="19.0" style="-fx-background-color: transparent;">
+                                       <HBox.margin>
+                                          <Insets bottom="2.0" />
+                                       </HBox.margin></Button>
                                     <ImageView fx:id="waveform" fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../assets/images/waveform.png" />
