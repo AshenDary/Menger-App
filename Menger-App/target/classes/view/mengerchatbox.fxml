@@ -264,7 +264,7 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox fx:id="jaridchatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="453.0" prefHeight="181.0" prefWidth="485.0">
+                  <HBox fx:id="jaridchatpreview2" alignment="CENTER_LEFT" layoutX="20.0" layoutY="453.0" prefHeight="194.0" prefWidth="485.0">
                      <children>
                         <ImageView fx:id="jaridicon2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -274,14 +274,14 @@
                               <Insets bottom="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <VBox alignment="CENTER_LEFT" prefHeight="126.0" prefWidth="435.0" spacing="2.0">
+                        <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="203.0" prefWidth="435.0" spacing="2.0">
                            <children>
                               <Label text="Jarid">
                                  <VBox.margin>
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="jaridmessagebubble2" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="49.0" prefHeight="96.0" prefWidth="96.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="\@Ranee @Alvin @Kenneth @Jared" wrapText="true">
+                              <Label fx:id="jaridmessagebubble2" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="49.0" prefHeight="95.0" prefWidth="107.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="\@Ranee @Alvin @Kenneth @Jared" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -297,27 +297,34 @@
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
                               </Label>
-                              <HBox fx:id="jaridmessagebubble4" alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="150.0" spacing="2.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20;">
-                                 <children>
-                                    <Label fx:id="staticat" text="\@" wrapText="true">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="cfuserchatpreviewStatic" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="USER" wrapText="true" HBox.hgrow="ALWAYS">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
+                              <VBox style="-fx-background-color: #d8dde4; -fx-background-radius: 20;">
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin>
+                                 <children>
+                                    <HBox fx:id="jaridmessagebubble4" alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label fx:id="staticat" text="\@" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="cfuserchatpreviewStatic" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="USER" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
-                              </HBox>
+                              </VBox>
                            </children>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
                         </VBox>
                      </children>
                   </HBox>

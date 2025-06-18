@@ -22,12 +22,12 @@
                </font>
             </Label>
             <Region prefHeight="36.0" prefWidth="240.0" HBox.hgrow="NEVER" />
-            <ImageView fx:id="editicon" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="editicon" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/pen.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="facebookicon" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="facebookicon" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/facebook.png" />
                </image>
@@ -499,20 +499,12 @@
                <children>
                   <StackPane fx:id="chatsstackpane" prefHeight="19.0" prefWidth="42.0">
                      <children>
-                        <ImageView fx:id="chatsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="chatsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn">
                            <image>
                               <Image url="@../assets/images/chaticon.png" />
                            </image>
                            <StackPane.margin>
                               <Insets top="2.0" />
-                           </StackPane.margin>
-                        </ImageView>
-                        <ImageView fx:id="notificationicon" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
-                           <image>
-                              <Image url="@../assets/images/notificationicon.png" />
-                           </image>
-                           <StackPane.margin>
-                              <Insets />
                            </StackPane.margin>
                         </ImageView>
                      </children>
@@ -529,7 +521,7 @@
             </VBox>
             <VBox fx:id="friendscontainer" alignment="BOTTOM_CENTER" layoutX="15.0" layoutY="15.0" prefHeight="54.0" prefWidth="38.0" spacing="5.0" HBox.hgrow="NEVER">
                <children>
-                  <ImageView fx:id="friendsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
+                  <ImageView fx:id="friendsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -549,7 +541,7 @@
             </VBox>
             <VBox fx:id="menucontainer" alignment="BOTTOM_CENTER" layoutX="220.0" layoutY="10.0" prefHeight="20.0" prefWidth="30.0" HBox.hgrow="NEVER">
                <children>
-                  <ImageView fx:id="menuicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
+                  <ImageView fx:id="menuicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="6.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>

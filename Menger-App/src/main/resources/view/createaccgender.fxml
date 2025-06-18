@@ -19,7 +19,7 @@
          <children>
             <HBox prefHeight="26.0" prefWidth="520.0">
                <children>
-                  <ImageView fx:id="backicon" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="backicon" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn">
                      <image>
                         <Image url="@../assets/images/backicon2.png" />
                      </image>
