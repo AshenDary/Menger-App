@@ -14,6 +14,8 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class LoginController {
 
@@ -35,7 +37,10 @@ public class LoginController {
     @FXML
     private Button btnTogglePassword;
 
-    private boolean passwordVisible = false;
+   private boolean passwordVisible = false;
+    private Image hideIcon;
+    private Image visibleIcon;
+    private ImageView toggleIconView;
 
     @FXML
     private void handleLogin(ActionEvent event) {
@@ -63,23 +68,33 @@ public class LoginController {
     }
 
     @FXML
+    private void initialize() {
+        hideIcon = new Image(getClass().getResource("/assets/images/hideicon.png").toExternalForm());
+        visibleIcon = new Image(getClass().getResource("/assets/images/visibleicon.png").toExternalForm());
+        toggleIconView = new ImageView(hideIcon);
+        toggleIconView.setFitHeight(20);
+        toggleIconView.setFitWidth(20);
+        btnTogglePassword.setGraphic(toggleIconView);
+    }
+
+    @FXML
     private void handleTogglePassword(ActionEvent event) {
         passwordVisible = !passwordVisible;
-        
+
         if (passwordVisible) {
             txtPasswordVisible.setText(txtPassword.getText());
             txtPasswordVisible.setVisible(true);
             txtPasswordVisible.setManaged(true);
             txtPassword.setVisible(false);
             txtPassword.setManaged(false);
-            btnTogglePassword.setText("🙈");
+            toggleIconView.setImage(visibleIcon);
         } else {
             txtPassword.setText(txtPasswordVisible.getText());
             txtPassword.setVisible(true);
             txtPassword.setManaged(true);
             txtPasswordVisible.setVisible(false);
             txtPasswordVisible.setManaged(false);
-            btnTogglePassword.setText("👁");
+            toggleIconView.setImage(hideIcon);
         }
     }
 
