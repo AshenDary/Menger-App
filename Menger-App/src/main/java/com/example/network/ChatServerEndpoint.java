@@ -36,12 +36,13 @@ public class ChatServerEndpoint {
         }
 
         String senderUsername = userMap.get(senderSession);
+        String fullMessage = (senderUsername != null ? senderUsername : "Unknown") + ": " + message;
 
         synchronized (sessions) {
             for (Session session : sessions) {
                 if (!session.equals(senderSession) && session.isOpen()) {
                     try {
-                        session.getBasicRemote().sendText(senderUsername + ": " + message);
+                        session.getBasicRemote().sendText(fullMessage);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
