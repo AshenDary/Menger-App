@@ -40,11 +40,11 @@
                   <TextField fx:id="txtPasswordVisible" focusTraversable="false" managed="false" prefHeight="58.0" prefWidth="390.0" promptText="Password" style="-fx-background-radius: 15; -fx-font-size: 18px; -fx-background-color: transparent;" visible="false" />
 
                   <!-- Hidden Password Field -->
-                  <PasswordField fx:id="txtPassword" focusTraversable="false" prefHeight="58.0" prefWidth="390.0" promptText="Password" style="-fx-background-radius: 15; -fx-font-size: 18px; -fx-background-color: transparent;" />
+                  <PasswordField fx:id="txtPassword" focusTraversable="false" prefHeight="58.0" prefWidth="384.0" promptText="Password" style="-fx-background-radius: 15; -fx-font-size: 18px; -fx-background-color: transparent;" />
+                  <Region prefHeight="58.0" prefWidth="45.0" />
 
                   <!-- Toggle Button -->
                   <Button fx:id="btnTogglePassword" mnemonicParsing="false" onAction="#handleTogglePassword" prefWidth="30.0" style="-fx-background-color: transparent; -fx-cursor: hand;" />
-                  <Region prefHeight="58.0" prefWidth="19.0" />
                </children>
                <VBox.margin>
                   <Insets left="20.0" right="20.0" />

@@ -619,7 +619,7 @@
                <children>
                   <StackPane fx:id="chatsstackpane" prefHeight="19.0" prefWidth="42.0">
                      <children>
-                        <ImageView fx:id="chatsicon" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#HandleChatTransfer" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="chatsicon" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#HandleChatTransfer" pickOnBounds="true" preserveRatio="true" styleClass="back-btn">
                            <image>
                               <Image url="@../assets/images/chaticon2.png" />
                            </image>
@@ -641,7 +641,7 @@
             </VBox>
             <VBox fx:id="friendscontainer" alignment="BOTTOM_CENTER" layoutX="15.0" layoutY="15.0" prefHeight="54.0" prefWidth="38.0" spacing="5.0">
                <children>
-                  <ImageView fx:id="friendsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="friendsicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -661,7 +661,7 @@
             </VBox>
             <VBox fx:id="menucontainer" alignment="BOTTOM_CENTER" layoutX="220.0" layoutY="10.0" prefHeight="20.0" prefWidth="30.0">
                <children>
-                  <ImageView fx:id="menuicon" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#HandleMenuTransfer" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="menuicon" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#HandleMenuTransfer" pickOnBounds="true" preserveRatio="true" styleClass="back-btn">
                      <VBox.margin>
                         <Insets bottom="6.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
