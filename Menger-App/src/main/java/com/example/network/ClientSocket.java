@@ -26,9 +26,10 @@ public class ClientSocket {
 
     private void connect() throws Exception {
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-        this.session = container.connectToServer(this, new URI("ws://localhost:8080/chat"));
+        this.session = container.connectToServer(this, new URI("ws://192.168.1.5:8080/chat"));
         sendMessage("USERNAME:" + username);
     }
+    
 
     @OnOpen
     public void onOpen(Session session) {
