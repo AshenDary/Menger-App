@@ -13,9 +13,9 @@
 
 <VBox fx:id="rootlayoutchatboxjarid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.JaridChatBoxController">
    <children>
-      <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="540.0" spacing="10.0" VBox.vgrow="NEVER">
+      <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="540.0" spacing="10.0" styleClass="back-btn" VBox.vgrow="NEVER">
          <children>
-            <ImageView fx:id="backicon" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#handleBackToChat" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="backicon" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#handleBackToChat" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/backicon.png" />
                </image>
@@ -40,7 +40,7 @@
                </HBox.margin>
             </Label>
             <Region prefHeight="50.0" prefWidth="277.0" />
-            <ImageView fx:id="callicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="callicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/callicon.png" />
                </image>
@@ -48,7 +48,7 @@
                   <Insets right="5.0" top="15.5" />
                </HBox.margin>
             </ImageView>
-            <ImageView fx:id="videocallicon" fitHeight="33.0" fitWidth="33.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="videocallicon" fitHeight="33.0" fitWidth="33.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/videocallicon.png" />
                </image>
@@ -58,7 +58,7 @@
             </ImageView>
          </children>
          <padding>
-            <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
          </padding>
          <VBox.margin>
             <Insets />
@@ -89,7 +89,7 @@
                               <Insets />
                            </VBox.margin>
                         </Label>
-                        <Button fx:id="jaridbutton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #e1e6ea; -fx-background-radius: 50;" text="View profile">
+                        <Button fx:id="jaridbutton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #e1e6ea; -fx-background-radius: 50;" styleClass="back-btn" text="View profile">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
@@ -125,7 +125,7 @@
                         </ImageView>
                         <VBox fx:id="jaridmessagebubblecontainer1" prefHeight="82.0" prefWidth="369.0" spacing="5.0">
                            <children>
-                              <Label fx:id="jaridmessagebubble1" contentDisplay="CENTER" style="-fx-background-color: #d8dde4; -fx-background-radius: 50; -fx-border-width: 1; -fx-border-radius: 50;" text="good morning po! baka interested po kayo bumili ng chicken wings samin" wrapText="true">
+                              <Label fx:id="jaridmessagebubble1" contentDisplay="CENTER" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="good morning po! baka interested po kayo bumili ng chicken wings samin" wrapText="true">
                                  <padding>
                                     <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
                                  </padding>

@@ -15,7 +15,7 @@
    <children>
       <HBox fx:id="topnavbar" alignment="CENTER" prefHeight="80.0" prefWidth="520.0" spacing="10.0" VBox.vgrow="NEVER">
          <children>
-            <ImageView fx:id="backicon" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#handleBackToChat" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="backicon" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#handleBackToChat" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/backicon.png" />
                </image>
@@ -40,7 +40,7 @@
                </HBox.margin>
             </Label>
             <Region prefHeight="50.0" prefWidth="130.0" />
-            <ImageView fx:id="callicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="callicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/callicon.png" />
                </image>
@@ -48,7 +48,7 @@
                   <Insets right="5.0" top="15.5" />
                </HBox.margin>
             </ImageView>
-            <ImageView fx:id="videocallicon" fitHeight="33.0" fitWidth="33.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+            <ImageView fx:id="videocallicon" fitHeight="33.0" fitWidth="33.0" layoutX="335.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" styleClass="back-btn" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../assets/images/videocallicon.png" />
                </image>
@@ -58,7 +58,7 @@
             </ImageView>
          </children>
          <padding>
-            <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
          </padding>
          <VBox.margin>
             <Insets />
@@ -89,7 +89,7 @@
                               <Insets bottom="8.0" top="8.0" />
                            </VBox.margin>
                         </Label>
-                        <Button fx:id="binobutton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #e1e6ea; -fx-background-radius: 50;" text="View profile">
+                        <Button fx:id="binobutton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #e1e6ea; -fx-background-radius: 50;" styleClass="back-btn" text="View profile">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
@@ -283,7 +283,7 @@
                <font>
                   <Font size="13.0" />
                </font></Label>
-            <Button fx:id="unblockbutton" mnemonicParsing="false" prefHeight="40.0" prefWidth="490.0" style="-fx-background-radius: 10; -fx-background-color: #e1e6ea;" text="Unblock">
+            <Button fx:id="unblockbutton" mnemonicParsing="false" prefHeight="40.0" prefWidth="490.0" style="-fx-background-radius: 10; -fx-background-color: #e1e6ea;" styleClass="back-btn" text="Unblock">
                <VBox.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
@@ -291,7 +291,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="reportbutton" layoutX="203.0" layoutY="85.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="490.0" style="-fx-background-radius: 10; -fx-background-color: #e1e6ea;" text="Report">
+            <Button fx:id="reportbutton" layoutX="203.0" layoutY="85.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="490.0" style="-fx-background-radius: 10; -fx-background-color: #e1e6ea;" styleClass="back-btn" text="Report">
                <VBox.margin>
                   <Insets bottom="25.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>

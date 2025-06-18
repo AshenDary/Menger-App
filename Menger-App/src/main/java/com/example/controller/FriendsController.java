@@ -14,7 +14,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import java.nio.file.Paths;
 
 public class FriendsController {
 
@@ -171,7 +170,7 @@ public class FriendsController {
     @FXML
     private void handlePlayAudio2() {
         try {
-            String audioPath = getClass().getResource("/assets/audio/binowaveform.mp3").toExternalForm();
+            String audioPath = getClass().getResource("/assets/audio/bugoywaveform.mp3").toExternalForm();
             Media media = new Media(audioPath);
             MediaPlayer mediaPlayer = new MediaPlayer(media);
             mediaPlayer.play();
@@ -184,7 +183,7 @@ public class FriendsController {
     @FXML
     private void handlePlayAudio1() {
     try {
-        String audioPath = getClass().getResource("/assets/audio/bugoywaveform.mp3").toExternalForm();
+        String audioPath = getClass().getResource("/assets/audio/binowaveform.mp3").toExternalForm();
         Media media = new Media(audioPath);
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
@@ -192,6 +191,19 @@ public class FriendsController {
         e.printStackTrace();
     }
 }
+
+    @FXML
+    private void initialize() {
+        storiespane.setOnScroll(event -> {
+            double deltaY = event.getDeltaY();
+            double scrollSpeed = 0.005;
+            double newValue = storiespane.getHvalue() - deltaY * scrollSpeed;
+            newValue = Math.max(0, Math.min(1, newValue)); // clamp between 0 and 1
+            storiespane.setHvalue(newValue);
+            event.consume();
+        });
+    }
+    
 
     
 }

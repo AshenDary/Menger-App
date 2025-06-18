@@ -307,3 +307,14 @@
     -fx-text-fill: #697479;
 }
 
+/* back buttons */
+
+.back-btn {
+    -fx-cursor: hand;
+}
+
+.back-btn:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-cursor: hand;
+}
