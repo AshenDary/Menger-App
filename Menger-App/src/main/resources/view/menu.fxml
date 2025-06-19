@@ -116,7 +116,7 @@
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <Region prefHeight="30.0" prefWidth="215.0" />
+                              <Region prefHeight="30.0" prefWidth="265.0" />
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../assets/images/backicon3.png" />
