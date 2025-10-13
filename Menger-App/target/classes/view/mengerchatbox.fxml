@@ -252,7 +252,7 @@
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="jaridmessagebubble1" alignment="BOTTOM_LEFT" prefHeight="53.0" prefWidth="306.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="baka sau lng, kakatapos lng magannounce n groupings si sir sa OOP eh" wrapText="true">
+                              <Label fx:id="jaridmessagebubble1" alignment="BOTTOM_LEFT" prefHeight="53.0" prefWidth="306.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="baka sau lng, kakatapos lng magannounce ng groupings si miss sa DSA eh" wrapText="true">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
