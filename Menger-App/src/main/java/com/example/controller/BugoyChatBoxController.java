@@ -1,6 +1,8 @@
 package com.example.controller;
 
 import java.io.IOException;
+import java.util.Stack;
+import java.util.UUID;
 
 import com.example.model.Chat;
 import com.example.network.ClientSocket;
@@ -9,6 +11,7 @@ import com.example.network.MainClient;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -36,8 +39,13 @@ public class BugoyChatBoxController {
     @FXML
     private ImageView backicon;
 
+    @FXML
+    private Label messageLabel;
+
     private ClientSocket clientSocket;
     private Chat chat;
+
+    private Stack<ChatBubbleController> sentMessages = new Stack<>();
 
     @FXML
     private void initialize() {
@@ -72,7 +80,8 @@ public class BugoyChatBoxController {
         if (chat != null && chat.getMessages() != null) {
             chat.getMessages().forEach(message -> {
                 boolean isSentByCurrentUser = message.getSender().equals(chat.getParticipant1());
-                addMessageToChat(message.getContent(), isSentByCurrentUser);
+                // ✅ Generate message ID if not stored
+                addMessageToChat(UUID.randomUUID().toString(), message.getContent(), isSentByCurrentUser);
             });
         }
     }
@@ -90,38 +99,73 @@ public class BugoyChatBoxController {
     private void handleSendMessage() {
         String message = chatbar.getText().trim();
         if (!message.isEmpty() && clientSocket != null) {
+            String messageId = UUID.randomUUID().toString(); // ✅ Generate message ID
             clientSocket.sendMessage(message);
             chatbar.clear();
-            addMessageToChat(message, true);
+            addMessageToChat(messageId, message, true);
         }
     }
 
     private void handleIncomingMessage(String message) {
         if (chat == null) return;
 
-        String[] parts = message.split(": ", 2);
-        if (parts.length == 2) {
-            String sender = parts[0].trim();
-            String content = parts[1];
-            if (sender.equalsIgnoreCase(chat.getParticipant1().getUsername().trim())) return;
-            addMessageToChat(content, false);
-        } else {
-            addMessageToChat(message, false);
+        if (message.startsWith("MESSAGE:")) {
+            String[] parts = message.split(":", 4);
+            if (parts.length == 4) {
+                String messageId = parts[1];
+                String sender = parts[2];
+                String content = parts[3];
+                boolean isSentByCurrentUser = sender.equals(chat.getParticipant1().getUsername());
+                addMessageToChat(messageId, content, isSentByCurrentUser);
+            }
+        } else if (message.startsWith("UNSEND:")) {
+            String[] parts = message.split(":", 3);
+            if (parts.length >= 2) {
+                String messageId = parts[1];
+                markMessageAsUnsent(messageId);
+            }
         }
     }
 
-    private void addMessageToChat(String content, boolean isSentByCurrentUser) {
+    private void addMessageToChat(String messageId, String content, boolean isSentByCurrentUser) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ChatBubble.fxml"));
             HBox bubble = loader.load();
 
             ChatBubbleController controller = loader.getController();
             controller.setMessage(content, isSentByCurrentUser);
+            controller.setMessageId(messageId);
+
+            bubble.setUserData(controller);
+
+            if (isSentByCurrentUser) {
+                controller.setOnUnsendCallback(() -> handleUnsend(controller));
+                sentMessages.push(controller);
+            }
 
             chatpreviewcontainer.getChildren().add(bubble);
             Platform.runLater(this::scrollToBottom);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void handleUnsend(ChatBubbleController controller) {
+        controller.markAsUnsent();
+        if (clientSocket != null) {
+            clientSocket.sendUnsend(controller.getMessageId());
+        }
+    }
+
+    private void markMessageAsUnsent(String messageId) {
+        for (javafx.scene.Node node : chatpreviewcontainer.getChildren()) {
+            if (node.getUserData() instanceof ChatBubbleController) {
+                ChatBubbleController controller = (ChatBubbleController) node.getUserData();
+                if (controller.getMessageId().equals(messageId)) {
+                    controller.markAsUnsent();
+                    break;
+                }
+            }
         }
     }
 

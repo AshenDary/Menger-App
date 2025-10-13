@@ -5,12 +5,27 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox fx:id="bubbleContainer" spacing="8" style="-fx-padding: 6; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ChatBubbleController">
+<HBox fx:id="bubbleContainer" spacing="8" style="-fx-padding: 6;"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.controller.ChatBubbleController">
     <children>
-        <ImageView fx:id="profilePic" fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true" visible="false" />
-        <VBox style="-fx-background-radius: 20;">
-            <Label fx:id="senderName" style="-fx-font-weight: bold; -fx-font-size: 15px; -fx-border-radius: 20;" visible="false" />
-            <Label fx:id="messageLabel" maxWidth="280" style="-fx-padding: 8; -fx-font-size: 15px; -fx-background-radius: 20;" wrapText="true" />
+        <ImageView fx:id="profilePic" fitHeight="40" fitWidth="40" visible="false" />
+        <VBox>
+            <Label fx:id="senderName" visible="false" />
+            <HBox fx:id="messageContainer" spacing="5" alignment="CENTER_LEFT">
+                <ImageView fx:id="unsendIcon"
+                           fitHeight="18" fitWidth="18"
+                           pickOnBounds="true"
+                           preserveRatio="true"
+                           visible="false"
+                           onMouseClicked="#handleUnsendClicked"
+                           style="-fx-cursor: hand; -fx-opacity: 0.7;" />
+                <Label fx:id="messageLabel"
+                       maxWidth="280"
+                       wrapText="true"
+                       style="-fx-padding: 8; -fx-background-radius: 20; -fx-font-size: 15px;" />
+            </HBox>
         </VBox>
     </children>
 </HBox>

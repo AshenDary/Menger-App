@@ -35,20 +35,20 @@ public class ChatServerEndpoint {
             return;
         }
 
-        String senderUsername = userMap.get(senderSession);
-        String fullMessage = (senderUsername != null ? senderUsername : "Unknown") + ": " + message;
+        if (message.startsWith("UNSEND:")) {
+            String messageId = message.substring(7);
+            String senderUsername = userMap.get(senderSession);
+            String unsendNotice = "UNSEND:" + messageId + ":" + senderUsername;
 
-        synchronized (sessions) {
-            for (Session session : sessions) {
-                if (!session.equals(senderSession) && session.isOpen()) {
-                    try {
-                        session.getBasicRemote().sendText(fullMessage);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+            broadcastToAll(unsendNotice, senderSession);
+            return;
         }
+
+        String messageId = java.util.UUID.randomUUID().toString();
+        String senderUsername = userMap.get(senderSession);
+        String fullMessage = "MESSAGE:" + messageId + ":" + senderUsername + ":" + message;
+
+        broadcastToAll(fullMessage, senderSession);
     }
 
     @OnClose
@@ -62,4 +62,21 @@ public class ChatServerEndpoint {
     public void onError(Session session, Throwable throwable) {
         System.err.println("Error on session " + session.getId() + ": " + throwable.getMessage());
     }
+
+    private void broadcastToAll(String message, Session senderSession) {
+        synchronized (sessions) {
+            for (Session session : sessions) {
+                if (session.isOpen()) {
+                    try {
+                        // Don't send back to sender for normal messages
+                        if (!session.equals(senderSession) || message.startsWith("UNSEND:")) {
+                            session.getBasicRemote().sendText(message);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }    
 }

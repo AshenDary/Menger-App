@@ -41,6 +41,7 @@ public class ClientSocket {
         if (onMessageReceived != null) onMessageReceived.accept(message);
     }
 
+
     @OnClose
     public void onClose(Session session) {
         System.out.println("❌ Disconnected: " + session.getId());
@@ -64,6 +65,17 @@ public class ClientSocket {
     public void setOnMessageReceived(Consumer<String> onMessageReceived) {
         this.onMessageReceived = onMessageReceived;
     }
+
+    public void sendUnsend(String messageId) {
+        try {
+            if (session != null && session.isOpen()) {
+                session.getBasicRemote().sendText("UNSEND:" + messageId);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
 
     public void close() {
         try {

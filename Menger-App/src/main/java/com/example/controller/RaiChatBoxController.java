@@ -88,9 +88,6 @@ public class RaiChatBoxController {
     }
 
     private void scrollToBottom() {
-        Platform.runLater(() -> {
-            chatareacontainer.layout();
-            chatareacontainer.setVvalue(1.0);
-        });
+        chatareacontainer.setVvalue(1.0);
     }
 }
