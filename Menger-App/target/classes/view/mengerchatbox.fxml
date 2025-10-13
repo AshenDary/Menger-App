@@ -281,7 +281,7 @@
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="jaridmessagebubble2" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="49.0" prefHeight="95.0" prefWidth="107.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="\@Ranee @Alvin @Kenneth @Jared" wrapText="true">
+                              <Label fx:id="jaridmessagebubble2" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="49.0" prefHeight="95.0" prefWidth="107.0" style="-fx-background-color: #d8dde4; -fx-background-radius: 20; -fx-border-width: 1; -fx-border-radius: 50;" text="\@Ranee @Riley @Kenneth @Jared" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

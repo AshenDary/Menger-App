@@ -56,7 +56,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/siricon.png" />
+                              <Image url="@../assets/images/missicon.png" />
                            </image>
                         </ImageView>
                         <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="399.0">

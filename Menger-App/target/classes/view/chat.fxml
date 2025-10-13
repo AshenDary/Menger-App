@@ -74,7 +74,7 @@
                      <children>
                         <ImageView fx:id="sirstoryicon" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
                            <image>
-                              <Image url="@../assets/images/sirstoryicon.png" />
+                              <Image url="@../assets/images/missstoryicon.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="yournote" alignment="CENTER" contentDisplay="CENTER" text="Your note" VBox.vgrow="NEVER">

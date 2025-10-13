@@ -41,7 +41,7 @@
                      <children>
                         <ImageView fx:id="sirstory" fitHeight="200.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/sirstory.png" />
+                              <Image url="@../assets/images/missstory.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -198,7 +198,7 @@
                                  <children>
                                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/siricon.png" />
+                                          <Image url="@../assets/images/missicon.png" />
                                        </image>
                                     </ImageView>
                                     <Label prefHeight="29.0" prefWidth="196.0" style="-fx-background-color: f3f2f8; -fx-background-radius: 20;" text="Send message..." textFill="#585d61" wrapText="true">
@@ -306,7 +306,7 @@
                                  <children>
                                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/siricon.png" />
+                                          <Image url="@../assets/images/missicon.png" />
                                        </image>
                                     </ImageView>
                                     <Label prefHeight="29.0" prefWidth="196.0" style="-fx-background-color: f3f2f8; -fx-background-radius: 20;" text="Send message..." textFill="#585d61" wrapText="true">
@@ -402,7 +402,7 @@
                                  <children>
                                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/siricon.png" />
+                                          <Image url="@../assets/images/missicon.png" />
                                        </image>
                                     </ImageView>
                                     <Label prefHeight="29.0" prefWidth="196.0" style="-fx-background-color: f3f2f8; -fx-background-radius: 20;" text="Send message..." textFill="#585d61" wrapText="true">
@@ -496,7 +496,7 @@
                                  <children>
                                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/siricon.png" />
+                                          <Image url="@../assets/images/missicon.png" />
                                        </image>
                                     </ImageView>
                                     <Label prefHeight="29.0" prefWidth="196.0" style="-fx-background-color: f3f2f8; -fx-background-radius: 20;" text="Send message..." textFill="#585d61" wrapText="true">
@@ -590,7 +590,7 @@
                                  <children>
                                     <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/siricon.png" />
+                                          <Image url="@../assets/images/missicon.png" />
                                        </image>
                                     </ImageView>
                                     <Label prefHeight="29.0" prefWidth="196.0" style="-fx-background-color: f3f2f8; -fx-background-radius: 20;" text="Send message..." textFill="#585d61" wrapText="true">
