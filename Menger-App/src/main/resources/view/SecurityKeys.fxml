@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller=fx:controller="com.example.controller.MenuController"
+            prefWidth="900" prefHeight="600">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #2b2d42; -fx-padding: 10;">
+            <Button fx:id="backButton" text="← Back" onAction="#onBackClicked"
+                    style="-fx-background-color: #8d99ae; -fx-text-fill: white;"/>
+            <Label text="Security Key Manager" style="-fx-text-fill: white;">
+                <font>
+                    <Font name="System Bold" size="20"/>
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="generateKeyButton" text="+ Generate Key" onAction="#onGenerateKey"
+                    style="-fx-background-color: #00b894; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <HBox spacing="10">
+                <Label text="Sort by:"/>
+                <!-- empty ComboBox that will be populated in controller -->
+                <ComboBox fx:id="sortComboBox" onAction="#onSortChanged" prefWidth="200"/>
+            </HBox>
+
+            <TableView fx:id="keysTable" prefHeight="450">
+                <columns>
+                    <TableColumn fx:id="ownerCol" text="Owner" prefWidth="200"/>
+                    <TableColumn fx:id="hashCol" text="Hashed Key" prefWidth="450"/>
+                    <TableColumn fx:id="activeCol" text="Active" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="validateButton" text="Validate" onAction="#onValidateKey"/>
+                <Button fx:id="revokeButton" text="Revoke" onAction="#onRevokeKey"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
