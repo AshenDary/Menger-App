@@ -9,6 +9,7 @@ import com.example.network.MainClient;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -43,6 +44,9 @@ public class MenuController {
 
     @FXML
     private ImageView menuicon;
+
+    @FXML
+    private HBox SecKeyOption;
 
     private User user;
 
@@ -82,6 +86,15 @@ public class MenuController {
     private void HandleFriendsTransfer() {
         try {
             MainClient.setRoot("friends", null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void HandleSecKeyTransfer(MouseEvent event) {
+        try {
+            MainClient.setRoot("SecurityKeys", null);
         } catch (IOException e) {
             e.printStackTrace();
         }

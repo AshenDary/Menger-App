@@ -101,7 +101,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </VBox.margin>
                      <children>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="200.0" style="-fx-background-radius: 20 20 0 0;" styleClass="hoverable-hbox">
+                        <HBox fx:id="SecKeyOption" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" onMouseClicked="#HandleSecKeyTransfer" prefHeight="60.0" prefWidth="200.0" style="-fx-background-radius: 20 20 0 0;" styleClass="hoverable-hbox">
                            <children>
                               <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

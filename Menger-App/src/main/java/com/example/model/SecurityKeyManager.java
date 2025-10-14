@@ -1,6 +1,9 @@
 package com.example.model;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class SecurityKeyManager {
@@ -66,5 +69,10 @@ public class SecurityKeyManager {
     /** Get only verified keys */
     public List<SecurityKey> getVerifiedKeys() {
         return keys.stream().filter(SecurityKey::isVerified).collect(Collectors.toList());
+    }
+
+    public void generateRandomKey() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'generateRandomKey'");
     }
 }
