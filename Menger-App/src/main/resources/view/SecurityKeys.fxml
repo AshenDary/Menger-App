@@ -21,36 +21,22 @@
                         <Font name="System Bold" size="20"/>
                     </font>
                 </Label>
-                <Region HBox.hgrow="ALWAYS" />
-                <Button fx:id="generateKeyButton" text="+ Generate Key" onAction="#onGenerateKey"
-                        style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 6;" />
+        <Region HBox.hgrow="ALWAYS" />
+                <Label text="Sort by:" style="-fx-text-fill: white;" />
+                <ComboBox fx:id="sortComboBox" onAction="#onSortChanged" prefWidth="160" />
+                <ComboBox fx:id="sortDirectionComboBox" onAction="#onSortChanged" prefWidth="100" />
+        <Button fx:id="generateKeyButton" text="+ Generate Key" onAction="#onGenerateKey"
+            style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 6;" />
             </HBox>
 
             <VBox spacing="12" style="-fx-padding: 10 20 20 20; -fx-alignment: center;">
-                <VBox spacing="8" style="-fx-padding: 10; -fx-background-color: rgba(255,255,255,0.03); -fx-background-radius: 8; -fx-pref-width: 760;">
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <Label text="Created:" style="-fx-text-fill: white; -fx-font-weight: bold;" />
-                        <Label fx:id="createdLabel" text="-" style="-fx-text-fill: white;" />
-                    </HBox>
+                <ScrollPane fitToWidth="true" prefViewportHeight="420" style="-fx-pref-width: 760; -fx-background: transparent; -fx-background-color: transparent;">
+                    <content>
+                        <VBox fx:id="entriesContainer" spacing="8" style="-fx-padding: 6; -fx-alignment: top_center;" />
+                    </content>
+                </ScrollPane>
 
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <Label text="Hashed Key:" style="-fx-text-fill: white; -fx-font-weight: bold;" />
-                        <TextField fx:id="keyField" editable="false" prefWidth="480" />
-                        <Button fx:id="copyButton" text="Copy" onAction="#onCopyKey" style="-fx-background-color: #4a90e2; -fx-text-fill: white; -fx-background-radius: 6;" />
-                    </HBox>
-
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <Label text="Status:" style="-fx-text-fill: white; -fx-font-weight: bold;" />
-                        <Label fx:id="activeLabel" text="-" style="-fx-text-fill: white;" />
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Label text="Expires in:" style="-fx-text-fill: white; -fx-font-weight: bold;" />
-                        <Label fx:id="expiryLabel" text="-" style="-fx-text-fill: white;" />
-                    </HBox>
-                </VBox>
-
-                <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 6 0 0 0; -fx-pref-width: 760;">
-                    <Button fx:id="revokeButton" text="Revoke" onAction="#onRevokeKey" style="-fx-background-color: #B22222; -fx-text-fill: white; -fx-background-radius: 8;" />
-                </HBox>
+                <!-- Global revoke button removed: per-entry Revoke buttons are available beside each key -->
             </VBox>
         </VBox>
     </children>
