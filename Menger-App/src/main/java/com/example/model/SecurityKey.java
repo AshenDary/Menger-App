@@ -16,7 +16,7 @@ public class SecurityKey {
         this.verified = verified;
         this.rawKey = rawKey;
         this.createdAt = LocalDateTime.now();
-        this.expiresAt = createdAt.plusDays(30); // Default 30-day validity
+    this.expiresAt = createdAt.plusSeconds(100); // Default 30-second validity (for testing)
     }
 
     public String getUserId() {
