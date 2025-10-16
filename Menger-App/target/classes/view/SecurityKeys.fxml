@@ -1,43 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.controller.SecurityKeysController"
-            prefWidth="900" prefHeight="600"
-            style="-fx-background-color: #162029;">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="520.0" style="-fx-background-color: #162029;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.SecurityKeysController">
     <children>
-        <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
-            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10; -fx-background-color: transparent;">
-                <Button fx:id="backButton" text="← Back" onAction="#onBackClicked"
-                        style="-fx-background-color: #8d99ae; -fx-text-fill: white; -fx-background-radius: 6;" />
-                <Label text="Security Key Manager" style="-fx-text-fill: white;">
-                    <font>
-                        <Font name="System Bold" size="20"/>
-                    </font>
-                </Label>
-        <Region HBox.hgrow="ALWAYS" />
-                <Label text="Sort by:" style="-fx-text-fill: white;" />
-                <ComboBox fx:id="sortComboBox" onAction="#onSortChanged" prefWidth="160" />
-                <ComboBox fx:id="sortDirectionComboBox" onAction="#onSortChanged" prefWidth="100" />
-        <Button fx:id="generateKeyButton" text="+ Generate Key" onAction="#onGenerateKey"
-            style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 6;" />
-            </HBox>
+        <VBox alignment="CENTER" prefHeight="964.0" prefWidth="520.0" spacing="20.0">
+            <children>
+                <HBox prefHeight="26.0" prefWidth="520.0">
+                    <children>
+                        <Button fx:id="backButton" onMouseClicked="#HandleBackToMenu" prefHeight="36.0" prefWidth="47.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14; -fx-background-radius: 6;" text="← ">
+                            <HBox.margin>
+                                <Insets bottom="15.0" />
+                            </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="47.0" />
+                     </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </HBox>
+                <VBox prefHeight="105.0" prefWidth="520.0" spacing="2.0">
+                    <children>
+                        <Label text="Security Key Manager" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="25.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="440.0" text="Generate, copy and revoke security keys for accounts. Keys expire automatically." textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </VBox>
 
-            <VBox spacing="12" style="-fx-padding: 10 20 20 20; -fx-alignment: center;">
-                <ScrollPane fitToWidth="true" prefViewportHeight="420" style="-fx-pref-width: 760; -fx-background: transparent; -fx-background-color: transparent;">
+                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="520.0" spacing="10.0">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="12.0">
+                            <padding>
+                                <Insets left="20.0" right="20.0" />
+                            </padding>
+                            <children>
+                                <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/images/missicon.png" />
+                                    </image>
+                                </ImageView>
+                                <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="320.0">
+                                    <children>
+                                        <Label fx:id="cfuserchatpreviewStatic" text="SYSTEM" textFill="WHITE" wrapText="true">
+                                            <font>
+                                                <Font name="System Bold" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="10.0" layoutY="10.0" text="Manage your security keys below." textFill="WHITE" wrapText="true">
+                                            <font>
+                                                <Font size="17.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" />
+                    </padding>
+                </VBox>
+
+                <!-- Action buttons -->
+                <HBox alignment="CENTER_LEFT" prefWidth="480.0" spacing="12.0">
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                    <children>
+                        <Button fx:id="generateKeyButton" mnemonicParsing="false" onAction="#onGenerateKey" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-size: 15;" text="+ Generate Key" />
+                        <ComboBox fx:id="sortComboBox" onAction="#onSortChanged" prefWidth="140.0" />
+                        <ComboBox fx:id="sortDirectionComboBox" onAction="#onSortChanged" prefWidth="110.0" />
+                    </children>
+                </HBox>
+
+                <!-- Keys list -->
+                <ScrollPane fitToWidth="true" prefViewportHeight="520.0" style="-fx-pref-width: 480; -fx-background: transparent; -fx-background-color: transparent;">
                     <content>
                         <VBox fx:id="entriesContainer" spacing="8" style="-fx-padding: 6; -fx-alignment: top_center;" />
                     </content>
                 </ScrollPane>
 
-                <!-- Global revoke button removed: per-entry Revoke buttons are available beside each key -->
-            </VBox>
+                <Label fx:id="lblMessage" textFill="RED" wrapText="true">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Region prefHeight="30.0" prefWidth="520.0" VBox.vgrow="NEVER" />
+            </children>
         </VBox>
     </children>
 </AnchorPane>

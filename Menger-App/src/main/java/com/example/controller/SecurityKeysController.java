@@ -1,11 +1,17 @@
 package com.example.controller;
 
+import java.io.IOException;
+
+import com.example.model.CurrentUser;
 import com.example.model.SecurityKey;
 import com.example.model.SecurityKeyManager;
+import com.example.network.MainClient;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
@@ -131,7 +137,6 @@ public class SecurityKeysController {
         // After rendering, find the entry view and ensure it shows raw momentarily
         EntryView ev = entryViews.get(k);
         if (ev != null) ev.showRawTemporarily(5);
-        showAlert("Success", "New security key generated successfully.");
     }
 
     // (Validation handled automatically when keys are generated active)
@@ -171,11 +176,14 @@ public class SecurityKeysController {
         }
     }
 
-    // 🔹 Back button (menu navigation)
     @FXML
-    private void onBackClicked(ActionEvent event) {
-        // Replace with your main menu navigation logic
-        System.out.println("Back to main menu...");
+    void HandleBackToMenu(MouseEvent event) {
+        try {
+            MainClient.setRoot("menu", CurrentUser.getInstance().getUser());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     // Small helper that creates a UI block for a single SecurityKey and manages its timers
@@ -299,4 +307,5 @@ public class SecurityKeysController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    
 }
