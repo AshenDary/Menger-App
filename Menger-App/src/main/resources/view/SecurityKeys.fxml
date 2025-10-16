@@ -17,29 +17,26 @@
     <children>
         <VBox alignment="CENTER" prefHeight="964.0" prefWidth="520.0" spacing="20.0">
             <children>
-                <HBox prefHeight="26.0" prefWidth="520.0">
+                <HBox prefHeight="25.0" prefWidth="520.0">
                     <children>
-                        <Button fx:id="backButton" onMouseClicked="#HandleBackToMenu" prefHeight="36.0" prefWidth="47.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14; -fx-background-radius: 6;" text="← ">
-                            <HBox.margin>
-                                <Insets bottom="15.0" />
-                            </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="47.0" />
-                     </font>
-                        </Button>
+                  <ImageView fx:id="backButton" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/backicon2.png" />
+                     </image>
+                  </ImageView>
                     </children>
                     <padding>
                         <Insets left="20.0" right="20.0" />
                     </padding>
                 </HBox>
-                <VBox prefHeight="105.0" prefWidth="520.0" spacing="2.0">
+                <VBox prefHeight="99.0" prefWidth="520.0" spacing="2.0">
                     <children>
                         <Label text="Security Key Manager" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="25.0" />
                             </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="440.0" text="Generate, copy and revoke security keys for accounts. Keys expire automatically." textFill="WHITE" wrapText="true">
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="77.0" prefWidth="480.0" text="Generate, copy and revoke security keys for accounts. Keys expire automatically." textFill="WHITE" wrapText="true">
                             <font>
                                 <Font size="20.0" />
                             </font>
@@ -85,19 +82,26 @@
                 </VBox>
 
                 <!-- Action buttons -->
-                <HBox alignment="CENTER_LEFT" prefWidth="480.0" spacing="12.0">
+                <HBox alignment="CENTER" prefHeight="66.0" prefWidth="520.0" spacing="12.0">
                     <padding>
                         <Insets left="20.0" right="20.0" />
                     </padding>
                     <children>
-                        <Button fx:id="generateKeyButton" mnemonicParsing="false" onAction="#onGenerateKey" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-size: 15;" text="+ Generate Key" />
-                        <ComboBox fx:id="sortComboBox" onAction="#onSortChanged" prefWidth="140.0" />
-                        <ComboBox fx:id="sortDirectionComboBox" onAction="#onSortChanged" prefWidth="110.0" />
+                        <ComboBox fx:id="sortComboBox" onAction="#onSortChanged" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #697479;" />
+                        <ComboBox fx:id="sortDirectionComboBox" onAction="#onSortChanged" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #697479;" />
                     </children>
                 </HBox>
+            <HBox alignment="CENTER" prefHeight="57.0" prefWidth="520.0">
+               <children>
+                        <Button fx:id="generateKeyButton" alignment="CENTER" mnemonicParsing="false" onAction="#onGenerateKey" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-size: 18;" text="+ Generate Key" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+               </children>
+            </HBox>
 
                 <!-- Keys list -->
-                <ScrollPane fitToWidth="true" prefViewportHeight="520.0" style="-fx-pref-width: 480; -fx-background: transparent; -fx-background-color: transparent;">
+                <ScrollPane fitToWidth="true" prefHeight="293.0" prefViewportHeight="520.0" prefWidth="520.0" style="-fx-pref-width: 480; -fx-background: transparent; -fx-background-color: transparent;">
                     <content>
                         <VBox fx:id="entriesContainer" spacing="8" style="-fx-padding: 6; -fx-alignment: top_center;" />
                     </content>
