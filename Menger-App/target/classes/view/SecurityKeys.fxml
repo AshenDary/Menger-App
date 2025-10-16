@@ -19,7 +19,7 @@
             <children>
                 <HBox prefHeight="25.0" prefWidth="520.0">
                     <children>
-                  <ImageView fx:id="backButton" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="backButton" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#HandleBackToMenu" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/images/backicon2.png" />
                      </image>
@@ -87,8 +87,8 @@
                         <Insets left="20.0" right="20.0" />
                     </padding>
                     <children>
-                        <ComboBox fx:id="sortComboBox" onAction="#onSortChanged" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #697479;" />
-                        <ComboBox fx:id="sortDirectionComboBox" onAction="#onSortChanged" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #697479;" />
+                        <ComboBox fx:id="sortComboBox" onAction="#onSortChanged" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #697479; -fx-font-color: white;" />
+                        <ComboBox fx:id="sortDirectionComboBox" onAction="#onSortChanged" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #697479; -fx-font-color: white;" />
                     </children>
                 </HBox>
             <HBox alignment="CENTER" prefHeight="57.0" prefWidth="520.0">

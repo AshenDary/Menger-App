@@ -7,21 +7,23 @@ import com.example.model.SecurityKey;
 import com.example.model.SecurityKeyManager;
 import com.example.network.MainClient;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 public class SecurityKeysController {
 
     @FXML
     private Button generateKeyButton;
+    
     @FXML
-    private Button backButton;
+    private ImageView backButton;
 
     @FXML
     private javafx.scene.control.Label createdLabel;
